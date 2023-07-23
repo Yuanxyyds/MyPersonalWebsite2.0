@@ -1,10 +1,10 @@
 import React from "react";
 import {Container, Row, Col} from "react-bootstrap";
 import myImg from "../../Assets/avatar.png";
+import email from "../../Assets/email.png";
 import Tilt from "react-parallax-tilt";
 import {
     AiFillGithub,
-    AiOutlineTwitter,
     AiFillInstagram,
     AiOutlinePhone,
     AiOutlineMail,
@@ -68,6 +68,12 @@ function Home2() {
                             <AiOutlinePhone style={{width: '40px', height: '40px'}}/> {" "} +1 (647)-309-9649
                         </p>
                     </Col>
+                    <Col md={4} className="myAvtar">
+                        <Tilt>
+                            <img src={email} style={{width: '300px', height: '300px'}} className="img-fluid"
+                                 alt="email"/>
+                        </Tilt>
+                    </Col>
                 </Row>
 
                 <Row>
@@ -79,7 +85,7 @@ function Home2() {
                         <ul className="home-about-social-links">
                             <li className="social-icons">
                                 <a
-                                    href="https://github.com/soumyajit4419"
+                                    href="https://github.com/Yuanxyyds"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="icon-colour  home-social-icons"
@@ -89,17 +95,7 @@ function Home2() {
                             </li>
                             <li className="social-icons">
                                 <a
-                                    href="https://twitter.com/Soumyajit4419"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="icon-colour  home-social-icons"
-                                >
-                                    <AiOutlineTwitter/>
-                                </a>
-                            </li>
-                            <li className="social-icons">
-                                <a
-                                    href="https://www.linkedin.com/in/soumyajit4419/"
+                                    href="https://www.linkedin.com/in/hongyuan-steven-liu/"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="icon-colour  home-social-icons"
@@ -109,7 +105,7 @@ function Home2() {
                             </li>
                             <li className="social-icons">
                                 <a
-                                    href="https://www.instagram.com/soumyajit4419"
+                                    href="https://www.instagram.com/yxyyds2001/"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="icon-colour home-social-icons"
