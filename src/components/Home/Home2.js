@@ -1,7 +1,6 @@
 import React from "react";
 import {Container, Row, Col} from "react-bootstrap";
 import myImg from "../../Assets/avatar.png";
-import email from "../../Assets/email.png";
 import Tilt from "react-parallax-tilt";
 import {
     AiFillGithub,
@@ -48,7 +47,7 @@ function Home2() {
                 </Row>
 
                 <Row>
-                    <Col md={8} className="home-about-description">
+                    <Col md={12} className="home-about-description">
                         <h1 style={{fontSize: "2.6em"}}>
                             <span className="blue"> CONTACT</span> ME AT
                         </h1>
@@ -67,21 +66,7 @@ function Home2() {
                             <br/>
                             <AiOutlinePhone style={{width: '40px', height: '40px'}}/> {" "} +1 (647)-309-9649
                         </p>
-                    </Col>
-                    <Col md={4} className="myAvtar">
-                        <Tilt>
-                            <img src={email} style={{width: '300px', height: '300px'}} className="img-fluid"
-                                 alt="email"/>
-                        </Tilt>
-                    </Col>
-                </Row>
 
-                <Row>
-                    <Col md={12} className="home-about-social">
-                        <h1>FIND ME ON</h1>
-                        <p>
-                            Feel free to <span className="blue">connect </span>with me
-                        </p>
                         <ul className="home-about-social-links">
                             <li className="social-icons">
                                 <a
@@ -116,6 +101,7 @@ function Home2() {
                         </ul>
                     </Col>
                 </Row>
+
             </Container>
         </Container>
     );
