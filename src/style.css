@@ -1,9 +1,5 @@
 html {
-    --section-background-color: linear-gradient(
-            to bottom left,
-            rgba(17, 16, 16, 0.582),
-            rgba(12, 8, 24, 0.904)
-    );
+    --section-background-color: linear-gradient(to bottom, #0e1424, #0e1427, #0f1424, #000316);
 
     --image-gradient: linear-gradient(
             to bottom left,
@@ -454,7 +450,7 @@ button:focus {
 }
 
 .blockquote-footer {
-    color: #a588c0 !important;
+    color: #3b57c9 !important;
 }
 
 /* --------- */
@@ -554,7 +550,7 @@ button:focus {
     color: white !important;
     font-size: 2.3em !important;
     font-weight: 500 !important;
-    padding-top: 10px !important;
+    padding-top: 20px !important;
 }
 
 /* --------- */
@@ -570,11 +566,12 @@ button:focus {
 }
 
 .tech-icons {
-    font-size: 4.5em !important;
+    font-size: medium !important;
+    font-weight: 1000 !important;
     margin: 15px !important;
     padding: 10px !important;
     opacity: 0.93 !important;
-    border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+    border: 1.7px solid #3b57c9 !important;
     vertical-align: middle !important;
     text-align: center !important;
     border-radius: 5px !important;
@@ -584,17 +581,22 @@ button:focus {
     transition: all 0.4s ease 0s !important;
 }
 
+.tech-icons:hover {
+    font-size: medium !important;
+    transition: all 0.4s ease 0s !important;
+    transform: scale(1.05) !important;
+    overflow: hidden !important;
+    border: 2.2px solid #54b7e1 !important;
+}
+
+
 @media (max-width: 767px) {
     .tech-icons {
         margin: 10px !important;
     }
 }
 
-.tech-icons:hover {
-    transform: scale(1.05) !important;
-    overflow: hidden !important;
-    border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
-}
+
 
 .tech-icon-images {
     padding: 20px !important;
