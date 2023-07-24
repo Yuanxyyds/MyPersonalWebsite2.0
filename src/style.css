@@ -531,14 +531,14 @@ button:focus {
 
 .btn-primary {
     color: #fff !important;
-    background-color: #623686 !important;
-    border-color: #623686 !important;
+    background-color: #001d52 !important;
+    border-color: #001d52 !important;
 }
 
 .btn-primary:hover {
     color: #fff !important;
-    background-color: #6d20c5d7 !important;
-    border-color: #6d20c5d7 !important;
+    background-color: #002365 !important;
+    border-color: #002365 !important;
 }
 
 .btn:focus {
@@ -669,14 +669,14 @@ button:focus {
 .resume .resume-item {
     padding: 0 0 10px 25px;
     margin-top: -2px;
-    border-left: 2px solid #8a49a8;
+    border-left: 2px solid #002365;
     position: relative;
 }
 
 .resume .resume-item .resume-title {
     line-height: 18px;
     font-size: 0.9em;
-    background: #5234795d;
+    background: #002365;
     padding: 8px 15px;
     display: inline-block;
     font-weight: 600;
@@ -706,64 +706,8 @@ button:focus {
     left: -9px;
     top: 0;
     background: #fff;
-    border: 2px solid #8a49a8;
+    border: 2px solid #001d52;
+
 }
 
-.like-item {
-    padding-top: 10px !important;
-    font-size: 1.1em !important;
-    font-family: sans-serif !important;
-}
 
-.like-btn {
-    background-color: #934cce5e !important;
-    border-color: #934cce5e !important;
-    padding: 0.25rem 0.98rem !important;
-    border-radius: 5px !important;
-    line-height: 1.4 !important;
-    transition: 0.3s ease !important;
-}
-
-.like-btn:hover {
-    transform: translateY(-2px) !important;
-    background-color: #a24dd386 !important;
-    border-color: #a24dd386 !important;
-}
-
-.animate-like {
-    animation-name: likeAnimation;
-    animation-fill-mode: forwards;
-    animation-duration: 0.85s;
-}
-
-@keyframes likeAnimation {
-    0% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.fork-btn {
-    font-size: 1.1em !important;
-    padding-top: 10px !important;
-}
-
-.fork-btn-inner {
-    line-height: 1.4em !important;
-    background-color: #934cce5e !important;
-    padding: 0.25rem 1.1rem !important;
-    vertical-align: middle !important;
-    text-align: center !important;
-}
-
-.fork-btn-inner:hover {
-    transform: translateY(-2px) !important;
-    background-color: #a24dd386 !important;
-    border-color: #a24dd386 !important;
-}
-
-.fork-btn-inner::after {
-    display: none !important;
-}
