@@ -284,25 +284,25 @@ button:focus {
     color: #0147a9;
 }
 
-.Typewriter__wrapper {
+.typewriter-wrapper-home {
     font-size: 2.2em !important;
     color: #0147a9 !important;
     font-weight: 600 !important;
 }
 
-.Typewriter__cursor {
-    font-size: 2.4em !important;
+.typewriter-wrapper-home .Typewriter__cursor {
+    font-size: 1em !important;
     color: #0147a9 !important;
 }
 
 @media (max-width: 767px) {
-    .Typewriter__wrapper {
+    .typewriter-wrapper-home {
         font-size: 1.4em !important;
         font-weight: 500 !important;
         position: absolute !important;
     }
 
-    .Typewriter__cursor {
+    .typewriter-wrapper-home .Typewriter__cursor {
         display: none !important;
     }
 }
@@ -597,7 +597,6 @@ button:focus {
 }
 
 
-
 .tech-icon-images {
     padding: 20px !important;
     line-height: 1.6 !important;
@@ -708,6 +707,67 @@ button:focus {
     background: #fff;
     border: 2px solid #001d52;
 
+}
+
+/* --------- */
+/* Project Demo */
+/* --------- */
+
+.project-demo-section {
+    position: relative !important;
+    padding-top: 150px !important;
+    padding-bottom: 30px !important;
+    color: white !important;
+}
+
+.project-tab-section {
+    justify-content: center !important;
+    padding-top: 15px !important;
+    display: inline-block !important;
+    position: relative !important;
+    padding-inline-start: 0 !important;
+}
+
+.project-tab {
+    display: inline-block !important;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.project-tab-content {
+    position: relative !important;
+    display: inline-block !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center !important;
+    font-size: 1.2em !important;
+    line-height: 2em !important;
+    transition: 0.5s !important;
+    padding: 4px 10px;
+    border-radius: 10%;
+}
+
+.project-tab-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    transform: scale(0.9);
+    z-index: -1;
+    border-radius: 10%;
+}
+
+.project-tab-content:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0147a9;
+}
+
+.tab-colour {
+    color: white !important;
+    text-decoration: none;
 }
 
 
