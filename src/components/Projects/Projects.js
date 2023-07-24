@@ -10,6 +10,7 @@ import DTC from "../../Assets/Projects/dtc.png";
 import Button from "react-bootstrap/Button";
 import {BsGithub} from "react-icons/bs";
 import {CgWebsite} from "react-icons/cg";
+import {Link} from "react-router-dom";
 
 function Projects() {
     return (
@@ -30,9 +31,11 @@ function Projects() {
                             description="As an extension to the UofT FoodTruck Project, we have created a comprehensive mobile food delivery app, catering to users, restaurants, and drivers, with the goal of enhancing campus food services. The app was developed using Flutter and Firebase backend."
                             action={
                                 <>
-                                    <Button variant="primary" href={"https://github.com/Yuanxyyds/FoodTruckMobile"}
+                                    <Button variant="primary"
                                             target="_blank">
-                                        <CgWebsite/> &nbsp; Project Demo
+                                        <Link to={"/campusEats"} style={{color: "white", textDecoration: "none"}}>
+                                            <CgWebsite/> &nbsp; Project Demo
+                                        </Link>
                                     </Button>
                                 </>}
                         />
