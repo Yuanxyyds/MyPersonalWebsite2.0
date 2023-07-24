@@ -5,7 +5,8 @@ import Particle from "../Particle";
 import campusEats from "../../Assets/Projects/campusEats.png";
 import GreatLakes from "../../Assets/Projects/Great-lakes.png";
 import DSWsb from "../../Assets/Projects/DS-web.png";
-import PersonalWeb from "../../Assets/Projects/personal-web.png"
+import PersonalWeb from "../../Assets/Projects/personal-web.png";
+import DTC from "../../Assets/Projects/dtc.png";
 import Button from "react-bootstrap/Button";
 import {BsGithub} from "react-icons/bs";
 import {CgWebsite} from "react-icons/cg";
@@ -41,7 +42,7 @@ function Projects() {
                         <ProjectCard
                             imgPath={PersonalWeb}
                             title="Personal Website"
-                            description="My personal website build with Next.js and Tailwind Css (version 1.0), React App (version 2.0). Both website includes detailed explanations (including videos) of all my projects."
+                            description="My personal website built with Next.js and Tailwind CSS (version 1.0) and React App (version 2.0). Both websites feature detailed project explanations, and videos showcasing each project."
                             action={
                                 <>
                                     <Button variant="primary" href={"https://github.com/Yuanxyyds/MyPersonalWebsite2.0"}
@@ -71,6 +72,21 @@ function Projects() {
                                         target="_blank"
                                         style={{marginLeft: "10px", marginTop: "10px"}}>
                                         <CgWebsite/> &nbsp; Website
+                                    </Button>
+                                </>}
+                        />
+                    </Col>
+
+                    <Col md={4} className="project-card">
+                        <ProjectCard
+                            imgPath={DTC}
+                            title="JCI Community (DTC) Mobile App"
+                            description="Home Security and Cloud device management mobile app (currently named as Community) developed by Johnson Controls. Participated in Front-end and Back-end development using Flutter and Firebase."
+                            action={
+                                <>
+                                    <Button variant="primary"
+                                            target="_blank">
+                                        <BsGithub/> &nbsp; Unavailable
                                     </Button>
                                 </>}
                         />
