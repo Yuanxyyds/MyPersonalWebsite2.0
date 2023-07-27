@@ -5,7 +5,8 @@ import campusEats1 from "../../Assets/campusEats1.0.png";
 import UTFT from "../../Assets/utft.png";
 import {BiCheck} from "react-icons/bi";
 import ReactPlayer from "react-player";
-import campusEats2 from "../../Assets/Projects/campusEats.png";
+import campusEats2 from "../../Assets/campusEats2.0.jpeg";
+import {ImPointRight} from "react-icons/im";
 
 
 function CampusEats() {
@@ -62,20 +63,42 @@ function CampusEats() {
                                 </li>
                             </ul>
                             <p style={{textAlign: "justify", paddingTop: 20}}>
-                                <strong className="blue">Updated July 13 2023</strong>: This project is under
-                                development.
-
-                                Unfortunately, this repository is currently set to private under development. However,
-                                below is a project demo based on the current state of the project. Feel free also to
-                                checkout
+                                <strong className="blue">Update July 27 2023: </strong> {" "} This project is still
+                                under development.
+                                <br/>
+                                <br/>
+                                Unfortunately, the repository for this Version 2.0 is set to private. However, feel
+                                free also to checkout the repository for the
                                 <a onClick={() => handleTabChange('campusEats1')}
                                    style={{cursor: "pointer", textDecoration: "none"}}
                                    className="blue"> Version 1.0
-                                </a> and
+                                </a> and the
                                 <a onClick={() => handleTabChange('utft')}
                                    style={{cursor: "pointer", textDecoration: "none"}}
                                    className="blue"> UofT Food Truck Project
                                 </a>
+                                <br/>
+                                <br/>
+                                In the second version, we have implemented a more modern UI design and incorporated
+                                additional stateful widgets to enhance user interaction. The database and back-end
+                                implementation have been redesigned to enable faster data querying. Currently, we have
+                                developed most of the static UI pages and implemented several essential back-end
+                                features, including user authentication & profile management, user address selection,
+                                and restaurant creation.
+                                <br/>
+                                <br/>
+                                At videos below, we have shown several highlight features, including:
+                                <ul>
+                                    <li>
+                                        <ImPointRight/> User-end UI Quick Demo
+                                    </li>
+                                    <li>
+                                        <ImPointRight/> User Authentication and Profile Management
+                                    </li>
+                                    <li>
+                                        <ImPointRight/> TBD: User Address Selection
+                                    </li>
+                                </ul>
                             </p>
                         </Col>
                         <Col md={5} style={{paddingBottom: 20, textAlign: "center"}}>
@@ -83,18 +106,32 @@ function CampusEats() {
                                 src={campusEats2}
                                 alt="Campus Eats"
                                 className="img-fluid"
-                                style={{maxHeight: "300px"}}
+                                style={{maxHeight: "600px"}}
                             />
                         </Col>
                     </Row>
+                    <div className="project-heading">
+                        Video <strong className="blue">Demo </strong>
+                    </div>
+
                     <Row style={{justifyContent: "center", padding: "10px"}}>
-                        <div className="project-heading">
-                            Video <strong className="blue">Demo </strong>
-                        </div>
-                        <ReactPlayer style={{marginTop: 20}} url='https://www.youtube.com/watch?v=7Bg82R61Dfk'/>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{marginTop: 20,}}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/RHQzjJ-cZSc'/>
+                        </Col>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{marginTop: 20}}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/BJ-8bv7qQxo'/>
+                        </Col>
+
 
                     </Row>
-
 
                 </Container>
             </Container>
@@ -139,10 +176,16 @@ function CampusEats() {
                                 </li>
                             </ul>
                             <p style={{textAlign: "justify", paddingTop: 20}}>
-                                As an extension to the UofT FoodTruck Project. I have formed a new development team,
+                                As an extension to the UofT FoodTruck Project. We have formed a new development team,
                                 continued this project's development and made significant enhancements. The project is
-                                hosted on GitHub, with separate repositories for the user-end code here and the seller
-                                code here.
+                                hosted on GitHub, with separate repositories for the user-end code
+                                <a href={"https://github.com/Yuanxyyds/FoodTruckMobile"}
+                                   style={{cursor: "pointer", textDecoration: "none"}}
+                                   className="blue"> here </a>
+                                and the seller code
+                                <a href={"https://github.com/Yuanxyyds/FoodTruckSeller"}
+                                   style={{cursor: "pointer", textDecoration: "none"}}
+                                   className="blue"> here</a>
                                 <br/>
                                 <br/>
                                 This Project was developed with Flutter and Firebase backend, this project expanded my
@@ -233,7 +276,11 @@ function CampusEats() {
                             </ul>
                             <p style={{textAlign: "justify", paddingTop: 20}}>
                                 This project was developed by Group Asoul as the final project for CSC207. The project
-                                is hosted on GitHub, and you can access the source code through the this link. It serves
+                                is hosted on GitHub, and you can access the source code through
+                                <a href={"https://github.com/Yuanxyyds/UofT-FoodTruck-GroupAsoul"}
+                                   style={{cursor: "pointer", textDecoration: "none"}}
+                                   className="blue"> this link </a>
+                                . It serves
                                 as the initial version of the CampusEats series.
                                 <br/>
                                 <br/>
