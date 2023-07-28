@@ -7,6 +7,7 @@ import GreatLakes from "../../Assets/Projects/Great-lakes.png";
 import DSWsb from "../../Assets/Projects/DS-web.png";
 import PersonalWeb from "../../Assets/Projects/personal-web.png";
 import DTC from "../../Assets/Projects/dtc.png";
+import LandSink from "../../Assets/Projects/landSink.png";
 import Button from "react-bootstrap/Button";
 import {BsGithub} from "react-icons/bs";
 import {CgWebsite} from "react-icons/cg";
@@ -45,7 +46,7 @@ function Projects() {
                         <ProjectCard
                             imgPath={PersonalWeb}
                             title="Personal Website"
-                            description="My personal website built with Next.js and Tailwind CSS (version 1.0) and React App (version 2.0). Both websites feature detailed project explanations, and videos showcasing each project."
+                            description="My personal website built with frontend using Next.js & Tailwind CSS (version 1), React (version 2). And backend using Django with AWS hosting. Both websites feature detailed project explanations, and videos showcasing each project."
                             action={
                                 <>
                                     <Button variant="primary" href={"https://github.com/Yuanxyyds/MyPersonalWebsite2.0"}
@@ -141,6 +142,23 @@ function Projects() {
                                         target="_blank"
                                         style={{marginLeft: "10px"}}>
                                         <CgWebsite/> &nbsp; Website
+                                    </Button>
+                                </>}
+                        />
+                    </Col>
+
+                    <Col md={4} className="project-card">
+                        <ProjectCard
+                            imgPath={LandSink}
+                            title="Estimate LandSink Percentage"
+                            description="CSC110 Final Project. We trained a model using Python to estimate temperature and land sink percentage for a given year. As an extension, I developed a Django Backend server, which is now hosted on AWS. This server enhances interactivity and allows users to access and interact with the project through the web."
+                            action={
+                                <>
+                                    <Button variant="primary"
+                                            target="_blank">
+                                        <Link to={"/landSink"} style={{color: "white", textDecoration: "none"}}>
+                                            <CgWebsite/> &nbsp; Project Demo
+                                        </Link>
                                     </Button>
                                 </>}
                         />

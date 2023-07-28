@@ -40,7 +40,7 @@ function Tool() {
             <Col xs={3} md={2} className="tech-icons" onMouseEnter={() => handleMouseEnter(2)}
                  onMouseLeave={() => handleMouseLeave(2)}>
                 {!hoverStates[2] && (<FaAws style={{fontSize: "5em"}}/>)}
-                {hoverStates[2] && (<div><p> AWS</p> <YellowStars number={1}/></div>)}
+                {hoverStates[2] && (<div><p> AWS</p> <YellowStars number={3}/></div>)}
             </Col>
             <Col xs={3} md={2} className="tech-icons" onMouseEnter={() => handleMouseEnter(3)}
                  onMouseLeave={() => handleMouseLeave(3)}>
