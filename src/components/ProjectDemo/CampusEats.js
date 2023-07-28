@@ -37,7 +37,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats2')}
-                                        className="tab-colour project-tab-content"
+                                        className="project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         Campus Eats 2.0 <BiCheck/>
@@ -46,7 +46,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats1')}
-                                        className="tab-colour  project-tab-content"
+                                        className=" project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         Campus Eats 1.0
@@ -55,7 +55,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('utft')}
-                                        className="tab-colour project-tab-content"
+                                        className="project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         UofT FoodTruck Group Asoul
@@ -88,17 +88,13 @@ function CampusEats() {
                                 <br/>
                                 <br/>
                                 At videos below, we have shown several highlight features, including:
-                                <ul>
-                                    <li>
-                                        <ImPointRight/> User-end UI Quick Demo
-                                    </li>
-                                    <li>
-                                        <ImPointRight/> User Authentication and Profile Management
-                                    </li>
-                                    <li>
-                                        <ImPointRight/> TBD: User Address Selection
-                                    </li>
-                                </ul>
+                                <br/>
+                                <br/>
+                                <ImPointRight/> User-end UI Quick Demo
+                                <br/>
+                                <ImPointRight/> User Authentication and Profile Management
+                                <br/>
+                                <ImPointRight/> TBD: User Address Selection
                             </p>
                         </Col>
                         <Col md={5} style={{paddingBottom: 20, textAlign: "center"}}>
@@ -150,7 +146,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats2')}
-                                        className="tab-colour project-tab-content"
+                                        className=" project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         Campus Eats 2.0
@@ -159,7 +155,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats1')}
-                                        className="tab-colour  project-tab-content"
+                                        className="  project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         Campus Eats 1.0 <BiCheck/>
@@ -168,7 +164,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('utft')}
-                                        className="tab-colour project-tab-content"
+                                        className=" project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         UofT FoodTruck Group Asoul
@@ -249,7 +245,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats2')}
-                                        className="tab-colour project-tab-content"
+                                        className=" project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         Campus Eats 2.0
@@ -258,7 +254,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats1')}
-                                        className="tab-colour  project-tab-content"
+                                        className="  project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         Campus Eats 1.0
@@ -267,7 +263,7 @@ function CampusEats() {
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('utft')}
-                                        className="tab-colour project-tab-content"
+                                        className=" project-tab-content"
                                         style={{cursor: "pointer"}}
                                     >
                                         UofT FoodTruck Group Asoul <BiCheck/>

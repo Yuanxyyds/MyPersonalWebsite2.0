@@ -17,6 +17,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CampusEats from "./components/ProjectDemo/CampusEats";
+import LandSink from "./components/ProjectDemo/LandSink";
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -41,6 +42,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/campusEats*" element={<CampusEats />} />
+          <Route path="/landSink*" element={<LandSink />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />
