@@ -57,7 +57,7 @@ function Projects() {
                                     {"\n"}
                                     <Button
                                         variant="primary"
-                                        href={"my-personal-website2-0.vercel.app"}
+                                        href={"https://liustev6.ca"}
                                         target="_blank"
                                         style={{marginLeft: "10px"}}>
                                         <CgWebsite/> &nbsp; Website
@@ -72,7 +72,7 @@ function Projects() {
                                     {"\n"}
                                     <Button
                                         variant="primary"
-                                        href={"https://liustev6.ca"}
+                                        href={"https://my-personal-website-yuanxyyds.vercel.app/"}
                                         target="_blank"
                                         style={{marginLeft: "10px", marginTop: "10px"}}>
                                         <CgWebsite/> &nbsp; Website
