@@ -1,12 +1,13 @@
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Particle from "../Particle";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import campusEats1 from "../../Assets/campusEats1.0.png";
 import UTFT from "../../Assets/utft.png";
-import {BiCheck} from "react-icons/bi";
+import { BiCheck } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import campusEats2 from "../../Assets/campusEats2.0.jpeg";
-import {ImPointRight} from "react-icons/im";
+import campusEatsLogo from "../../Assets/campus-eats.jpg";
+import { ImPointRight } from "react-icons/im";
 
 
 function CampusEats() {
@@ -26,9 +27,9 @@ function CampusEats() {
     if (activeTab === 'campusEats2') {
         return (
             <Container fluid className="project-demo-section">
-                <Particle/>
+                <Particle />
                 <Container>
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <Col>
                             <div className="project-heading">
                                 Campus Eats Series Demo
@@ -38,16 +39,16 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('campusEats2')}
                                         className="project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
-                                        Campus Eats 2.0 <BiCheck/>
+                                        Campus Eats 2.0 <BiCheck />
                                     </div>
                                 </li>
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('campusEats1')}
                                         className=" project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 1.0
                                     </div>
@@ -56,75 +57,155 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('utft')}
                                         className="project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         UofT FoodTruck Group Asoul
                                     </div>
                                 </li>
                             </ul>
-                            <p style={{textAlign: "justify", paddingTop: 20}}>
-                                <strong className="blue">Update July 27 2023: </strong> {" "} This project is still
+
+                            <p style={{ textAlign: "justify", paddingTop: 20 }}>
+                                <strong className="blue">Update Nov 18 2023: </strong> {" "} This project is still
                                 under development.
-                                <br/>
-                                <br/>
+                            </p>
+
+                            <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
+                                <strong> Specification </strong>
+                            </h5>
+
+                            <p style={{ textAlign: "justify", paddingTop: 20 }}>
+                                Currently, it has come to our attention that there are a variety of food service options on our campus,
+                                including the residence cafeteria, food trucks, and nearby restaurants. However, the vast majority of
+                                these establishments solely offer in-person ordering, leading to inconveniently lengthy wait times
+                                during peak times (e.g. UofT times).
+                                <br />
+                                <br />
+                                In addition, we understand the challenges posed by high delivery and platform fees on the current online
+                                ordering platforms. These fees can limit students’ access to nearby restaurant options while on campus.
+                                We aim to mitigate this issue and provide a more affordable solution.
+                                <br />
+                                <br />
+                                Consequently, we would like to develop a mobile app named CampusEats, allowing users to place orders online
+                                with ease, browse food menus, provide diverse meal options/plans, and unlock exclusive discounts tailored
+                                to students. Our mission is to provide a better dining solution for all campus members.
+                            </p>
+
+                            <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
+                                <strong> Updates from Version 1.0 </strong>
+                            </h5>
+
+
+                            <p style={{ textAlign: "justify", paddingTop: 20 }}>
                                 Unfortunately, the repository for this Version 2.0 is set to private. However, feel
                                 free also to checkout the repository for the
                                 <a onClick={() => handleTabChange('campusEats1')}
-                                   style={{cursor: "pointer", textDecoration: "none"}}
-                                   className="blue"> Version 1.0
+                                    style={{ cursor: "pointer", textDecoration: "none" }}
+                                    className="blue"> Version 1.0
                                 </a> and the
                                 <a onClick={() => handleTabChange('utft')}
-                                   style={{cursor: "pointer", textDecoration: "none"}}
-                                   className="blue"> UofT Food Truck Project
+                                    style={{ cursor: "pointer", textDecoration: "none" }}
+                                    className="blue"> UofT Food Truck Project
                                 </a>
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 In the second version, we have implemented a more modern UI design and incorporated
                                 additional stateful widgets to enhance user interaction. The database and back-end
-                                implementation have been redesigned to enable faster data querying. Currently, we have
-                                developed most of the static UI pages and implemented several essential back-end
-                                features, including user authentication & profile management, user address selection,
-                                and restaurant creation.
-                                <br/>
-                                <br/>
+                                implementation have been redesigned to enable faster data querying. We now have all
+                                the User-end, Restaurant-end, and Driver-end implementation.
+                                <br />
+                                <br />
                                 At videos below, we have shown several highlight features, including:
-                                <br/>
-                                <br/>
-                                <ImPointRight/> User-end UI Quick Demo
-                                <br/>
-                                <ImPointRight/> User Authentication and Profile Management
-                                <br/>
-                                <ImPointRight/> TBD: User Address Selection
+                                <br />
+                                <br />
+                                <ImPointRight /> Authentication and Profile management
+                                <br />
+                                <ImPointRight /> Address Management
+                                <br />
+                                <ImPointRight /> Payment System
+                                <br />
+                                <ImPointRight /> Restaurant Creation
+                                <br />
+                                <ImPointRight /> Restaurant Searching
+                                <br />
+                                <ImPointRight /> Pickup Order Placement Flow
+                                <br />
+                                <ImPointRight /> Delivery Order and Order Chat
+
                             </p>
+
                         </Col>
-                        <Col md={5} style={{paddingBottom: 20, textAlign: "center"}}>
+                        <Col md={5} style={{ paddingBottom: 20, textAlign: "center" }}>
+                            <img
+                                src={campusEatsLogo}
+                                alt="Campus Eats"
+                                className="img-fluid"
+                                style={{ maxWidth: "300px", paddingTop: 40 }}
+                            />
                             <img
                                 src={campusEats2}
                                 alt="Campus Eats"
                                 className="img-fluid"
-                                style={{maxHeight: "600px"}}
+                                style={{ maxWidth: "300px", paddingTop: 40 }}
                             />
+
+
                         </Col>
                     </Row>
                     <div className="project-heading">
                         Video <strong className="blue">Demo </strong>
                     </div>
 
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <Col xs={12} md={6} lg={6}>
                             <ReactPlayer
-                                style={{marginTop: 20,}}
+                                style={{ marginTop: 20, }}
                                 width="100%"
                                 controls={true}
-                                url='https://youtu.be/RHQzjJ-cZSc'/>
+                                url='https://youtu.be/H6pUOCezsl0' />
                         </Col>
                         <Col xs={12} md={6} lg={6}>
                             <ReactPlayer
-                                style={{marginTop: 20}}
+                                style={{ marginTop: 20 }}
                                 width="100%"
                                 controls={true}
-                                url='https://youtu.be/BJ-8bv7qQxo'/>
+                                url='https://youtube.com/shorts/CC1eHGZ_yqc' />
                         </Col>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{ marginTop: 20, }}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/V3IKAUIMLG8' />
+                        </Col>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{ marginTop: 20 }}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/yjI85SoDbig' />
+                        </Col>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{ marginTop: 20 }}
+                                width="100%"
+                                controls={true}
+                                url='https://youtube.com/shorts/ztN4KI6UtE4' />
+                        </Col>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{ marginTop: 20, }}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/C0ouf4YC8rA' />
+                        </Col>
+                        <Col xs={12} md={6} lg={6}>
+                            <ReactPlayer
+                                style={{ marginTop: 20 }}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/oQ6Wbr5k9yM' />
+                        </Col>
+
 
 
                     </Row>
@@ -135,9 +216,9 @@ function CampusEats() {
     } else if (activeTab === 'campusEats1') {
         return (
             <Container fluid className="project-demo-section">
-                <Particle/>
+                <Particle />
                 <Container>
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <Col>
                             <div className="project-heading">
                                 Campus Eats Series Demo
@@ -147,7 +228,7 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('campusEats2')}
                                         className=" project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 2.0
                                     </div>
@@ -156,75 +237,75 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('campusEats1')}
                                         className="  project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
-                                        Campus Eats 1.0 <BiCheck/>
+                                        Campus Eats 1.0 <BiCheck />
                                     </div>
                                 </li>
                                 <li className="project-tab">
                                     <div
                                         onClick={() => handleTabChange('utft')}
                                         className=" project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         UofT FoodTruck Group Asoul
                                     </div>
                                 </li>
                             </ul>
-                            <p style={{textAlign: "justify", paddingTop: 20}}>
+                            <p style={{ textAlign: "justify", paddingTop: 20 }}>
                                 As an extension to the UofT FoodTruck Project. We have formed a new development team,
                                 continued this project's development and made significant enhancements. The project is
                                 hosted on GitHub, with separate repositories for the user-end code
                                 <a href={"https://github.com/Yuanxyyds/FoodTruckMobile"}
-                                   style={{cursor: "pointer", textDecoration: "none"}}
-                                   className="blue"> here </a>
+                                    style={{ cursor: "pointer", textDecoration: "none" }}
+                                    className="blue"> here </a>
                                 and the seller code
                                 <a href={"https://github.com/Yuanxyyds/FoodTruckSeller"}
-                                   style={{cursor: "pointer", textDecoration: "none"}}
-                                   className="blue"> here</a>
-                                <br/>
-                                <br/>
+                                    style={{ cursor: "pointer", textDecoration: "none" }}
+                                    className="blue"> here</a>
+                                <br />
+                                <br />
                                 This Project was developed with Flutter and Firebase backend, this project expanded my
                                 expertise in Kotlin/Swift, Android Gradle building, iOS building with Xcode.
                                 Additionally, I
                                 gained proficiency in Figma UI design, utilized public Flutter packages, and explored
                                 the Google Cloud platform for API integration.
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 For user-end functionality, it includes features such as account creation, account
                                 editing
                                 (image uploading, address autocomplete), viewing restaurant, shopping cart managing, and
                                 seamless integration with the backend for communication with the seller-end.
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 For the seller-end functionality, it includes additional features such as restaurant
                                 creation, food item creation, and backend for communication with the user-end.
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 To further enhance functionality and improve the user interface, <strong
-                                className="blue">
-                                development for this version has been halted.</strong> The latest and updated version
+                                    className="blue">
+                                    development for this version has been halted.</strong> The latest and updated version
                                 can be
                                 accessed at the here. Here, you can explore the newest version of the CampusEats project
                                 with improved features and a
                                 refined user experience.
                             </p>
                         </Col>
-                        <Col md={5} style={{paddingBottom: 20, textAlign: "center"}}>
+                        <Col md={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                             <img
                                 src={campusEats1}
                                 alt="Campus Eats Version 1.0"
                                 className="img-fluid"
-                                style={{maxHeight: "700px"}}
+                                style={{ maxHeight: "700px" }}
                             />
                         </Col>
 
                     </Row>
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <div className="project-heading">
                             Video <strong className="blue">Demo </strong>
                         </div>
-                        <ReactPlayer style={{marginTop: 20}} url='https://www.youtube.com/watch?v=0pP6WPmZV9M'/>
+                        <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=0pP6WPmZV9M' />
                     </Row>
 
 
@@ -234,9 +315,9 @@ function CampusEats() {
     } else if (activeTab === 'utft') {
         return (
             <Container fluid className="project-demo-section">
-                <Particle/>
+                <Particle />
                 <Container>
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <Col>
                             <div className="project-heading">
                                 Campus Eats Series Demo
@@ -246,7 +327,7 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('campusEats2')}
                                         className=" project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 2.0
                                     </div>
@@ -255,7 +336,7 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('campusEats1')}
                                         className="  project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 1.0
                                     </div>
@@ -264,29 +345,29 @@ function CampusEats() {
                                     <div
                                         onClick={() => handleTabChange('utft')}
                                         className=" project-tab-content"
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
-                                        UofT FoodTruck Group Asoul <BiCheck/>
+                                        UofT FoodTruck Group Asoul <BiCheck />
                                     </div>
                                 </li>
                             </ul>
-                            <p style={{textAlign: "justify", paddingTop: 20}}>
+                            <p style={{ textAlign: "justify", paddingTop: 20 }}>
                                 This project was developed by Group Asoul as the final project for CSC207. The project
                                 is hosted on GitHub, and you can access the source code through
                                 <a href={"https://github.com/Yuanxyyds/UofT-FoodTruck-GroupAsoul"}
-                                   style={{cursor: "pointer", textDecoration: "none"}}
-                                   className="blue"> this link </a>
+                                    style={{ cursor: "pointer", textDecoration: "none" }}
+                                    className="blue"> this link </a>
                                 . It serves
                                 as the initial version of the CampusEats series.
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 We have developed a FoodTruck ordering program with two main components: the Java
                                 backend and the Java/Android frontend. The backend handles user registration, login
                                 system, rating system, market sorting, serialization, and various functionalities like
                                 managing food trucks and orders. Users can act as both buyers and sellers, and they can
                                 edit their food trucks.
-                                <br/>
-                                <br/>
+                                <br />
+                                <br />
                                 For the frontend, we have implemented a fully-functional command-line interface that can
                                 be accessed in Intellij. It includes a help function to display available commands.
                                 Additionally, we have partially implemented an Android app, which can perform most of
@@ -294,27 +375,27 @@ function CampusEats() {
                                 placing orders.
                             </p>
                         </Col>
-                        <Col md={5} style={{paddingBottom: 20, textAlign: "center"}}>
+                        <Col md={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                             <img
                                 src={UTFT}
                                 alt="UofT Food Truck App"
                                 className="img-fluid"
-                                style={{maxHeight: "550px"}}
+                                style={{ maxHeight: "550px" }}
                             />
                         </Col>
 
                     </Row>
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <div className="project-heading">
                             Command Line Interface <strong className="blue">Demo </strong>
                         </div>
-                        <ReactPlayer style={{marginTop: 20}} url='https://www.youtube.com/watch?v=J3kfU4Ic8Uc'/>
+                        <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=J3kfU4Ic8Uc' />
                     </Row>
-                    <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <div className="project-heading">
                             Android App <strong className="blue">Demo </strong>
                         </div>
-                        <ReactPlayer style={{marginTop: 20}} url='https://www.youtube.com/watch?v=RT-l98ZasE4'/>
+                        <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=RT-l98ZasE4' />
                     </Row>
 
 

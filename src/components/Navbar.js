@@ -8,6 +8,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
+import { IoSchoolSharp } from "react-icons/io5";
 
 import { CgFileDocument } from "react-icons/cg";
 
@@ -63,6 +64,17 @@ function NavBar() {
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/campuseats"
+                onClick={() => updateExpanded(false)}
+              >
+                <IoSchoolSharp style={{ marginBottom: "2px" }} /> Campus Eats
+              </Nav.Link>
+            </Nav.Item>
+
 
             <Nav.Item>
               <Nav.Link

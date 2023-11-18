@@ -28,7 +28,7 @@ function Projects() {
                     <Col md={4} className="project-card">
                         <ProjectCard
                             imgPath={campusEats}
-                            title="Campus Eats Mobile App"
+                            title="Campus Eats"
                             description="As an extension to the UofT FoodTruck Project, we have created a comprehensive mobile food delivery app, catering to users, restaurants, and drivers, with the goal of enhancing campus food services. The app was developed using Flutter and Firebase backend."
                             action={
                                 <>
