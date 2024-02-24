@@ -71,7 +71,7 @@ function NavBar() {
                 to="/campuseats"
                 onClick={() => updateExpanded(false)}
               >
-                <IoSchoolSharp style={{ marginBottom: "2px" }} /> Campus Eats
+                <IoSchoolSharp style={{ marginBottom: "2px" }} /> CampusEats
               </Nav.Link>
             </Nav.Item>
 

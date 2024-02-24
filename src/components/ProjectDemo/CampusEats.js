@@ -7,8 +7,11 @@ import { BiCheck } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import campusEats2 from "../../Assets/campusEats2.0.jpeg";
 import campusEatsLogo from "../../Assets/campus-eats.jpg";
-import { ImPointRight } from "react-icons/im";
-
+import {
+    AiFillGithub,
+    AiFillInstagram,
+} from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function CampusEats() {
     const [activeTab, setActiveTab] = useState('campusEats2');
@@ -30,7 +33,7 @@ function CampusEats() {
                 <Particle />
                 <Container>
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
-                        <Col>
+                        <Col xs={12} md={12} lg={7}>
                             <div className="project-heading">
                                 Campus Eats Series Demo
                             </div>
@@ -65,8 +68,7 @@ function CampusEats() {
                             </ul>
 
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
-                                <strong className="blue">Update Nov 18 2023: </strong> {" "} This project is still
-                                under development.
+                                <strong className="blue">Update Feb 24 2024: </strong> {" "} We expect to launch in March 2024!
                             </p>
 
                             <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
@@ -111,48 +113,51 @@ function CampusEats() {
                                 In the second version, we have implemented a more modern UI design and incorporated
                                 additional stateful widgets to enhance user interaction. The database and back-end
                                 implementation have been redesigned to enable faster data querying. We now have all
-                                the User-end, Restaurant-end, and Driver-end implementation.
+                                the User-end, Restaurant-end, Driver-end, and a  
+                                <a href="https://campuseats.ca"
+                                    style={{ cursor: "pointer", textDecoration: "none" }}
+                                    className="blue"> general-purpose website
+                                </a>  implementation.
                                 <br />
-                                <br />
-                                At videos below, we have shown several highlight features, including:
-                                <br />
-                                <br />
-                                <ImPointRight /> Authentication and Profile management
-                                <br />
-                                <ImPointRight /> Address Management
-                                <br />
-                                <ImPointRight /> Payment System
-                                <br />
-                                <ImPointRight /> Restaurant Creation
-                                <br />
-                                <ImPointRight /> Restaurant Searching
-                                <br />
-                                <ImPointRight /> Pickup Order Placement Flow
-                                <br />
-                                <ImPointRight /> Delivery Order and Order Chat
-
                             </p>
 
                         </Col>
-                        <Col md={5} style={{ paddingBottom: 20, textAlign: "center" }}>
-                            <img
-                                src={campusEatsLogo}
-                                alt="Campus Eats"
-                                className="img-fluid"
-                                style={{ maxWidth: "300px", paddingTop: 40 }}
-                            />
-                            <img
-                                src={campusEats2}
-                                alt="Campus Eats"
-                                className="img-fluid"
-                                style={{ maxWidth: "300px", paddingTop: 40 }}
-                            />
-
-
+                        <Col xs={12} md={12} lg={5}>
+                            <Row>
+                                <Col xs={12} md={6} lg={12} style={{ justifyContent: "center", paddingTop: 40 }}>
+                                    <img
+                                        src={campusEatsLogo}
+                                        alt="Campus Eats"
+                                        className="img-fluid"
+                                        style={{ maxWidth: "300px" }}
+                                    />
+                                </Col>
+                                <Col xs={12} md={6} lg={12} style={{ display: "flex", justifyContent: "center", paddingTop: 40 }}>
+                                    <img
+                                        src={campusEats2}
+                                        alt="Campus Eats"
+                                        className="img-fluid"
+                                        style={{ maxWidth: "300px" }}
+                                    />
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
                     <div className="project-heading">
-                        Video <strong className="blue">Demo </strong>
+                        Hult Prize Pitch <strong className="blue">2024 </strong>
+                    </div>
+                    <Row style={{ justifyContent: "center", padding: "10px" }}>
+                        <Col>
+                            <ReactPlayer
+                                style={{ marginTop: 20, }}
+                                width="100%"
+                                controls={true}
+                                url='https://youtu.be/-iV_XxbnngA' />
+                        </Col>
+                    </Row>
+
+                    <div className="project-heading">
+                        Mobile App Video <strong className="blue">Demo </strong>
                     </div>
 
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
@@ -205,10 +210,44 @@ function CampusEats() {
                                 controls={true}
                                 url='https://youtu.be/oQ6Wbr5k9yM' />
                         </Col>
-
-
-
                     </Row>
+
+                    <div className="project-heading">
+                        Follow <strong className="blue">Campus Eats </strong> on Social Media
+                    </div>
+                    <ul className="project-tab-section">
+                        <li className="social-icons">
+                            <a
+                                href="https://github.com/CampusEatsUofT"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="icon-colour  home-social-icons"
+                            >
+                                <AiFillGithub />
+                            </a>
+                        </li>
+                        <li className="social-icons">
+                            <a
+                                href="https://www.linkedin.com/company/100274536/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="icon-colour  home-social-icons"
+                            >
+                                <FaLinkedinIn />
+                            </a>
+                        </li>
+                        <li className="social-icons">
+                            <a
+                                href="https://www.instagram.com/campus_eats_uoft/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="icon-colour home-social-icons"
+                            >
+                                <AiFillInstagram />
+                            </a>
+                        </li>
+                    </ul>
+
 
                 </Container>
             </Container>

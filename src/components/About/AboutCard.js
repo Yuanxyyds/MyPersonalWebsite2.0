@@ -11,20 +11,23 @@ function AboutCard() {
             Hi Everyone, I am <span className="blue">Steven Liu </span>
             from <span className="blue"> Toronto, Canada.</span>
             <br />I am currently working as Cloud and Mobile App Developer at Johnson Controls, and serving as
-            President of University of Toronto Tutoring Club.
+            the Founder of the Campus Eats.
             <br />
             <br />
             Apart from that, some other activities that I am currently working on!
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Small Software Business - Campus Eats
+              <ImPointRight /> Software Business Startups - Campus Eats, aSocial
             </li>
             <li className="about-activity">
-              <ImPointRight /> Project Teams Leader
+              <ImPointRight /> Sports - Soccer, Hockey, Basketball
             </li>
             <li className="about-activity">
-              <ImPointRight /> Play Games (used to)
+              <ImPointRight /> Research - FarDataLab at UofT
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> Play Games
             </li>
           </ul>
 

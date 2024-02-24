@@ -26,7 +26,7 @@ function Home2() {
                             Computer Science & Data Science GPA 3.9/4.0. Currently working as a
                             <i>
                                 <b className="blue"> Cloud and Mobile App Co-op developer at Johnson Controls </b>
-                            </i> and serving as President of the University of Toronto Tutoring Club.
+                            </i> and serving as the Founder of the Campus Eats.
                             <br/>
                             <br/>I am expertise in
                             <i>
