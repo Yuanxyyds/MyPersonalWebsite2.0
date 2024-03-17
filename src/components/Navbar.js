@@ -17,7 +17,7 @@ function NavBar() {
   const [navColour, updateNavbar] = useState(false);
 
   function scrollHandler() {
-    if (window.scrollY >= 20) {
+    if (window.scrollY >= 20 || window.innerWidth <= 992) {
       updateNavbar(true);
     } else {
       updateNavbar(false);
@@ -25,12 +25,14 @@ function NavBar() {
   }
 
   window.addEventListener("scroll", scrollHandler);
+  window.addEventListener('resize', scrollHandler);
 
   return (
     <Navbar
+      collapseOnSelect
       expanded={expand}
       fixed="top"
-      expand="md"
+      expand="lg"
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>

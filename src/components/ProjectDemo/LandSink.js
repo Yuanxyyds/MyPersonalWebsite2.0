@@ -1,8 +1,8 @@
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Particle from "../Particle";
-import React, {useEffect, useState} from "react";
+import React, {useState } from "react";
 import landSink from "../../Assets/Projects/landSink.png";
-import {ImPointLeft} from "react-icons/im";
+import { ImPointLeft } from "react-icons/im";
 
 
 function LandSink() {
@@ -30,42 +30,42 @@ function LandSink() {
 
     return (
         <Container fluid className="project-demo-section">
-            <Particle/>
+            <Particle />
             <Container>
-                <Row style={{justifyContent: "center", padding: "10px"}}>
-                    <Col>
+                <Row style={{ justifyContent: "center", padding: "10px" }}>
+                    <Col xs={12} md={12} lg={7}>
                         <div className="project-heading">
                             Estimate LandSink Percentage <strong className='blue'> Demo </strong>
                         </div>
-                        <p style={{textAlign: "justify", paddingTop: 20}}>
+                        <p style={{ textAlign: "justify", paddingTop: 20 }}>
 
                             This project represents the culminating effort of CSC110, where our team gathered sea level
                             data, temperature data, and elevation data from various locations worldwide. Our objective
                             was to construct a linear regression model capable of predicting the percentage of country
                             submerged and the future global average temperature.
-                            <br/><br/>
+                            <br /><br />
                             Originally, we built the project using Pygame, which generated HTML files upon each new
                             value request. For more details about the original version, please refer to our Github
                             Repository linked
                             <a
                                 href={"https://github.com/Yuanxyyds/CSC110PredictLandSink"} className="blue"
-                                style={{cursor: "pointer", textDecoration: "none"}}> here
+                                style={{ cursor: "pointer", textDecoration: "none" }}> here
                             </a>
-                            <br/><br/>
+                            <br /><br />
                             To enhance interactivity on the web, I recently developed a Django back-end for this
                             project. This allows users to send API requests for predictions. The back-end server is now
                             hosted on AWS. You can try out the prediction feature <strong
-                            className="blue">below</strong>.
+                                className="blue">below</strong>.
 
 
                         </p>
                     </Col>
-                    <Col md={5} style={{paddingBottom: 20, textAlign: "center"}}>
+                    <Col xs={12} md={12} lg={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                         <img
                             src={landSink}
                             alt="Land Sink"
                             className="img-fluid"
-                            style={{maxHeight: "600px"}}
+                            style={{ maxHeight: "600px" }}
                         />
                     </Col>
                 </Row>
@@ -73,11 +73,11 @@ function LandSink() {
                     Make a <strong className="blue">Prediction </strong>
                 </div>
 
-                <h5 style={{paddingTop: 20}}>
+                <h5 style={{ paddingTop: 20 }}>
                     <strong className="blue">Note: </strong> Enter some large numbers as input year
                 </h5>
 
-                <div style={{paddingTop: 20}}>
+                <div style={{ paddingTop: 20 }}>
                     <form onSubmit={handleSubmit}>
                         <input
                             type="text"
@@ -87,7 +87,7 @@ function LandSink() {
                             className="input-field"
                         />
                         <button type="submit" className=" generate-button">
-                            <ImPointLeft/> Generate
+                            <ImPointLeft /> Generate
                         </button>
                     </form>
 

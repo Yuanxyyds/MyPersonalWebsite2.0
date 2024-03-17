@@ -68,7 +68,7 @@ function CampusEats() {
                             </ul>
 
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
-                                <strong className="blue">Update Feb 24 2024: </strong> {" "} We expect to launch in March 2024!
+                                <strong className="blue">Update Mar 17 2024: </strong> {" "} We expect to launch in March 2024!
                             </p>
 
                             <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
