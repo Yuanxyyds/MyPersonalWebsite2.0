@@ -13,7 +13,6 @@
     10% {
         transform: rotate(14deg);
     }
-    /* The following five values can be played with to make the waving more or less extreme */
     20% {
         transform: rotate(-8deg);
     }
@@ -35,60 +34,77 @@
     }
 }
 
-.home-header {
-    padding-top: 80px !important;
-}
-
-.home-section {
-    position: relative;
-    z-index: -1;
-    background-image: var(--image-gradient), url(../assets/home-bg.jpg);
-    background-position: top center;
-    background-repeat: no-repeat;
-    padding-bottom: 30px !important;
-    padding-top: 30px !important;
-}
-
 .home-content {
     padding: 9rem 0 2rem !important;
     color: whitesmoke;
     text-align: left;
 }
 
-.heading {
-    font-size: 2.4em !important;
-    padding-left: 50px !important;
+.home-section {
+    position: relative;
+    z-index: -1;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+}
+
+
+.home-primary-header {
+    position: relative;
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.7);
+    padding-top: 80px !important;
+    padding-left: 3vw;
+    color: white;
+    font-weight: 900;
+    font-size: 50pt;
 }
 
 .heading-name {
     font-size: 2.5em !important;
-    padding-left: 45px !important;
+    padding-left: 3vw;
+    margin-left: 8pt;
 }
 
 .main-name {
-    color: #0147a9;
+    color: var(--imp-text-color);
 }
 
 .typewriter-wrapper-home {
-    font-size: 2.2em !important;
-    color: #0147a9 !important;
+    font-size: 2.5em !important;
+    color: var(--imp-text-color) !important;
     font-weight: 600 !important;
+    padding-left: 3vw;
+    padding-top: 16pt;
+    margin-left: 8pt;
 }
 
 .typewriter-wrapper-home .Typewriter__cursor {
     font-size: 1em !important;
-    color: #0147a9 !important;
+    color: var(--imp-text-color) !important;
 }
 
-@media (max-width: 767px) {
-    .typewriter-wrapper-home {
-        font-size: 1.4em !important;
-        font-weight: 500 !important;
-        position: absolute !important;
+@media (max-width: 1200px) {
+    .home-primary-header {
+        padding-left: 8vw;
+        padding-right: 8vw;
+        font-size: 40pt;
     }
 
-    .typewriter-wrapper-home .Typewriter__cursor {
-        display: none !important;
+    .heading-name {
+        font-size: 2em !important;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        margin-left: 4pt;
+    }
+
+    .typewriter-wrapper-home {
+        font-size: 2em !important;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-top: 8pt;
+        margin-left: 4pt;
     }
 }
 
