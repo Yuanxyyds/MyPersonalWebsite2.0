@@ -37,7 +37,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          Steven&apos;s Personal Website
+          Steven&apos;s Server
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"

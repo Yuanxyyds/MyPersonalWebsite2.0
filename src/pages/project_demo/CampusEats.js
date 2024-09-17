@@ -68,7 +68,7 @@ function CampusEats() {
                             </ul>
 
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
-                                <strong className="blue">Update Mar 17 2024: </strong> {" "} We expect to launch in March 2024!
+                                <strong className="primary-color">Update Mar 17 2024: </strong> {" "} We expect to launch in March 2024!
                             </p>
 
                             <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
@@ -102,11 +102,11 @@ function CampusEats() {
                                 free also to checkout the repository for the
                                 <a onClick={() => handleTabChange('campusEats1')}
                                     style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="blue"> Version 1.0
+                                    className="primary-color"> Version 1.0
                                 </a> and the
                                 <a onClick={() => handleTabChange('utft')}
                                     style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="blue"> UofT Food Truck Project
+                                    className="primary-color"> UofT Food Truck Project
                                 </a>
                                 <br />
                                 <br />
@@ -116,7 +116,7 @@ function CampusEats() {
                                 the User-end, Restaurant-end, Driver-end, and a  
                                 <a href="https://campuseats.ca"
                                     style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="blue"> general-purpose website
+                                    className="primary-color"> general-purpose website
                                 </a>  implementation.
                                 <br />
                             </p>
@@ -144,7 +144,7 @@ function CampusEats() {
                         </Col>
                     </Row>
                     <div className="project-heading">
-                        Hult Prize Pitch <strong className="blue">2024 </strong>
+                        Hult Prize Pitch <strong className="primary-color">2024 </strong>
                     </div>
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <Col>
@@ -157,7 +157,7 @@ function CampusEats() {
                     </Row>
 
                     <div className="project-heading">
-                        Mobile App Video <strong className="blue">Demo </strong>
+                        Mobile App Video <strong className="primary-color">Demo </strong>
                     </div>
 
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
@@ -213,7 +213,7 @@ function CampusEats() {
                     </Row>
 
                     <div className="project-heading">
-                        Follow <strong className="blue">Campus Eats </strong> on Social Media
+                        Follow <strong className="primary-color">Campus Eats </strong> on Social Media
                     </div>
                     <ul className="project-tab-section">
                         <li className="social-icons">
@@ -297,11 +297,11 @@ function CampusEats() {
                                 hosted on GitHub, with separate repositories for the user-end code
                                 <a href={"https://github.com/Yuanxyyds/FoodTruckMobile"}
                                     style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="blue"> here </a>
+                                    className="primary-color"> here </a>
                                 and the seller code
                                 <a href={"https://github.com/Yuanxyyds/FoodTruckSeller"}
                                     style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="blue"> here</a>
+                                    className="primary-color"> here</a>
                                 <br />
                                 <br />
                                 This Project was developed with Flutter and Firebase backend, this project expanded my
@@ -322,7 +322,7 @@ function CampusEats() {
                                 <br />
                                 <br />
                                 To further enhance functionality and improve the user interface, <strong
-                                    className="blue">
+                                    className="primary-color">
                                     development for this version has been halted.</strong> The latest and updated version
                                 can be
                                 accessed at the here. Here, you can explore the newest version of the CampusEats project
@@ -342,7 +342,7 @@ function CampusEats() {
                     </Row>
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <div className="project-heading">
-                            Video <strong className="blue">Demo </strong>
+                            Video <strong className="primary-color">Demo </strong>
                         </div>
                         <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=0pP6WPmZV9M' />
                     </Row>
@@ -395,7 +395,7 @@ function CampusEats() {
                                 is hosted on GitHub, and you can access the source code through
                                 <a href={"https://github.com/Yuanxyyds/UofT-FoodTruck-GroupAsoul"}
                                     style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="blue"> this link </a>
+                                    className="primary-color"> this link </a>
                                 . It serves
                                 as the initial version of the CampusEats series.
                                 <br />
@@ -426,13 +426,13 @@ function CampusEats() {
                     </Row>
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <div className="project-heading">
-                            Command Line Interface <strong className="blue">Demo </strong>
+                            Command Line Interface <strong className="primary-color">Demo </strong>
                         </div>
                         <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=J3kfU4Ic8Uc' />
                     </Row>
                     <Row style={{ justifyContent: "center", padding: "10px" }}>
                         <div className="project-heading">
-                            Android App <strong className="blue">Demo </strong>
+                            Android App <strong className="primary-color">Demo </strong>
                         </div>
                         <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=RT-l98ZasE4' />
                     </Row>

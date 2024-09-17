@@ -28,34 +28,21 @@
     60% {
         transform: rotate(0deg);
     }
-    /* Reset for the last half to pause */
     100% {
         transform: rotate(0deg);
     }
 }
 
 .home-content {
-    padding: 9rem 0 2rem !important;
+    padding: 20vh 4vw !important;
     color: whitesmoke;
     text-align: left;
-}
-
-.home-section {
-    position: relative;
-    z-index: -1;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 30px !important;
-    padding-top: 30px !important;
 }
 
 
 .home-primary-header {
     position: relative;
-    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.6);
     padding-top: 80px !important;
-    padding-left: 3vw;
     color: white;
     font-weight: 900;
     font-size: 50pt;
@@ -63,19 +50,14 @@
 
 .heading-name {
     font-size: 2.5em !important;
-    padding-left: 3vw;
     margin-left: 8pt;
 }
 
-.main-name {
-    color: var(--imp-text-color);
-}
-
 .typewriter-wrapper-home {
-    font-size: 2.5em !important;
+    font-family: "Courier Prime", serif;
+    font-size: 2.3em !important;
     color: var(--imp-text-color) !important;
     font-weight: 600 !important;
-    padding-left: 3vw;
     padding-top: 16pt;
     margin-left: 8pt;
 }
@@ -85,17 +67,19 @@
     color: var(--imp-text-color) !important;
 }
 
+.my-avtar {
+    text-align: center;
+    justify-content: center !important;
+}
+
 @media (max-width: 1200px) {
     .home-primary-header {
-        text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
-        padding-left: 8vw;
         padding-right: 8vw;
         font-size: 40pt;
     }
 
     .heading-name {
         font-size: 2em !important;
-        padding-left: 8vw;
         padding-right: 8vw;
         margin-left: 4pt;
     }
@@ -103,61 +87,96 @@
     .typewriter-wrapper-home {
         font-size: 2em !important;
         font-weight: 500 !important;
-        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-top: 8pt;
+        margin-left: 4pt;
+    }
+
+    .my-avtar {
+        padding-top: 2em !important;
+        padding-bottom: 2em !important;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .home-content {
+        padding: 15vh 4vw !important;
+    }
+
+    .home-primary-header {
+        padding-right: 8vw;
+        font-size: 30pt;
+    }
+
+    .heading-name {
+        font-size: 1.5em !important;
+        padding-right: 8vw;
+        margin-left: 4pt;
+    }
+
+    .typewriter-wrapper-home {
+        font-size: 1.5em !important;
+        font-weight: 500 !important;
         padding-right: 8vw;
         padding-top: 8pt;
         margin-left: 4pt;
     }
 }
 
-.myAvtar {
-    justify-content: center !important;
-    padding-top: 9em !important;
-}
 
-
-@media (max-width: 767px) {
-    .myAvtar {
-        padding-top: 2em !important;
-        padding-bottom: 2em !important;
-    }
-}
-
-.home-about-section {
-    position: relative;
-    padding-bottom: 70px !important;
-    padding-top: 70px !important;
-}
-
-.home-about-description {
-    color: white !important;
-    padding-top: 100px !important;
-    padding-bottom: 20px !important;
-    text-align: center;
-}
-
-.home-about-body {
-    padding-top: 50px;
-    font-size: 1.2em !important;
-    text-align: left;
-}
-
-.home-about-contact {
-    padding-top: 50px;
+.home-contact-info {
+    padding-top: 20px;
     font-size: 1.2em !important;
     text-align: center !important;
 }
 
-.home-about-social {
+.social_icon_list {
+    justify-content: center !important;
     text-align: center !important;
     padding-top: 25px;
     color: white !important;
+    display: flex;
 }
 
-.home-about-social-links {
-    justify-content: center !important;
-    padding-top: 15px !important;
-    display: inline-block !important;
-    position: relative !important;
-    padding-inline-start: 0 !important;
+.social-icons {
+    padding-right: 30px;
 }
+
+.home-social-icons {
+    position: relative !important;
+    display: inline-block !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.2em !important;
+    line-height: 2em !important;
+    background: #ffffff !important;
+    color: #000000;
+    border-radius: 50% !important;
+    transition: 0.5s !important;
+}
+
+
+.home-social-icons:hover {
+    color: var(--imp-text-color);
+}
+
+.home-social-icons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: var(--imp-text-color);
+    transition: 0.5s;
+    transform: scale(0.9);
+    z-index: -1;
+}
+
+.home-social-icons:hover::before {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px var(--imp-text-color);
+}
+

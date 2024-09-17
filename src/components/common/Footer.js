@@ -1,60 +1,62 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import {Col, Container, Row,} from "react-bootstrap";
 import {
-  AiFillGithub,
-  AiFillInstagram,
+    AiFillGithub,
+    AiFillInstagram,
 } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import {FaLinkedinIn} from "react-icons/fa";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
-  return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copyright">
-          <h3>Developed by Steven Liu</h3>
-        </Col>
-        <Col md="4" className="footer-copyright">
-          <h3>Copyright © {year} SL</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/Yuanxyyds"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/hongyuan-steven-liu/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/yxyyds2001/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
-  );
+    let date = new Date();
+    let year = date.getFullYear();
+    return (
+        <section>
+            <Container fluid className="footer">
+                <Row>
+                    <Col md={4} className="footer-paragraph">
+                        <h3>Developed by Steven Liu</h3>
+                    </Col>
+                    <Col md={4} className="footer-paragraph">
+                        <h3>Copyright © {year} SL</h3>
+                    </Col>
+                    <Col md={4}>
+                        <ul className="footer-icon-list">
+                            <div className="footer-icons">
+                                <a
+                                    href="https://github.com/Yuanxyyds"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="footer-social-icons"
+                                >
+                                    <AiFillGithub/>
+                                </a>
+                            </div>
+                            <div className="footer-icons">
+                                <a
+                                    href="https://www.linkedin.com/in/hongyuan-steven-liu/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="footer-social-icons"
+                                >
+                                    <FaLinkedinIn/>
+                                </a>
+                            </div>
+                            <div className="footer-icons">
+                                <a
+                                    href="https://www.instagram.com/yxyyds2001/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="footer-social-icons"
+                                >
+                                    <AiFillInstagram/>
+                                </a>
+                            </div>
+                        </ul>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
+    );
 }
 
 export default Footer;

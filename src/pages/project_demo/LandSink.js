@@ -35,7 +35,7 @@ function LandSink() {
                 <Row style={{ justifyContent: "center", padding: "10px" }}>
                     <Col xs={12} md={12} lg={7}>
                         <div className="project-heading">
-                            Estimate LandSink Percentage <strong className='blue'> Demo </strong>
+                            Estimate LandSink Percentage <strong className='primary-color'> Demo </strong>
                         </div>
                         <p style={{ textAlign: "justify", paddingTop: 20 }}>
 
@@ -48,14 +48,14 @@ function LandSink() {
                             value request. For more details about the original version, please refer to our Github
                             Repository linked
                             <a
-                                href={"https://github.com/Yuanxyyds/CSC110PredictLandSink"} className="blue"
+                                href={"https://github.com/Yuanxyyds/CSC110PredictLandSink"} className="primary-color"
                                 style={{ cursor: "pointer", textDecoration: "none" }}> here
                             </a>
                             <br /><br />
                             To enhance interactivity on the web, I recently developed a Django back-end for this
                             project. This allows users to send API requests for predictions. The back-end server is now
                             hosted on AWS. You can try out the prediction feature <strong
-                                className="blue">below</strong>.
+                                className="primary-color">below</strong>.
 
 
                         </p>
@@ -70,11 +70,11 @@ function LandSink() {
                     </Col>
                 </Row>
                 <div className="project-heading">
-                    Make a <strong className="blue">Prediction </strong>
+                    Make a <strong className="primary-color">Prediction </strong>
                 </div>
 
                 <h5 style={{ paddingTop: 20 }}>
-                    <strong className="blue">Note: </strong> Enter some large numbers as input year
+                    <strong className="primary-color">Note: </strong> Enter some large numbers as input year
                 </h5>
 
                 <div style={{ paddingTop: 20 }}>
