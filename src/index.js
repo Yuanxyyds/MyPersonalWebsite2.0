@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "./style/style.css";
+import "./style/Navbar.css";
+import "./style/Footer.css";
 import "./style/App.css";
 import "./style/Home.css"
-import App from "./pages/primary/App";
+import "./style/Pre.css"
+import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

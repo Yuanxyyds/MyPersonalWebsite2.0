@@ -1,0 +1,145 @@
+.wave {
+    animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.1s; /* Change to speed up or slow down */
+    animation-iteration-count: infinite; /* Never stop waving :) */
+    transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    }
+    /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.home-header {
+    padding-top: 80px !important;
+}
+
+.home-section {
+    position: relative;
+    z-index: -1;
+    background-image: var(--image-gradient), url(../assets/home-bg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+}
+
+.home-content {
+    padding: 9rem 0 2rem !important;
+    color: whitesmoke;
+    text-align: left;
+}
+
+.heading {
+    font-size: 2.4em !important;
+    padding-left: 50px !important;
+}
+
+.heading-name {
+    font-size: 2.5em !important;
+    padding-left: 45px !important;
+}
+
+.main-name {
+    color: #0147a9;
+}
+
+.typewriter-wrapper-home {
+    font-size: 2.2em !important;
+    color: #0147a9 !important;
+    font-weight: 600 !important;
+}
+
+.typewriter-wrapper-home .Typewriter__cursor {
+    font-size: 1em !important;
+    color: #0147a9 !important;
+}
+
+@media (max-width: 767px) {
+    .typewriter-wrapper-home {
+        font-size: 1.4em !important;
+        font-weight: 500 !important;
+        position: absolute !important;
+    }
+
+    .typewriter-wrapper-home .Typewriter__cursor {
+        display: none !important;
+    }
+}
+
+.myAvtar {
+    justify-content: center !important;
+    padding-top: 9em !important;
+}
+
+
+@media (max-width: 767px) {
+    .myAvtar {
+        padding-top: 2em !important;
+        padding-bottom: 2em !important;
+    }
+}
+
+.home-about-section {
+    position: relative;
+    padding-bottom: 70px !important;
+    padding-top: 70px !important;
+}
+
+.home-about-description {
+    color: white !important;
+    padding-top: 100px !important;
+    padding-bottom: 20px !important;
+    text-align: center;
+}
+
+.home-about-body {
+    padding-top: 50px;
+    font-size: 1.2em !important;
+    text-align: left;
+}
+
+.home-about-contact {
+    padding-top: 50px;
+    font-size: 1.2em !important;
+    text-align: center !important;
+}
+
+.home-about-social {
+    text-align: center !important;
+    padding-top: 25px;
+    color: white !important;
+}
+
+.home-about-social-links {
+    justify-content: center !important;
+    padding-top: 15px !important;
+    display: inline-block !important;
+    position: relative !important;
+    padding-inline-start: 0 !important;
+}
