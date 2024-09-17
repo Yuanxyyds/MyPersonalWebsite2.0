@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../../components/common/Particle";
 import Github from "../../components/about/Github";
-import ProgrammingLanguage from "../../components/about/ProgrammingLanguage";
+import Language from "../../components/about/Language";
 import Framework from "../../components/about/Framework";
 import Tool from "../../components/about/Tool";
 import Aboutcard from "../../components/about/AboutCard";
@@ -43,7 +43,7 @@ function About() {
           Programming Language <strong className="blue">Skill </strong>
         </h1>
 
-        <ProgrammingLanguage />
+        <Language />
 
         <h1 className="project-heading">
           Framework <strong className="blue">Skill </strong>
