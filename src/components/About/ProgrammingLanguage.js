@@ -11,7 +11,7 @@ import {
 import {FaRProject} from "react-icons/fa";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 
-function ProgramingLanguage() {
+function ProgrammingLanguage() {
     const [hoverStates, setHoverStates] = useState(Array(10).fill(false));
     const handleMouseEnter = (index) => {
         setHoverStates((prevStates) => {
@@ -84,7 +84,7 @@ function ProgramingLanguage() {
     );
 }
 
-export default ProgramingLanguage;
+export default ProgrammingLanguage;
 
 const YellowStars = ({number}) => {
     const stars = getYellowStars({number});
