@@ -53,7 +53,7 @@
 
 .home-primary-header {
     position: relative;
-    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.6);
     padding-top: 80px !important;
     padding-left: 3vw;
     color: white;
@@ -87,6 +87,7 @@
 
 @media (max-width: 1200px) {
     .home-primary-header {
+        text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
         padding-left: 8vw;
         padding-right: 8vw;
         font-size: 40pt;
@@ -101,6 +102,7 @@
 
     .typewriter-wrapper-home {
         font-size: 2em !important;
+        font-weight: 500 !important;
         padding-left: 8vw;
         padding-right: 8vw;
         padding-top: 8pt;
