@@ -5,11 +5,11 @@ body {
     font-family: "Raleway", serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: linear-gradient(to bottom, #0e1424, #0e1427, #0f1424, #000316);
+    background-image: linear-gradient(to right, #000000, #000000);
 }
 
 html {
-    --section-background-color: linear-gradient(to bottom, #0e1424, #0e1427, #0f1424, #000316);
+    --section-background-color: linear-gradient(to right, #000000, #000000);
 
     --image-gradient: linear-gradient(
             to bottom left,

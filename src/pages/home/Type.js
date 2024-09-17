@@ -8,12 +8,14 @@ function Type() {
                 options={{
                     strings: [
                         "Student at University of Toronto",
-                        "Cloud and Mobile App Developer",
+                        "Mobile App Developer",
                         "Web Developer",
+                        "Machine Learning Developer",
                     ],
+                    cursor: '_',
                     autoStart: true,
                     loop: true,
-                    deleteSpeed: 50,
+                    deleteSpeed: 80,
                 }}
             />
         </div>
