@@ -24,7 +24,7 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="blue">I'M</strong>
+              Know Who <strong className="primary-color">I'M</strong>
             </h1>
             <Aboutcard />
           </Col>
@@ -40,23 +40,23 @@ function About() {
         <Github />
 
         <h1 className="project-heading">
-          Programming Language <strong className="blue">Skill </strong>
+          Programming Language <strong className="primary-color">Skill </strong>
         </h1>
 
         <Language />
 
         <h1 className="project-heading">
-          Framework <strong className="blue">Skill </strong>
+          Framework <strong className="primary-color">Skill </strong>
         </h1>
         <Framework />
 
         <h1 className="project-heading">
-          Service and Tool <strong className="blue">Skill </strong>
+          Service and Tool <strong className="primary-color">Skill </strong>
         </h1>
         <Tool />
 
         <h1 className="project-heading">
-          Technical <strong className="blue">Skill </strong>
+          Technical <strong className="primary-color">Skill </strong>
         </h1>
         <Technical />
 

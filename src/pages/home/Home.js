@@ -2,12 +2,12 @@ import React from "react";
 import {Container, Row, Col} from "react-bootstrap";
 import homeLogo from "../../assets/home-animation.gif";
 import Particle from "../../components/common/Particle";
-import Type from "./Type";
 import Tilt from "react-parallax-tilt";
-import myImg from "../../assets/avatar.png";
+import myImg from "../../assets/avatar.gif";
 import {HiOutlineLocationMarker} from "react-icons/hi";
 import {AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone} from "react-icons/ai";
 import {FaLinkedinIn} from "react-icons/fa";
+import Typewriter from "typewriter-effect";
 
 document.addEventListener("scroll", function () {
     const elements = document.querySelectorAll(".fade-in");
@@ -25,7 +25,7 @@ document.addEventListener("scroll", function () {
             if (elementTopToViewBottom <= transitionDistance) {
                 opacity = Math.pow(elementTopToViewBottom / transitionDistance, 3);
             } else if (ViewTopToElementBottom <= transitionDistance) {
-                opacity = Math.pow(elementTopToViewBottom / transitionDistance, 3);
+                opacity = Math.pow(ViewTopToElementBottom / transitionDistance, 3);
             } else {
                 opacity = 1
             }
@@ -39,128 +39,133 @@ document.addEventListener("scroll", function () {
 function Home() {
     return (
         <section>
-            <Container fluid className="home-section" id="home">
+            <Container className="home-content">
                 <Particle/>
-                <Container className="home-content">
-                    <Row>
+                <Container fluid id="home">
+                    <Row fluid id="home">
                         <Col xl={7}>
-                            <h1 className="home-primary-header">
+                            <h1 className="home-primary-header fade-in">
                                 Welcome to my Website!{"  "}
                                 <span className="wave" role="img" aria-labelledby="wave"> 👋🏻 </span>
                             </h1>
 
-                            <h1 className="heading-name">
+                            <h1 className="heading-name fade-in">
                                 I'M
-                                <strong className="main-name"> Hongyuan (Steven) Liu</strong>
+                                <strong className="primary-color"> Hongyuan (Steven) Liu</strong>
                             </h1>
 
-                            <div>
-                                <Type/>
+                            <div className="typewriter-wrapper-home fade-in">
+                                <Typewriter
+                                    options={{
+                                        strings: [
+                                            "> Student at University of Toronto",
+                                            "> Mobile App Developer",
+                                            "> Web Developer",
+                                            "> Machine Learning Developer",
+                                        ],
+                                        cursor: '_',
+                                        autoStart: true,
+                                        loop: true,
+                                        deleteSpeed: 80,
+                                    }}
+                                />
                             </div>
                         </Col>
 
                         <Col xl={5}>
-                            <img
-                                src={homeLogo}
-                                alt="home pic"
-                                className="img-fluid"
-                                style={{maxHeight: "450px"}}
-                            />
+                            <Tilt>
+                                <img src={homeLogo} className="img-fluid fade-in" style={{maxHeight: "450px"}}
+                                     alt="avatar"/>
+                            </Tilt>
                         </Col>
                     </Row>
                 </Container>
-            </Container>
-            <Container fluid className="home-about-section" id="about">
-                <Container>
+                <Container className={"section-divider"} fluid id="about">
                     <Row>
-                        <Col md={8} className="home-about-description">
-                            <h1 className={"fade-in"} style={{fontSize: "2.6em"}}>
-                                LET ME <span className="blue"> INTRODUCE </span> MYSELF
+                        <Col xl={8}>
+                            <h1 className="fade-in section-header">
+                                LET ME <span className="primary-color"> INTRODUCE </span> MYSELF
                             </h1>
-                            <p className="home-about-body fade-in">
-                                I am a passionate Fourth-year student at University of Toronto, double specialist in
-                                Computer Science & Data Science GPA 3.9/4.0. Currently working as a
+                            <p className="paragraph fade-in">
+                                I am a passionate Fifth-year student at University of Toronto, double specialist in
+                                Computer Science & Data Science GPA 3.9/4.0. Previously worked as a
                                 <i>
-                                    <b className="blue"> Cloud and Mobile App Co-op developer at Johnson Controls </b>
-                                </i> and serving as the Founder of the Campus Eats.
+                                    <b className="primary-color"> Cloud and Mobile App Co-op developer at Johnson
+                                        Controls </b>
+                                </i> and currently serve as the Founder of the Campus Eats.
                             </p>
-                            <p className="home-about-body fade-in">I am expertise in
+                            <p className="paragraph fade-in">I am expertise in
                                 <i>
-                                    <b className="blue"> Mobile App Development, Web Development, and Data Analysis </b>
+                                    <b className="primary-color"> Machine Learning, Full Stack Mobile App Development,
+                                        Full Stack Web Development, and Data Analysis </b>
                                 </i>
                             </p>
-                            <p className="home-about-body fade-in">
+                            <p className="paragraph fade-in">
                                 Besides, I am actively contributing to a diverse range of 10+ projects, software
                                 business
                                 startups, over 1000+ contribution on github.
                             </p>
                         </Col>
-                        <Col md={4} className="myAvtar fade-in">
-                            <Tilt>
-                                <img src={myImg} style={{width: '300px', height: '300px'}} className="img-fluid"
-                                     alt="avatar"/>
-                            </Tilt>
+                        <Col xl={4} className="my-avtar">
+                            <img src={myImg} className="fade-in img-fluid" style={{maxHeight: "400px"}}
+                                 alt="avatar"/>
                         </Col>
                     </Row>
+                </Container>
+                <Container className={"section-divider"} fluid id="contact">
+                    <h1 className="section-header fade-in">
+                        <span className="primary-color"> CONTACT </span> {" "} ME AT
+                    </h1>
+                    <p className="home-contact-info fade-in">
+                        <HiOutlineLocationMarker c style={{
+                            width: '40px',
+                            height: '40px',
+                            fill: "white !important"
+                        }}/> {"  "} 65 Saint Mary Street, Toronto ON, M5S 0A6, Canada
+                    </p>
+                    <p className="home-contact-info fade-in">
+                        <AiOutlineMail style={{width: '40px', height: '40px'}}/> {" "} liuhongyuan.liu AT
+                        mail.utoronto.ca
+                    </p>
+                    <p className="home-contact-info fade-in">
+                        <AiOutlinePhone style={{width: '40px', height: '40px'}}/> {" "} +1 (647)-309-9649
+                    </p>
 
-                    <Row className={"fade-in"}>
-                        <Col md={12} className="home-about-description">
-                            <h1 style={{fontSize: "2.6em"}}>
-                                <span className="blue"> CONTACT</span> ME AT
-                            </h1>
-                            <p className="home-about-contact ">
-                                <HiOutlineLocationMarker c style={{
-                                    width: '40px',
-                                    height: '40px',
-                                    fill: "white !important"
-                                }}/> {" "} 1000 portage
-                                pkwy, Concord, ON L4K 0L1, Canada
-                                <br/>
-                                <br/>
-                                <AiOutlineMail style={{width: '40px', height: '40px'}}/> {" "} liuhongyuan.liu AT
-                                mail.utoronto.ca
-                                <br/>
-                                <br/>
-                                <AiOutlinePhone style={{width: '40px', height: '40px'}}/> {" "} +1 (647)-309-9649
-                            </p>
-
-                            <ul className="home-about-social-links">
-                                <li className="social-icons">
-                                    <a
-                                        href="https://github.com/Yuanxyyds"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="icon-colour  home-social-icons"
-                                    >
-                                        <AiFillGithub/>
-                                    </a>
-                                </li>
-                                <li className="social-icons">
-                                    <a
-                                        href="https://www.linkedin.com/in/hongyuan-steven-liu/"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="icon-colour  home-social-icons"
-                                    >
-                                        <FaLinkedinIn/>
-                                    </a>
-                                </li>
-                                <li className="social-icons">
-                                    <a
-                                        href="https://www.instagram.com/yxyyds2001/"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="icon-colour home-social-icons"
-                                    >
-                                        <AiFillInstagram/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </Col>
-                    </Row>
-
+                    <ul className="social_icon_list fade-in">
+                        <div className="social-icons">
+                            <a
+                                href="https://github.com/Yuanxyyds"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="home-social-icons"
+                            >
+                                <AiFillGithub/>
+                            </a>
+                        </div>
+                        <div className="social-icons">
+                            <a
+                                href="https://www.linkedin.com/in/liustev6/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="home-social-icons"
+                            >
+                                <FaLinkedinIn/>
+                            </a>
+                        </div>
+                        <div className="social-icons">
+                            <a
+                                href="https://www.instagram.com/yuanxyyds/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="home-social-icons"
+                            >
+                                <AiFillInstagram/>
+                            </a>
+                        </div>
+                    </ul>
                 </Container>
             </Container>
+
         </section>
     );
 }

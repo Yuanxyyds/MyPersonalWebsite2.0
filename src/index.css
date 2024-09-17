@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
     margin: 0;
@@ -17,10 +18,10 @@ html {
             rgba(12, 10, 22, 0.863)
     );
 
-    --imp-text-color: #0147a9;
+    --imp-text-color: #9d2dcb;
 }
 
-.blue {
+.primary-color {
     color: var(--imp-text-color) !important;
 }
 
