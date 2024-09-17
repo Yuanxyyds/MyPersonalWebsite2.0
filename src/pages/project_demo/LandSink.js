@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Particle from "../Particle";
+import Particle from "../../components/common/Particle";
 import React, {useState } from "react";
-import landSink from "../../Assets/Projects/landSink.png";
+import landSink from "../../assets/Projects/landSink.png";
 import { ImPointLeft } from "react-icons/im";
 
 

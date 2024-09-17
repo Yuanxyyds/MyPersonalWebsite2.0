@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
-import Github from "./Github";
-import ProgramingLanguage from "./ProgramingLanguage";
-import Framework from "./Framework";
-import Tool from "./Tool";
-import Aboutcard from "./AboutCard";
-import Technical from "./Technical";
-import laptopImg from "../../Assets/about.png";
+import Particle from "../../components/common/Particle";
+import Github from "../../components/about/Github";
+import ProgrammingLanguage from "../../components/about/ProgrammingLanguage";
+import Framework from "../../components/about/Framework";
+import Tool from "../../components/about/Tool";
+import Aboutcard from "../../components/about/AboutCard";
+import Technical from "../../components/about/Technical";
+import laptopImg from "../../assets/about.png";
 
 function About() {
   return (
@@ -43,7 +43,7 @@ function About() {
           Programming Language <strong className="blue">Skill </strong>
         </h1>
 
-        <ProgramingLanguage />
+        <ProgrammingLanguage />
 
         <h1 className="project-heading">
           Framework <strong className="blue">Skill </strong>

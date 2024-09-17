@@ -1,12 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Particle from "../Particle";
+import Particle from "../../components/common/Particle";
 import React, { useState } from "react";
-import campusEats1 from "../../Assets/campusEats1.0.png";
-import UTFT from "../../Assets/utft.png";
+import campusEats1 from "../../assets/campusEats1.0.png";
+import UTFT from "../../assets/utft.png";
 import { BiCheck } from "react-icons/bi";
 import ReactPlayer from "react-player";
-import campusEats2 from "../../Assets/campusEats2.0.jpeg";
-import campusEatsLogo from "../../Assets/campus-eats.jpg";
+import campusEats2 from "../../assets/campusEats2.0.jpeg";
+import campusEatsLogo from "../../assets/campus-eats.jpg";
 import {
     AiFillGithub,
     AiFillInstagram,

@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
+import Preloader from "../../components/common/Pre";
+import Navbar from "../../components/common/Navbar";
+import About from "../about/About";
+import Projects from "../project/Projects";
+import Resume from "../resume/ResumeNew";
+import CampusEats from "../project_demo/CampusEats";
+import LandSink from "../project_demo/LandSink";
+import Home from "../home/Home";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate
 } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import "./style.css";
-import "./App.css";
+import Footer from "../../components/common/Footer";
+import ScrollToTop from "../../effect/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CampusEats from "./components/ProjectDemo/CampusEats";
-import LandSink from "./components/ProjectDemo/LandSink";
 
 function App() {
   const [load, updateLoad] = useState(true);
