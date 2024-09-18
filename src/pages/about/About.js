@@ -1,17 +1,16 @@
 import {Container, Row, Col} from "react-bootstrap";
 import Particle from "../../components/common/Particle";
-import Language from "../../components/about/Language";
-import Framework from "../../components/about/Framework";
-import Tool from "../../components/about/Tool";
-import Technical from "../../components/about/Technical";
 import laptopImg from "../../assets/about.png";
 import {ImPointRight} from "react-icons/im";
 import FadeIn from "../../effect/FadeIn";
 import React from "react";
+import {Framework, Language, Topics, Tool} from "../../components/about/StackCard";
+import Typewriter from "typewriter-effect";
 
 
 function About() {
-    document.addEventListener("scroll", FadeIn);
+    window.addEventListener("scroll", FadeIn);
+    window.addEventListener("resize", FadeIn);
     return (
         <Container fluid className="about-content">
             <Particle/>
@@ -63,43 +62,53 @@ function About() {
                     </Col>
                 </Row>
             </Container>
-            {/*<Container className="section-divider">*/}
-            {/*    <h1 className="section-header fade-in" style={{paddingBottom: "20px"}}>*/}
-            {/*        Days I <strong className="primary-color">Code</strong>*/}
-            {/*    </h1>*/}
-
-            {/*    <GitHubCalendar*/}
-            {/*        username="Yuanxyyds"*/}
-            {/*        blockSize={20}*/}
-            {/*        blockMargin={5}*/}
-            {/*        color="#0b5dd0"*/}
-            {/*        fontSize={16}*/}
-            {/*    />*/}
-            {/*</Container>*/}
-            <Container className="about-skill-divider">
+            <Container className="section-divider">
+                <h1 className="section-header fade-in" style={{paddingBottom: "20px"}}>
+                    Days I <strong style={{color: "#ed9b37"}}>Code</strong>
+                </h1>
+                <img className="github-stats img-fluid fade-in"
+                     src={"https://github-readme-streak-stats.herokuapp.com/?user=Yuanxyyds&theme=halloween&card_width=496&background=000000"}
+                     alt="github"/>
+                <div className="typewriter-wrapper-about fade-in">
+                    <Typewriter
+                        options={{
+                            strings: [
+                                "> System.out.println (\"Hello, world!\");",
+                                "> print(\"Hello, world!\");",
+                                "> console.log(\"Hello, world!\");",
+                                "> printf(\"%s %s\", \"hello\", \"world\");"
+                            ],
+                            cursor: '_',
+                            autoStart: true,
+                            loop: true,
+                            deleteSpeed: 100,
+                        }}
+                    />
+                </div>
+            </Container>
+            <Container className="section-divider">
                 <h1 className="section-header fade-in">
                     Programming Language <strong className="primary-color">Skill </strong>
                 </h1>
-
-                <Language/>
+                <Language className="fade-in"/>
             </Container>
             <Container className="about-skill-divider">
                 <h1 className="section-header fade-in">
-                    Framework <strong className="primary-color">Skill </strong>
+                    Framework and System <strong className="primary-color">Skill </strong>
                 </h1>
-                <Framework/>
+                <Framework className="fade-in"/>
             </Container>
             <Container className="about-skill-divider">
                 <h1 className="section-header fade-in">
                     Service and Tool <strong className="primary-color">Skill </strong>
                 </h1>
-                <Tool/>
+                <Tool className="fade-in"/>
             </Container>
             <Container className="about-skill-divider">
                 <h1 className="section-header fade-in">
-                    Technical <strong className="primary-color">Skill </strong>
+                    Learning <strong className="primary-color">Topics </strong>
                 </h1>
-                <Technical/>
+                <Topics className="fade-in"/>
 
             </Container>
         </Container>

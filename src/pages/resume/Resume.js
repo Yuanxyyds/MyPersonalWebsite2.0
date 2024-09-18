@@ -15,7 +15,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 
-function ResumeNew() {
+function Resume() {
     const [width, setWidth] = useState(1200);
 
     useEffect(() => {
@@ -53,4 +53,4 @@ function ResumeNew() {
     );
 }
 
-export default ResumeNew;
+export default Resume;

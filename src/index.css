@@ -18,15 +18,87 @@ html {
             rgba(12, 10, 22, 0.863)
     );
 
-    --imp-text-color: #ab31de;
-}
+    --primary-color: #ab31de;
 
-.primary-color {
-    color: var(--imp-text-color) !important;
+    --secondary-color: #3b57c9;
 }
 
 button:focus {
     box-shadow: none !important;
+}
+
+.primary-color {
+    color: var(--primary-color) !important;
+}
+
+.secondary-color {
+    color: var(--secondary-color) !important;
+}
+
+@keyframes neonBluePurpleGradient {
+    0% {
+        background: linear-gradient(45deg, #4a00e0, #8e2de2, #6a00ff, #2f00ff, #0077ff, #00aaff, #7300ff);
+    }
+    5% {
+        background: linear-gradient(45deg, #4b00d8, #8b2dd1, #6500e8, #2c00e8, #006fe8, #00a2e8, #7200e8);
+    }
+    10% {
+        background: linear-gradient(45deg, #4c00d0, #882dc0, #6400e0, #2b00e0, #0068e0, #009be0, #7100e0);
+    }
+    15% {
+        background: linear-gradient(45deg, #4d00c8, #852daf, #6300d8, #2900d8, #0060d8, #0093d8, #7000d8);
+    }
+    20% {
+        background: linear-gradient(45deg, #4e00c0, #822d9e, #6200d0, #2800d0, #0058d0, #008bd0, #6f00d0);
+    }
+    25% {
+        background: linear-gradient(45deg, #4f00b8, #7f2d8d, #6100c8, #2700c8, #0050c8, #0083c8, #6e00c8);
+    }
+    30% {
+        background: linear-gradient(45deg, #5000b0, #7c2d7c, #6000c0, #2600c0, #0048c0, #007bc0, #6d00c0);
+    }
+    35% {
+        background: linear-gradient(45deg, #5100a8, #792d6b, #5f00b8, #2500b8, #0040b8, #0073b8, #6c00b8);
+    }
+    40% {
+        background: linear-gradient(45deg, #5200a0, #762d5a, #5e00b0, #2400b0, #0038b0, #006bb0, #6b00b0);
+    }
+    45% {
+        background: linear-gradient(45deg, #530098, #732d49, #5d00a8, #2300a8, #0030a8, #0063a8, #6a00a8);
+    }
+    50% {
+        background: linear-gradient(45deg, #540090, #702d38, #5c00a0, #2200a0, #0028a0, #005ba0, #6900a0);
+    }
+    55% {
+        background: linear-gradient(45deg, #530098, #732d49, #5d00a8, #2300a8, #0030a8, #0063a8, #6a00a8);
+    }
+    60% {
+        background: linear-gradient(45deg, #5200a0, #762d5a, #5e00b0, #2400b0, #0038b0, #006bb0, #6b00b0);
+    }
+    65% {
+        background: linear-gradient(45deg, #5100a8, #792d6b, #5f00b8, #2500b8, #0040b8, #0073b8, #6c00b8);
+    }
+    70% {
+        background: linear-gradient(45deg, #5000b0, #7c2d7c, #6000c0, #2600c0, #0048c0, #007bc0, #6d00c0);
+    }
+    75% {
+        background: linear-gradient(45deg, #4f00b8, #7f2d8d, #6100c8, #2700c8, #0050c8, #0083c8, #6e00c8);
+    }
+    80% {
+        background: linear-gradient(45deg, #4e00c0, #822d9e, #6200d0, #2800d0, #0058d0, #008bd0, #6f00d0);
+    }
+    85% {
+        background: linear-gradient(45deg, #4d00c8, #852daf, #6300d8, #2900d8, #0060d8, #0093d8, #7000d8);
+    }
+    90% {
+        background: linear-gradient(45deg, #4c00d0, #882dc0, #6400e0, #2b00e0, #0068e0, #009be0, #7100e0);
+    }
+    95% {
+        background: linear-gradient(45deg, #4b00d8, #8b2dd1, #6500e8, #2c00e8, #006fe8, #00a2e8, #7200e8);
+    }
+    100% {
+        background: linear-gradient(45deg, #4a00e0, #8e2de2, #6a00ff, #2f00ff, #0077ff, #00aaff, #7300ff);
+    }
 }
 
 
