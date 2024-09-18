@@ -120,7 +120,7 @@
     height: 5px;
     width: 0;
     border-radius: 16px;
-    background: var(--imp-text-color);
+    background: var(--primary-color);
     bottom: 1px;
     left: 0;
     z-index: -1;

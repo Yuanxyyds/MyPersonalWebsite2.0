@@ -3,7 +3,7 @@ import Preloader from "./primary/Pre";
 import Navbar from "../components/common/Navbar";
 import About from "./about/About";
 import Projects from "./project/Projects";
-import Resume from "./resume/ResumeNew";
+import Resume from "./resume/Resume";
 import CampusEats from "./project_demo/CampusEats";
 import LandSink from "./project_demo/LandSink";
 import Home from "./home/Home";

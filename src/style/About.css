@@ -15,7 +15,7 @@
 }
 
 .blockquote-footer {
-    color: var(--imp-text-color) !important;
+    color: var(--primary-color) !important;
 }
 
 .about-image {
@@ -26,59 +26,61 @@
     padding-top: 10vh;
 }
 
+.github-stats {
+    margin: 4vh 0;
+    width: min(90vw, 600px);
+    transition: all 0.4s ease 0s !important;
+}
+
+.github-stats:hover {
+    transition: all 0.4s ease 0s !important;
+    transform: scale(1.1) !important;
+}
+
+.typewriter-wrapper-about {
+    font-family: "Courier Prime", serif;
+    font-size: 2em !important;
+    color: #ed9b37 !important;
+    font-weight: 500 !important;
+}
+
+.typewriter-wrapper-about .Typewriter__cursor {
+    font-size: 1em !important;
+    color: #ed9b37 !important;
+}
+
 @media (max-width: 1200px) {
     .about-image {
         padding-top: 2em !important;
     }
 }
 
+@media (max-width: 576px) {
+    .typewriter-wrapper-about {
+        font-size: 1.5em !important;
+    }
+}
+
+
+
 .tech-icons {
-    font-size: medium !important;
     font-weight: 1000 !important;
-    margin: 15px !important;
     padding: 10px !important;
-    opacity: 0.93 !important;
-    border: 1.7px solid #3b57c9 !important;
-    vertical-align: middle !important;
-    text-align: center !important;
+    margin: 10% 0 !important;
+    height: 80% !important;
+    width: 100% !important;
+    border: 2px solid #420a81 !important;
+    /*border: 2px solid var(--secondary-color) !important;*/
     border-radius: 5px !important;
-    display: table !important;
-    box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
-    overflow: hidden !important;
+    box-shadow: 0 0 20px rgba(89, 4, 168, 0.3) !important;
     transition: all 0.4s ease 0s !important;
 }
 
 .tech-icons:hover {
     font-size: medium !important;
     transition: all 0.4s ease 0s !important;
-    transform: scale(1.05) !important;
+    transform: scale(1.1) !important;
     overflow: hidden !important;
-    border: 2.2px solid #54b7e1 !important;
-}
-
-
-@media (max-width: 767px) {
-    .tech-icons {
-        margin: 10px !important;
-    }
-}
-
-
-.tech-icon-images {
-    padding: 20px !important;
-    line-height: 1.6 !important;
-}
-
-.quote-card-view {
-    border: none !important;
-    color: white !important;
-    background-color: transparent !important;
-}
-
-
-
-@media (max-width: 767px) {
-    .about-img {
-        padding-top: 0 !important;
-    }
+    border: 2px solid var(--primary-color) !important;
+    /*border: 2px solid #54b7e1 !important;*/
 }

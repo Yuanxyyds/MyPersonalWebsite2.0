@@ -13,7 +13,8 @@ import FadeIn from "../../effect/FadeIn";
 
 
 function Home() {
-    document.addEventListener("scroll", FadeIn);
+    window.addEventListener("scroll", FadeIn);
+    window.addEventListener("resize", FadeIn);
     return (
         <section>
             <Container className="home-content">
