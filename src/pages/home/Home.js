@@ -8,35 +8,12 @@ import {HiOutlineLocationMarker} from "react-icons/hi";
 import {AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone} from "react-icons/ai";
 import {FaLinkedinIn} from "react-icons/fa";
 import Typewriter from "typewriter-effect";
+import FadeIn from "../../effect/FadeIn";
 
-document.addEventListener("scroll", function () {
-    const elements = document.querySelectorAll(".fade-in");
 
-    elements.forEach((element) => {
-        const position = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const elementTopToViewBottom = windowHeight - position.top;
-        const ViewTopToElementBottom = position.bottom;
-
-        let opacity = 0;
-        const transitionDistance = windowHeight / 4;
-
-        if (elementTopToViewBottom >= 0 && ViewTopToElementBottom >= 0) {
-            if (elementTopToViewBottom <= transitionDistance) {
-                opacity = Math.pow(elementTopToViewBottom / transitionDistance, 3);
-            } else if (ViewTopToElementBottom <= transitionDistance) {
-                opacity = Math.pow(ViewTopToElementBottom / transitionDistance, 3);
-            } else {
-                opacity = 1
-            }
-        }
-
-        // Set the opacity
-        element.style.opacity = opacity;
-    });
-});
 
 function Home() {
+    document.addEventListener("scroll", FadeIn);
     return (
         <section>
             <Container className="home-content">
