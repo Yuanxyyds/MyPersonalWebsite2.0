@@ -215,37 +215,37 @@ function CampusEats() {
                     <div className="project-heading">
                         Follow <strong className="primary-color">Campus Eats </strong> on Social Media
                     </div>
-                    <ul className="project-tab-section">
-                        <li className="social-icons">
+                    <ul className="social_icon_list">
+                        <div className="social-icons">
                             <a
                                 href="https://github.com/CampusEatsUofT"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="icon-colour  home-social-icons"
+                                className="home-social-icons"
                             >
                                 <AiFillGithub />
                             </a>
-                        </li>
-                        <li className="social-icons">
+                        </div>
+                        <div className="social-icons">
                             <a
                                 href="https://www.linkedin.com/company/100274536/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="icon-colour  home-social-icons"
+                                className="home-social-icons"
                             >
                                 <FaLinkedinIn />
                             </a>
-                        </li>
-                        <li className="social-icons">
+                        </div>
+                        <div className="social-icons">
                             <a
                                 href="https://www.instagram.com/campus_eats_uoft/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="icon-colour home-social-icons"
+                                className="home-social-icons"
                             >
                                 <AiFillInstagram />
                             </a>
-                        </li>
+                        </div>
                     </ul>
 
 

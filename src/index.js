@@ -7,6 +7,7 @@ import "./style/Footer.css";
 import "./style/App.css";
 import "./style/Home.css"
 import "./style/Pre.css"
+import "./style/About.css"
 import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 

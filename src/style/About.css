@@ -1,0 +1,84 @@
+/* --------- */
+/* About */
+/* --------- */
+
+.about-content {
+    padding: 20vh 4vw !important;
+    color: white;
+    text-align: center;
+}
+
+.about-activity {
+    list-style: none !important;
+    text-align: left !important;
+    padding-left: 1px !important;
+}
+
+.blockquote-footer {
+    color: var(--imp-text-color) !important;
+}
+
+.about-image {
+    padding-top: 4em;
+}
+
+.about-skill-divider {
+    padding-top: 10vh;
+}
+
+@media (max-width: 1200px) {
+    .about-image {
+        padding-top: 2em !important;
+    }
+}
+
+.tech-icons {
+    font-size: medium !important;
+    font-weight: 1000 !important;
+    margin: 15px !important;
+    padding: 10px !important;
+    opacity: 0.93 !important;
+    border: 1.7px solid #3b57c9 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    border-radius: 5px !important;
+    display: table !important;
+    box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+    overflow: hidden !important;
+    transition: all 0.4s ease 0s !important;
+}
+
+.tech-icons:hover {
+    font-size: medium !important;
+    transition: all 0.4s ease 0s !important;
+    transform: scale(1.05) !important;
+    overflow: hidden !important;
+    border: 2.2px solid #54b7e1 !important;
+}
+
+
+@media (max-width: 767px) {
+    .tech-icons {
+        margin: 10px !important;
+    }
+}
+
+
+.tech-icon-images {
+    padding: 20px !important;
+    line-height: 1.6 !important;
+}
+
+.quote-card-view {
+    border: none !important;
+    color: white !important;
+    background-color: transparent !important;
+}
+
+
+
+@media (max-width: 767px) {
+    .about-img {
+        padding-top: 0 !important;
+    }
+}
