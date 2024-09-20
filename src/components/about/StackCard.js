@@ -218,7 +218,7 @@ export function Tool({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(1)}
                      onMouseLeave={() => handleMouseLeave(1)}>
                     {hoverIndex !== 1 && (<SiGooglecloud style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 1 && (<div><p> GoogleCloudPlatform</p> <YellowStars number={5}/></div>)} </div>
+                    {hoverIndex === 1 && (<div><p> Google Cloud Platform</p> <YellowStars number={5}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(2)}
