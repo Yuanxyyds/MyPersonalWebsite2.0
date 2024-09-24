@@ -18,6 +18,7 @@ import {
     Navigate
 } from "react-router-dom";
 import FadeIn from "../effect/FadeIn";
+import Sever from "./server/Sever";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
                     <Route path="/campusEats*" element={<CampusEats/>}/>
                     <Route path="/landSink*" element={<LandSink/>}/>
                     <Route path="/foodImageClassify*" element={<FoodImageClassify/>}/>
+                    <Route path="/server*" element={<Sever/>}/>
                     <Route path="*" element={<Navigate to="/"/>}/>
                 </Routes>
                 <Footer/>

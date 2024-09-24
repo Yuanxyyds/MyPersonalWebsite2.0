@@ -1,0 +1,100 @@
+.server-top-section {
+    height: 100vh;
+    position: relative !important;
+    padding-top: 150px !important;
+    padding-bottom: 30px !important;
+    background-image: var(--image-gradient), url(../assets/server.gif);
+    background-size: 100vw 100vh;
+}
+
+.server-hardware-section {
+    position: relative !important;
+    padding: 10vh 9vw !important;
+    text-align: left;
+}
+
+.server-content {
+    padding: 0 9vw !important;
+    color: whitesmoke;
+    text-align: left;
+}
+
+.server-primary-header {
+    position: relative;
+    padding-top: 80px !important;
+    color: white;
+    font-weight: 900;
+    font-size: 40pt;
+}
+
+.server-sub-header {
+    position: relative;
+    padding-top: 10px !important;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 24pt;
+    font-style: italic;
+}
+
+.server-header-description {
+    position: relative;
+    padding-top: 10px !important;
+    color: white;
+    font-weight: 400;
+    font-size: 18pt;
+}
+
+.server-info-header {
+    position: relative;
+    padding-top: 80px !important;
+    color: white;
+    font-weight: 400;
+    font-size: 30pt;
+}
+
+.server-info-text {
+    position: relative;
+    font-family: "Courier Prime", serif;
+    padding-top: 10px !important;
+    color: white;
+    font-weight: 400;
+    font-size: 16pt;
+}
+
+@media (max-width: 1200px) {
+    .server-primary-header {
+        font-size: 35pt;
+    }
+
+    .server-sub-header {
+        font-size: 20pt;
+    }
+
+    .server-header-description {
+        font-size: 14pt;
+    }
+
+    .server-info-header {
+        padding-top: 40px !important;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .server-primary-header {
+        font-size: 30pt;
+    }
+
+    .server-sub-header {
+        font-size: 18pt;
+    }
+
+    .server-header-description {
+        font-size: 12pt;
+    }
+
+    .server-info-header {
+        padding-top: 80px !important;
+    }
+}
+
