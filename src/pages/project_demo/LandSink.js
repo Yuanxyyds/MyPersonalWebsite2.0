@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Particle from "../../components/common/Particle";
 import React, {useState } from "react";
-import landSink from "../../assets/Projects/landSink.png";
+import landSink from "../../assets/projects/landSink.png";
 import { ImPointLeft } from "react-icons/im";
 
 
@@ -86,11 +86,10 @@ function LandSink() {
                             placeholder="Enter the year"
                             className="input-field"
                         />
-                        <button type="submit" className=" generate-button">
+                        <button type="submit" className=" text-button">
                             <ImPointLeft /> Generate
                         </button>
                     </form>
-
                 </div>
 
             </Container>

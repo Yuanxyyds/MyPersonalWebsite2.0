@@ -8,13 +8,10 @@ import {HiOutlineLocationMarker} from "react-icons/hi";
 import {AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone} from "react-icons/ai";
 import {FaLinkedinIn} from "react-icons/fa";
 import Typewriter from "typewriter-effect";
-import FadeIn from "../../effect/FadeIn";
 
 
 
 function Home() {
-    window.addEventListener("scroll", FadeIn);
-    window.addEventListener("resize", FadeIn);
     return (
         <section>
             <Container className="home-content">

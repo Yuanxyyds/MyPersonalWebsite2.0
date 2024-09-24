@@ -127,7 +127,7 @@
     color: white !important;
     font-size: 2.3em !important;
     font-weight: 500 !important;
-    padding-top: 20px !important;
+    padding: 20px 0 !important;
 }
 
 
@@ -299,7 +299,7 @@
     border-color: #0147a9;
 }
 
-.generate-button {
+.text-button {
     background: none;
     color: whitesmoke;
     position: relative !important;
@@ -313,6 +313,6 @@
     border: none !important;
 }
 
-.generate-button:hover {
+.text-button:hover {
     transform: scale(1.05);
 }
