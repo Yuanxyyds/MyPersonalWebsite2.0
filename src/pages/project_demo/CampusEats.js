@@ -1,12 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Particle from "../../components/common/Particle";
 import React, { useState } from "react";
-import campusEats1 from "../../assets/campusEats1.0.png";
+import campusEats1 from "../../assets/project_demo/campusEats1.0.png";
 import UTFT from "../../assets/utft.png";
 import { BiCheck } from "react-icons/bi";
 import ReactPlayer from "react-player";
-import campusEats2 from "../../assets/campusEats2.0.jpeg";
-import campusEatsLogo from "../../assets/campus-eats.jpg";
+import campusEats2 from "../../assets/project_demo/campusEats2.0.jpeg";
+import campusEatsLogo from "../../assets/project_demo/campus-eats.jpg";
 import {
     AiFillGithub,
     AiFillInstagram,
@@ -66,10 +66,6 @@ function CampusEats() {
                                     </div>
                                 </li>
                             </ul>
-
-                            <p style={{ textAlign: "justify", paddingTop: 20 }}>
-                                <strong className="primary-color">Update Mar 17 2024: </strong> {" "} We expect to launch in March 2024!
-                            </p>
 
                             <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
                                 <strong> Specification </strong>

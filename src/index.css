@@ -23,9 +23,6 @@ html {
     --secondary-color: #3b57c9;
 }
 
-button:focus {
-    box-shadow: none !important;
-}
 
 .primary-color {
     color: var(--primary-color) !important;

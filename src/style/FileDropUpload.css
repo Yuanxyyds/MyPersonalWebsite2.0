@@ -1,0 +1,39 @@
+/* Styling for the file upload section */
+.file-upload-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Default styling for the drop area */
+.drop-area {
+    width: min(80vw, 800px);
+    text-align: center;
+    border: 4px dashed var(--primary-color);
+    padding: 80px 80px;
+    cursor: pointer;
+}
+
+/* Styling for the drop area when a file is being dragged over */
+.drop-area.dragging {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.drop-area.preview {
+    padding: 10px;
+}
+
+.typewriter-wrapper-upload {
+    font-family: "Courier Prime", serif;
+    font-size: 1.2em !important;
+    color: white !important;
+    font-weight: 500 !important;
+    padding-top: 16pt;
+    margin-left: 8pt;
+}
+
+.typewriter-wrapper-upload .Typewriter__cursor {
+    font-size: 1em !important;
+    color: white;
+}
+

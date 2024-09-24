@@ -9,8 +9,6 @@ import Typewriter from "typewriter-effect";
 
 
 function About() {
-    window.addEventListener("scroll", FadeIn);
-    window.addEventListener("resize", FadeIn);
     return (
         <Container fluid className="about-content">
             <Particle/>

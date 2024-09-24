@@ -1,0 +1,9 @@
+.food-classify-image {
+    margin-top: 4em;
+    width: min(500px, 90%);
+}
+
+.food-classify-plot {
+    margin-top: 10px;
+    width: min(800px, 90%);
+}

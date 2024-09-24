@@ -9,6 +9,7 @@ import LandSink from "./project_demo/LandSink";
 import Home from "./home/Home";
 import Footer from "../components/common/Footer";
 import ScrollToTop from "../effect/ScrollToTop";
+import FoodImageClassify from "./project_demo/FoodImageClassify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
     BrowserRouter as Router,
@@ -16,10 +17,13 @@ import {
     Routes,
     Navigate
 } from "react-router-dom";
+import FadeIn from "../effect/FadeIn";
 
 
 function App() {
     const [load, updateLoad] = useState(true);
+    window.addEventListener("scroll", FadeIn);
+    window.addEventListener("resize", FadeIn);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -42,6 +46,7 @@ function App() {
                     <Route path="/resume" element={<Resume/>}/>
                     <Route path="/campusEats*" element={<CampusEats/>}/>
                     <Route path="/landSink*" element={<LandSink/>}/>
+                    <Route path="/foodImageClassify*" element={<FoodImageClassify/>}/>
                     <Route path="*" element={<Navigate to="/"/>}/>
                 </Routes>
                 <Footer/>

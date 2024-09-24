@@ -2,14 +2,15 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "../../components/projects/ProjectCards";
 import Particle from "../../components/common/Particle";
-import campusEats from "../../assets/Projects/campusEats.png";
-import GreatLakes from "../../assets/Projects/Great-lakes.png";
-import DSWsb from "../../assets/Projects/DS-web.png";
-import PersonalWeb from "../../assets/Projects/personal-web.png";
-import DTC from "../../assets/Projects/dtc.png";
-import LandSink from "../../assets/Projects/landSink.png";
-import ASocial from "../../assets/Projects/aSocial.png";
-import FDL from "../../assets/Projects/FDL.png";
+import campusEats from "../../assets/projects/campusEats.png";
+import GreatLakes from "../../assets/projects/Great-lakes.png";
+import DSWsb from "../../assets/projects/DS-web.png";
+import PersonalWeb from "../../assets/projects/personal-web.png";
+import DTC from "../../assets/projects/dtc.png";
+import LandSink from "../../assets/projects/landSink.png";
+import ASocial from "../../assets/projects/aSocial.png";
+import FDL from "../../assets/projects/FDL.png";
+import Food101 from "../../assets/projects/food-101.png"
 import Button from "react-bootstrap/Button";
 import { BsGithub } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
@@ -44,6 +45,29 @@ function Projects() {
                                     <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6} style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
                                         <Button variant="primary" href={"https://github.com/CampusEatsUofT"} target="_blank">
                                             <BsGithub /> &nbsp; Organization
+                                        </Button>
+                                    </Col>
+                                </Row>}
+                        />
+                    </Col>
+
+                    <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
+                        <ProjectCard
+                            imgPath={Food101}
+                            title="Food-101 Classification"
+                            description="This project focuses on developing a deep learning model to classify food images using the Food-101 dataset. It includes data processing, model training, fine-tuning, and performance optimization through transfer learning and hyperparameter tuning. It compares VGG, Inception, ResNet with a baseline model aiming to create an efficient and accurate food classification solution."
+                            action={
+                                <Row style={{ justifyContent: "center", padding: "10px", display: "flex", flexWrap: "wrap" }} className="g-0">
+                                    <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6} style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
+                                        <Button variant="primary" target="_blank">
+                                            <Link to={"/foodImageClassify"} style={{ color: "white", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                                <CgWebsite /> &nbsp; Project Demo
+                                            </Link>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6} style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
+                                        <Button variant="primary" href={"https://github.com/Yuanxyyds/machine-learning"} target="_blank">
+                                            <BsGithub /> &nbsp; Repository
                                         </Button>
                                     </Col>
                                 </Row>}
