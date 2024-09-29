@@ -67,7 +67,7 @@ function Projects() {
                                     </Col>
                                     <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6} style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
                                         <Button variant="primary" href={"https://github.com/Yuanxyyds/machine-learning"} target="_blank">
-                                            <BsGithub /> &nbsp; Repository
+                                            <BsGithub /> &nbsp; Github
                                         </Button>
                                     </Col>
                                 </Row>}
