@@ -71,13 +71,13 @@ function FoodImageClassify() {
                 <Row style={{justifyContent: "center", padding: "10px"}}>
                     <Col lg={12} xl={7}>
                         <div className="project-heading fade-in">
-                            Food Classification with <strong className='primary-color'> 20 </strong> Class
+                            Food Classification with <strong className='primary-color'> 22 </strong> Class
                         </div>
                         <p className="paragraph fade-in">
                             This project is focused on developing <span className="primary-color">a deep learning-based
                             food classification system</span> using the Food-101 dataset. It involves preparing and
                             processing image data, building and training models to classify <span
-                            className="primary-color">20 food categories </span>, and fine-tuning the models
+                            className="primary-color">22 food categories </span>, and fine-tuning the models
                             for improved accuracy.
                         </p>
                         <p className="paragraph fade-in">
@@ -90,8 +90,8 @@ function FoodImageClassify() {
                         <p className="paragraph fade-in">
                             <span className="primary-color"> Try to classify a food photo below! </span>
                             Support food types include: Apple Pie, Baby Back Ribs, Bibimbap, Caesar Salad, Cheesecake,
-                            Chicken Curry, Chicken Wings, Club Sandwich, Donuts, Dumplings, French Fries, Hot Dog,
-                            Pizza, Ramen, Steak, Ice Cream, Waffles, Spring Rolls, Sushi, Fish and Chips.
+                            Chicken Curry, Chicken Wings, Club Sandwich, Donuts, Dumplings, French Fries, Hot Dog, Hamburger, 
+                            Frozen Yogust, Pizza, Ramen, Steak, Ice Cream, Waffles, Spring Rolls, Sushi, Fish and Chips.
                         </p>
                     </Col>
                     <Col lg={12} xl={5} style={{paddingBottom: 20, textAlign: "center"}}>
@@ -135,7 +135,7 @@ function FoodImageClassify() {
                 {modelResult != null ?
                     <Container>
                         <div className="project-heading fade-in">
-                            Prediction <strong className="primary-color">Result </strong>
+                            Prediction <strong className="primary-color">Result </strong> - {modelResult[3].first_predicted_class}
                         </div>
                         <table border="1" cellPadding="10" style={{borderCollapse: 'collapse', width: '100%'}}>
                             <thead>
