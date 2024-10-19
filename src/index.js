@@ -11,6 +11,7 @@ import "./style/About.css"
 import  "./style/FileDropUpload.css"
 import  "./style/FoodImageClassify.css"
 import  "./style/Server.css"
+import  "./style/StevenAI.css"
 import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 

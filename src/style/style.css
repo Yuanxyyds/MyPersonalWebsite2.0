@@ -26,6 +26,18 @@
     text-align: left;
 }
 
+.sub-title {
+    max-width: max(500px, 60%);
+    font-size: 1.1em !important;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-space {
+    padding-top: 10vh;
+}
+
 
 /* --------- */
 /* Projects */
