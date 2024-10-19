@@ -39,7 +39,6 @@ function StevenAI() {
                     setConnectionStatus(data.message);
                 } else if (data.code === "TO") {  // Timeout
                     setConnectionStatus(data.message);
-                    socket.close();
                 }
             };
 
