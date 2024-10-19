@@ -5,7 +5,7 @@
     padding: 15px;
     border-radius: 10px;
     height: 500px;
-    width: max(500px, 90%);
+    width: 90%;
     overflow-y: auto;
     margin: 20px auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -43,7 +43,7 @@
 
 /* Chat form styling */
 .chat-form {
-    width: max(500px, 90%);
+    width: 90%;
     display: flex;
     margin-top: 10px;
     margin-left: auto;
