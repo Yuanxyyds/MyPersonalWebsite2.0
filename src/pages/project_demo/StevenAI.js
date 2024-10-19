@@ -13,7 +13,7 @@ function StevenAI() {
     const [isModelLoaded, setIsModelLoaded] = useState(false);
 
     // WebSocket URL (adjust this URL based on your setup)
-    const wsUrl = `ws://webserver.liustev6.ca/ws/socket-server/`;
+    const wsUrl = `wss://webserver.liustev6.ca/ws/socket-server/`;
 
     // Function to initiate WebSocket connection when button is clicked
     const requestConnection = () => {
