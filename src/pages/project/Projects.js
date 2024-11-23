@@ -12,6 +12,7 @@ import ASocial from "../../assets/projects/aSocial.png";
 import FDL from "../../assets/projects/FDL.png";
 import Food101 from "../../assets/projects/food-101.png"
 import StevenAI from "../../assets/projects/stevenai.png"
+import MentorAI from "../../assets/projects/mentorai.png"
 import Button from "react-bootstrap/Button";
 import {BsGithub} from "react-icons/bs";
 import {CgWebsite} from "react-icons/cg";
@@ -99,6 +100,43 @@ function Projects() {
                                             <BsGithub/> &nbsp; Github
                                         </Button>
                                     </Col>
+                                </Row>}
+                        />
+                    </Col>
+
+                    <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
+                        <ProjectCard
+                            imgPath={MentorAI}
+                            title="Mentor AI"
+                            description="MentorAI is a research project that automates the creation of an LLM pipeline using only YouTube links to generate personalized mentorship advice. It leverages NLP mentorship videos, transcripts, and user-specific data to guide aspiring researchers in finding mentors, conducting literature reviews, and preparing for PhD applications with tailored, actionable suggestions."
+                            action={
+                                <Row style={{
+                                    justifyContent: "center",
+                                    padding: "10px",
+                                    display: "flex",
+                                    flexWrap: "wrap"
+                                }} className="g-0">
+                                    <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
+                                         style={{display: "flex", justifyContent: "center", paddingBottom: "10px"}}>
+                                        <Button variant="primary" target="_blank">
+                                            <Link to={"/mentorAi"} style={{
+                                                color: "white",
+                                                textDecoration: "none",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center"
+                                            }}>
+                                                <CgWebsite/> &nbsp; Project Demo
+                                            </Link>
+                                        </Button>
+                                    </Col>
+                                    {/*<Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}*/}
+                                    {/*     style={{display: "flex", justifyContent: "center", paddingBottom: "10px"}}>*/}
+                                    {/*    <Button variant="primary" href={"https://github.com/Yuanxyyds/machine-learning"}*/}
+                                    {/*            target="_blank">*/}
+                                    {/*        <BsGithub/> &nbsp; Github*/}
+                                    {/*    </Button>*/}
+                                    {/*</Col>*/}
                                 </Row>}
                         />
                     </Col>

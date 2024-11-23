@@ -20,6 +20,7 @@ import {
 import FadeIn from "../effect/FadeIn";
 import Sever from "./server/Sever";
 import StevenAI from "./project_demo/StevenAI";
+import MentorAI from "./project_demo/MentorAI";
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
                     <Route path="/foodImageClassify*" element={<FoodImageClassify/>}/>
                     <Route path="/server*" element={<Sever/>}/>
                     <Route path="/stevenAI*" element={<StevenAI/>}/>
+                    <Route path="/mentorAI*" element={<MentorAI/>}/>
                     <Route path="*" element={<Navigate to="/"/>}/>
                 </Routes>
                 <Footer/>
