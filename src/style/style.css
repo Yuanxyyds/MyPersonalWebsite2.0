@@ -21,7 +21,7 @@
 }
 
 .paragraph {
-    padding-top: 30px;
+    padding-top: 24px;
     font-size: 1.2em !important;
     text-align: left;
 }
@@ -149,7 +149,7 @@
 }
 
 .resume {
-    padding-top: 50px;
+    padding-top: 16px;
     padding-bottom: 50px;
     justify-content: center;
 }

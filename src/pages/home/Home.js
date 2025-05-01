@@ -1,12 +1,12 @@
 import React from "react";
-import {Container, Row, Col} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../assets/home-animation.gif";
 import Particle from "../../components/common/Particle";
 import Tilt from "react-parallax-tilt";
 import myImg from "../../assets/avatar.gif";
-import {HiOutlineLocationMarker} from "react-icons/hi";
-import {AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone} from "react-icons/ai";
-import {FaLinkedinIn} from "react-icons/fa";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 
 
@@ -15,7 +15,7 @@ function Home() {
     return (
         <section>
             <Container className="home-content">
-                <Particle/>
+                <Particle />
                 <Container fluid id="home">
                     <Row fluid id="home">
                         <Col xl={7}>
@@ -34,9 +34,8 @@ function Home() {
                                     options={{
                                         strings: [
                                             "> Student at University of Toronto",
-                                            "> Mobile App Developer",
-                                            "> Web Developer",
                                             "> Machine Learning Developer",
+                                            "> Full-stack Mobile/Web Developer",
                                         ],
                                         cursor: '_',
                                         autoStart: true,
@@ -49,8 +48,8 @@ function Home() {
 
                         <Col xl={5}>
                             <Tilt>
-                                <img src={homeLogo} className="img-fluid fade-in" style={{maxHeight: "450px"}}
-                                     alt="avatar"/>
+                                <img src={homeLogo} className="img-fluid fade-in" style={{ maxHeight: "450px" }}
+                                    alt="avatar" />
                             </Tilt>
                         </Col>
                     </Row>
@@ -62,28 +61,28 @@ function Home() {
                                 LET ME <span className="primary-color"> INTRODUCE </span> MYSELF
                             </h1>
                             <p className="paragraph fade-in">
-                                I am a passionate Fifth-year student at University of Toronto, double specialist in
-                                Computer Science & Data Science GPA 3.9/4.0. Previously worked as a
+                                I recently graduated from University of Toronto (May 2025), where I completed my double specialist
+                                in Computer Science & Data Science with a GPA 3.91/4.0. I previously worked as a
                                 <i>
                                     <b className="primary-color"> Cloud and Mobile App Co-op developer at Johnson
                                         Controls </b>
-                                </i> and currently serve as the Founder of the Campus Eats.
+                                </i> and served as the Founder of the Campus Eats.
                             </p>
                             <p className="paragraph fade-in">I am expertise in
                                 <i>
                                     <b className="primary-color"> Machine Learning, Full Stack Mobile App Development,
-                                        Full Stack Web Development, and Data Analysis </b>
+                                        Full Stack Web Development, and Data Analysis. </b>
                                 </i>
+                                Besides, I am actively contributing to a diverse range of 10+ projects, software
+                                business startups, over 1000+ contribution on github.
                             </p>
                             <p className="paragraph fade-in">
-                                Besides, I am actively contributing to a diverse range of 10+ projects, software
-                                business
-                                startups, over 1000+ contribution on github.
+                                I am currently seeking full-time roles or admission to a Master’s program for 2025–2026.
                             </p>
                         </Col>
                         <Col xl={4} className="my-avtar">
-                            <img src={myImg} className="fade-in img-fluid" style={{maxHeight: "400px"}}
-                                 alt="avatar"/>
+                            <img src={myImg} className="fade-in img-fluid" style={{ maxHeight: "400px" }}
+                                alt="avatar" />
                         </Col>
                     </Row>
                 </Container>
@@ -96,14 +95,14 @@ function Home() {
                             width: '40px',
                             height: '40px',
                             fill: "white !important"
-                        }}/> {"  "} 65 Saint Mary Street, Toronto ON, M5S 0A6, Canada
+                        }} /> {"  "} 65 Saint Mary Street, Toronto ON, M5S 0A6, Canada
                     </p>
                     <p className="home-contact-info fade-in">
-                        <AiOutlineMail style={{width: '40px', height: '40px'}}/> {" "} liuhongyuan.liu AT
+                        <AiOutlineMail style={{ width: '40px', height: '40px' }} /> {" "} liuhongyuan.liu AT
                         mail.utoronto.ca
                     </p>
                     <p className="home-contact-info fade-in">
-                        <AiOutlinePhone style={{width: '40px', height: '40px'}}/> {" "} +1 (647)-309-9649
+                        <AiOutlinePhone style={{ width: '40px', height: '40px' }} /> {" "} +1 (647)-309-9649
                     </p>
 
                     <ul className="social_icon_list fade-in">
@@ -114,7 +113,7 @@ function Home() {
                                 rel="noreferrer"
                                 className="home-social-icons"
                             >
-                                <AiFillGithub/>
+                                <AiFillGithub />
                             </a>
                         </div>
                         <div className="social-icons">
@@ -124,7 +123,7 @@ function Home() {
                                 rel="noreferrer"
                                 className="home-social-icons"
                             >
-                                <FaLinkedinIn/>
+                                <FaLinkedinIn />
                             </a>
                         </div>
                         <div className="social-icons">
@@ -134,7 +133,7 @@ function Home() {
                                 rel="noreferrer"
                                 className="home-social-icons"
                             >
-                                <AiFillInstagram/>
+                                <AiFillInstagram />
                             </a>
                         </div>
                     </ul>
