@@ -43,7 +43,7 @@ export function Language({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(1)}
                      onMouseLeave={() => handleMouseLeave(1)}>
                     {hoverIndex !== 1 && (<DiPython style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 1 && (<div><p> Python</p> <YellowStars number={5}/></div>)} </div>
+                    {hoverIndex === 1 && (<div><p> Python</p> <YellowStars number={6}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(2)}
@@ -55,13 +55,13 @@ export function Language({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(3)}
                      onMouseLeave={() => handleMouseLeave(3)}>
                     {hoverIndex !== 3 && (<TbSql style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 3 && (<div><p> SQL </p><YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 3 && (<div><p> SQL </p><YellowStars number={5}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(4)}
                      onMouseLeave={() => handleMouseLeave(4)}>
                     {hoverIndex !== 4 && (<BiLogoCPlusPlus style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 4 && (<div><p> C Language</p> <YellowStars number={5}/></div>)} </div>
+                    {hoverIndex === 4 && (<div><p> C Language</p> <YellowStars number={4}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(5)}
@@ -91,13 +91,13 @@ export function Language({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(9)}
                      onMouseLeave={() => handleMouseLeave(9)}>
                     {hoverIndex !== 9 && (<FaRProject style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 9 && (<div><p> R Language</p><YellowStars number={5}/></div>)} </div>
+                    {hoverIndex === 9 && (<div><p> R Language</p><YellowStars number={4}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(10)}
                      onMouseLeave={() => handleMouseLeave(3)}>
                     {hoverIndex !== 10 && (<DiHtml5 style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 10 && (<div><p> HTML </p><YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 10 && (<div><p> HTML </p><YellowStars number={5}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(11)}
@@ -150,7 +150,7 @@ export function Framework({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(4)}
                      onMouseLeave={() => handleMouseLeave(2)}>
                     {hoverIndex !== 4 && (<SiTensorflow style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 4 && (<div><p> TensorFlow</p> <YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 4 && (<div><p> TensorFlow</p> <YellowStars number={5}/></div>)} </div>
             </Col>
 
 
@@ -158,14 +158,14 @@ export function Framework({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(5)}
                      onMouseLeave={() => handleMouseLeave(5)}>
                     {hoverIndex !== 5 && (<DiDjango style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 5 && (<div><p> Django</p> <YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 5 && (<div><p> Django</p> <YellowStars number={5}/></div>)} </div>
             </Col>
 
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(6)}
                      onMouseLeave={() => handleMouseLeave(2)}>
                     {hoverIndex !== 6 && (<SiPytorch style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 6 && (<div><p> PyTorch</p> <YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 6 && (<div><p> PyTorch</p> <YellowStars number={5}/></div>)} </div>
             </Col>
 
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
@@ -230,7 +230,7 @@ export function Tool({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(3)}
                      onMouseLeave={() => handleMouseLeave(3)}>
                     {hoverIndex !== 3 && (<SiTailwindcss style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 3 && (<div><p> Tailwind Css </p><YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 3 && (<div><p> Tailwind CSS </p><YellowStars number={4}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(4)}
@@ -242,7 +242,7 @@ export function Tool({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(5)}
                      onMouseLeave={() => handleMouseLeave(5)}>
                     {hoverIndex !== 5 && (<SiNumpy style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 5 && (<div><p> Numpy</p> <YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 5 && (<div><p> Numpy</p> <YellowStars number={5}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(6)}
@@ -295,7 +295,7 @@ export function Topics({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(0)}
                      onMouseLeave={() => handleMouseLeave(0)}>
                     {hoverIndex !== 0 && (<div style={{fontSize: "3em"}}> ML </div>)}
-                    {hoverIndex === 0 && (<div><p> Machine Learning</p>  <YellowStars number={5}/></div>)} </div>
+                    {hoverIndex === 0 && (<div><p> Machine Learning</p>  <YellowStars number={6}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(1)}
@@ -308,7 +308,7 @@ export function Topics({className}) {
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(2)}
                      onMouseLeave={() => handleMouseLeave(2)}>
                     {hoverIndex !== 2 && (<AiOutlineRobot style={{fontSize: "5em"}}/>)}
-                    {hoverIndex === 2 && (<div><p> Artificial Intelligence</p> <YellowStars number={4}/></div>)} </div>
+                    {hoverIndex === 2 && (<div><p> Artificial Intelligence</p> <YellowStars number={6}/></div>)} </div>
             </Col>
             <Col xs={6} md={4} lg={3} xl={2} className={className}>
                 <div className="tech-icons" onMouseEnter={() => handleMouseEnter(3)}

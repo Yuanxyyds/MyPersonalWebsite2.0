@@ -2,7 +2,6 @@ import {Container, Row, Col} from "react-bootstrap";
 import Particle from "../../components/common/Particle";
 import laptopImg from "../../assets/about.png";
 import {ImPointRight} from "react-icons/im";
-import FadeIn from "../../effect/FadeIn";
 import React from "react";
 import {Framework, Language, Topics, Tool} from "../../components/about/StackCard";
 import Typewriter from "typewriter-effect";
@@ -24,8 +23,7 @@ function About() {
                             className="primary-color">Toronto, Canada</span>. Originally born in <span
                             className="primary-color">Beijing, China</span>, and moved to Canada in 2016. I
                             completed high school at Semiahmoo Secondary School in <span
-                            className="primary-color">Surrey, BC</span> and am currently taking my undergraduate
-                            studies at the University of Toronto.
+                            className="primary-color">Surrey, BC</span> and recently completed my Bachelor degree at University of Toronto.
                         </p>
                         <p className="paragraph fade-in">
                             I love my family, my girlfriend, and my two cats, Timi and Chocho. Besides that, I enjoy
