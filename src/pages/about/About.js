@@ -24,6 +24,7 @@ function About() {
                             className="primary-color">Beijing, China</span>, and moved to Canada in 2016. I
                             completed high school at Semiahmoo Secondary School in <span
                             className="primary-color">Surrey, BC</span> and recently completed my Bachelor degree at University of Toronto.
+                            Starting Fall 2025, I will pursue a Master of Engineering in AI at the University of Pennsylvania.
                         </p>
                         <p className="paragraph fade-in">
                             I love my family, my girlfriend, and my two cats, Timi and Chocho. Besides that, I enjoy

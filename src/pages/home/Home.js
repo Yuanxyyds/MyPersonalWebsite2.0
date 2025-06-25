@@ -33,7 +33,7 @@ function Home() {
                                 <Typewriter
                                     options={{
                                         strings: [
-                                            "> Student at University of Toronto",
+                                            "> Student at University of Toronto => University of Pennsylvania",
                                             "> Machine Learning Developer",
                                             "> Full-stack Mobile/Web Developer",
                                         ],
@@ -61,8 +61,9 @@ function Home() {
                                 LET ME <span className="primary-color"> INTRODUCE </span> MYSELF
                             </h1>
                             <p className="paragraph fade-in">
-                                I recently graduated from University of Toronto (May 2025), where I completed my double specialist
-                                in Computer Science & Data Science with a GPA 3.91/4.0. I previously worked as a
+                                I recently graduated from University of Toronto (June 2025), where I completed my double specialist
+                                in Computer Science & Data Science with a GPA 3.90/4.0. Starting Fall 2025, I will pursue a Master 
+                                of Engineering in AI at the University of Pennsylvania. I previously worked as a
                                 <i>
                                     <b className="primary-color"> Cloud and Mobile App Co-op developer at Johnson
                                         Controls </b>
@@ -77,7 +78,7 @@ function Home() {
                                 business startups, over 1000+ contribution on github.
                             </p>
                             <p className="paragraph fade-in">
-                                I am currently seeking full-time roles or admission to a Master’s program for 2025–2026.
+                                I am currently seeking full-time roles.
                             </p>
                         </Col>
                         <Col xl={4} className="my-avtar">
