@@ -7,6 +7,11 @@
     background-size: 100vw 100vh;
 }
 
+.canvas-container {
+    width:  100vw;
+    height: 100vh;
+}
+
 .server-hardware-section {
     position: relative !important;
     padding: 10vh 9vw !important;

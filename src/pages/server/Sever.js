@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {Container, Row, Col} from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../../components/common/Particle";
 import hardware from "../../assets/hardware.png";
 import axios from "axios";
+import ModelCanvas from "../../components/server/ModelCanvas";
+import ScrollToBottomButton from "../../components/server/ScrollToBottomButton";
 
 function Server() {
     const [responseData, setResponseData] = useState(null);
@@ -25,7 +27,8 @@ function Server() {
 
     return (
         <section>
-            <Particle/>
+            <Particle />
+            <ScrollToBottomButton />
             <Container fluid className="server-top-section">
                 <Container fluid id="home" className="server-content">
                     <Row fluid id="home">
@@ -46,11 +49,14 @@ function Server() {
                     </Row>
                 </Container>
             </Container>
+            <div className="canvas-container">
+                <ModelCanvas />
+            </div>
             <Container fluid className="server-hardware-section">
                 <Row fluid id="home">
                     <Col sm={12} md={10} lg={6}>
-                        <img src={hardware} className="fade-in img-fluid" style={{width: '100%'}}
-                             alt="hardware"/>
+                        <img src={hardware} className="fade-in img-fluid" style={{ width: '100%' }}
+                            alt="hardware" />
                     </Col>
                     <Col sm={12} md={10} lg={6}>
                         <h1 className="server-info-header fade-in">
