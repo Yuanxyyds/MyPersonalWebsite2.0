@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Preloader from "./primary/Pre";
 import Navbar from "../components/common/Navbar";
 import About from "./about/About";
@@ -12,7 +13,6 @@ import ScrollToTop from "../effect/ScrollToTop";
 import FoodImageClassify from "./project_demo/FoodImageClassify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
-    BrowserRouter as Router,
     Route,
     Routes,
     Navigate
@@ -22,43 +22,44 @@ import Sever from "./server/Sever";
 import StevenAI from "./project_demo/StevenAI";
 import MentorAI from "./project_demo/MentorAI";
 
-
 function App() {
-    const [load, updateLoad] = useState(true);
+    const [load, setLoad] = useState(true);
+    const location = useLocation();
+
     window.addEventListener("scroll", FadeIn);
     window.addEventListener("resize", FadeIn);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            updateLoad(false);
+            setLoad(false);
         }, 1200);
 
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <Router>
-            <Preloader load={load}/>
+        <div>
+            <Preloader load={load} />
             <div className="App" id={load ? "no-scroll" : "scroll"}>
-                <Navbar/>
-                <ScrollToTop/>
+                <Navbar />
+                <ScrollToTop />
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/project" element={<Projects/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/resume" element={<Resume/>}/>
-                    <Route path="/campusEats*" element={<CampusEats/>}/>
-                    <Route path="/landSink*" element={<LandSink/>}/>
-                    <Route path="/foodImageClassify*" element={<FoodImageClassify/>}/>
-                    <Route path="/server*" element={<Sever/>}/>
-                    <Route path="/stevenAI*" element={<StevenAI/>}/>
-                    <Route path="/mentorAI*" element={<MentorAI/>}/>
-                    <Route path="*" element={<Navigate to="/"/>}/>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/project" element={<Projects />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/campusEats*" element={<CampusEats />} />
+                    <Route path="/landSink*" element={<LandSink />} />
+                    <Route path="/foodImageClassify*" element={<FoodImageClassify />} />
+                    <Route path="/server*" element={<Sever />} />
+                    <Route path="/stevenAI*" element={<StevenAI />} />
+                    <Route path="/mentorAI*" element={<MentorAI />} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
-                <Footer/>
+                {/* Conditionally hide footer if path starts with /server */}
+                {!location.pathname.startsWith("/server") && <Footer />}
             </div>
-        </Router>
+        </div>
     );
 }
-
 export default App;
