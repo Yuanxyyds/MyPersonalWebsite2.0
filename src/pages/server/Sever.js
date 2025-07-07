@@ -127,6 +127,7 @@ function Server() {
             <div className="canvas-container">
                 <ModelCanvas />
             </div>
+            <div id={"loader"}/>
         </section>
     );
 }

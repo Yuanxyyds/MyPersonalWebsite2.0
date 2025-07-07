@@ -93,6 +93,19 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+#loader {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: #000000;
+    background-image: url(../assets/pre.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 @keyframes pulse-scale {
     0% {
