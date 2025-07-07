@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../../components/common/Particle";
-import hardware from "../../assets/hardware.png";
 import axios from "axios";
 import ModelCanvas from "../../components/server/ModelCanvas";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
@@ -128,48 +127,6 @@ function Server() {
             <div className="canvas-container">
                 <ModelCanvas />
             </div>
-            {/* <Container fluid className="server-hardware-section">
-                <Row fluid id="home">
-                    <Col sm={12} md={10} lg={6}>
-                        <img src={hardware} className="fade-in img-fluid" style={{ width: '100%' }}
-                            alt="hardware" />
-                    </Col>
-                    <Col sm={12} md={10} lg={6}>
-                        <h1 className="server-info-header fade-in">
-                            <span className="primary-color">Hardware </span> Info
-                        </h1>
-                        <h2 className="server-info-text fade-in">
-                            CPU/GPU: AMD Ryzen 7 5800X, NVIDIA GeForce RTX 4060 Ti
-                        </h2>
-                        <h2 className="server-info-text fade-in">
-                            RAM/DISK: Corsair Vengeance 32G DDR4, SAMSUNG 990 EVO SSD 1TB, Seagate IronWolf Pro 4T HDD
-                        </h2>
-                        <h2 className="server-info-text fade-in">
-                            CASE/MOTHERBOARD: Corsair iCUE 4000D RGB Airflow, ASUS TUF Gaming B550-PLUS
-                        </h2>
-
-                        <h2 className="server-info-text fade-in">
-                            CPU Info:
-                            {responseData != null ? (
-                                `${responseData["cpu"]["cpu_usage_percent"]}% out of ${responseData["cpu"]["cpus"]} CPUS - ${responseData["cpu"]["cpu_temp"]}°C`
-                            ) : (
-                                'Calculating...'
-                            )}
-                        </h2>
-                        <h2 className="server-info-text fade-in">
-                            RAM Info:
-                            {responseData != null ? (
-                                `${responseData["memory"]["memory_usage_percent"]}% (${responseData["memory"]["used"]}GB) out of ${responseData["memory"]["total"]}GB`
-                            ) : (
-                                'Calculating...'
-                            )}
-                        </h2>
-
-
-                    </Col>
-                </Row>
-
-            </Container> */}
         </section>
     );
 }
