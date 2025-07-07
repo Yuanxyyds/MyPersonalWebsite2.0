@@ -1,7 +1,7 @@
 .server-top-section {
     height: 100vh;
     position: relative !important;
-    padding-top: 150px !important;
+    padding-top: 150px;
     padding-bottom: 30px !important;
     background-image: var(--image-gradient), url(../assets/server.gif);
     background-size: 100vw 100vh;
@@ -66,6 +66,48 @@
     font-size: 16pt;
 }
 
+.scroll-to-bottom {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 64px;
+    height: 64px;
+    background: rgba(107, 76, 76, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+
+    animation: pulse-scale 2s ease-in-out infinite;
+}
+
+.scroll-to-bottom:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+@keyframes pulse-scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 @media (max-width: 1200px) {
     .server-primary-header {
         font-size: 35pt;
@@ -100,5 +142,68 @@
 
     .server-info-header {
         padding-top: 80px !important;
+    }
+
+    .scroll-to-bottom {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-height: 600px) {
+    .server-top-section {
+        padding-top: 100px;
+    }
+
+    .server-primary-header {
+        font-size: 28pt;
+        padding-top: 20px;
+    }
+
+    .server-sub-header {
+        font-size: 16pt;
+    }
+
+    .server-header-description {
+        font-size: 11pt;
+    }
+
+    .scroll-to-bottom {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+@media (max-height: 500px) {
+    .server-top-section {
+        padding-top: 80px;
+    }
+
+    .server-primary-header {
+        font-size: 22pt;
+        padding-top: 10px;
+    }
+
+    .server-sub-header {
+        font-size: 14pt;
+    }
+
+    .server-header-description {
+        font-size: 11pt;
+    }
+
+    .scroll-to-bottom {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
     }
 }

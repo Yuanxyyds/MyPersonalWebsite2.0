@@ -5,11 +5,13 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import server from "../../assets/server.glb";
 import monitor from "../../assets/monitor.mp4";
+import tv from "../../assets/tv.mp4";
 
 function RoomModel({ controls, zoomDistance }) {
   const { nodes, scene } = useGLTF(server);
   const [dragging, setDragging] = useState(false);
   const [focused, setFocused] = useState(false);
+  const [focusedMedia, setFocusedMedia] = useState(null);
   const originalPosition = useRef(new Vector3());
   const originalTarget = useRef(new Vector3());
 
@@ -24,9 +26,9 @@ function RoomModel({ controls, zoomDistance }) {
   scene.remove(nodes["Monitor2"]);
   scene.remove(nodes["Monitor3"]);
 
-  const [video] = useState(() => {
+  const [monitorVideo] = useState(() => {
     const video = document.createElement("video");
-    video.src = monitor; // your MP4 file path
+    video.src = monitor;
     video.crossOrigin = "anonymous";
     video.loop = true;
     video.muted = true;
@@ -36,8 +38,8 @@ function RoomModel({ controls, zoomDistance }) {
     return video;
   });
 
-  const videoTexture = useMemo(() => {
-    const texture = new VideoTexture(video);
+  const monitorVideoTexture = useMemo(() => {
+    const texture = new VideoTexture(monitorVideo);
     texture.minFilter = LinearFilter;
     texture.magFilter = LinearFilter;
     texture.format = RGBAFormat;
@@ -45,7 +47,31 @@ function RoomModel({ controls, zoomDistance }) {
     texture.wrapT = ClampToEdgeWrapping;
     texture.flipY = false;
     return texture;
-  }, [video]);
+  }, [monitorVideo]);
+
+  // Focus video
+  const [TvVideo] = useState(() => {
+    const v = document.createElement("video");
+    v.src = tv;
+    v.crossOrigin = "anonymous";
+    v.loop = true;
+    v.muted = true;
+    v.playsInline = true;
+    v.autoplay = true;
+    v.play();
+    return v;
+  });
+
+  const TvVideoTexture = useMemo(() => {
+    const tex = new VideoTexture(TvVideo);
+    tex.minFilter = LinearFilter;
+    tex.magFilter = LinearFilter;
+    tex.format = RGBAFormat;
+    tex.flipY = false;
+    return tex;
+  }, [TvVideo]);
+
+
 
 
   // Neon Light Effect
@@ -107,6 +133,67 @@ function RoomModel({ controls, zoomDistance }) {
     setFocused(true);
   };
 
+  const tvDisplay = useMemo(() => {
+    if (focusedMedia !== "TV") {
+      return (
+        <primitive
+          object={nodes["TV"]}
+          onPointerDown={(e) => {
+            e.stopPropagation();
+            if (!focused) {
+              zoomToObject(e.object);
+              setFocusedMedia("TV");
+              TvVideo.currentTime = 0;
+              TvVideo.play();
+            }
+          }}
+          onPointerOver={() => {
+            document.body.style.cursor = "pointer";
+          }}
+          onPointerOut={() => {
+            document.body.style.cursor = "default";
+          }}
+        />
+      );
+    }
+
+    // Focused: clone with video texture
+    const clone = nodes["TV"].clone(true);
+    clone.traverse((child) => {
+      if (child.isMesh) {
+        child.material = Array.isArray(child.material)
+          ? child.material.map((m) => m.clone())
+          : child.material.clone();
+      }
+    });
+    clone.traverse((child) => {
+      if (child.isMesh) {
+        const mats = Array.isArray(child.material)
+          ? child.material
+          : [child.material];
+        mats.forEach((mat) => {
+          if (mat.name.includes("Screen")) {
+            mat.map = TvVideoTexture;
+            mat.emissiveMap = TvVideoTexture;
+            mat.needsUpdate = true;
+            if (mat.map) mat.map.needsUpdate = true;
+            if (mat.emissiveMap) mat.emissiveMap.needsUpdate = true;
+          }
+        });
+      }
+    });
+
+    return (
+      <primitive
+        object={clone}
+        onPointerDown={(e) => {
+          e.stopPropagation();
+        }}
+      />
+    );
+  }, [focusedMedia, TvVideoTexture, nodes, zoomToObject]);
+
+
 
   return (
     <>
@@ -120,6 +207,7 @@ function RoomModel({ controls, zoomDistance }) {
             controls.current.enabled = true;
             controls.current.update();
             setFocused(false);
+            setFocusedMedia(null);
           } else if (dragging) {
             setDragging(false);
             controls.current.enabled = true;
@@ -154,22 +242,9 @@ function RoomModel({ controls, zoomDistance }) {
         }}
       />
       {/* Render TV separately with click */}
-      <primitive
-        object={nodes["TV"]}
-        onPointerDown={(e) => {
-          e.stopPropagation();
-          if (!focused) {
-            zoomToObject(e.object);
-          }
-        }}
-        onPointerOver={() => {
-          document.body.style.cursor = "pointer";
-        }}
-        onPointerOut={() => {
-          document.body.style.cursor = "default";
-        }}
-      />
+      {tvDisplay}
 
+      {/* Render Monitors separately with click */}
       {monitorConfigs.map(({ name, offset }) => {
         const originalGroup = nodes[name];
         const groupClone = originalGroup.clone(true);
@@ -191,8 +266,8 @@ function RoomModel({ controls, zoomDistance }) {
               : [child.material];
             mats.forEach((mat) => {
               if (mat.name.includes("Screen")) {
-                mat.map = videoTexture;
-                mat.emissiveMap = videoTexture;
+                mat.map = monitorVideoTexture;
+                mat.emissiveMap = monitorVideoTexture;
                 mat.needsUpdate = true;
                 mat.map.repeat.set(1 / 3, 1);
                 mat.map.offset.set(offset, 0);
@@ -209,6 +284,7 @@ function RoomModel({ controls, zoomDistance }) {
               e.stopPropagation();
               if (!focused) {
                 zoomToObject(e.object);
+                setFocusedMedia("Monitor");
               }
             }}
             onPointerOver={() => {

@@ -59,7 +59,7 @@ function Server() {
         };
 
         const preventKeys = (e) => {
-            const keys = [32, 33, 34, 35, 36, 37, 38, 39, 40]; // space, pgup/pgdn, end/home, arrows
+            const keys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
             if (keys.includes(e.keyCode)) {
                 e.preventDefault();
             }
@@ -112,16 +112,14 @@ function Server() {
                     <Row fluid id="home">
                         <Col lg={10} xl={8}>
                             <h1 className="server-primary-header fade-in">
-                                Explore My Home Server!
+                                Explore My 3D Server Room!
                             </h1>
                             <h2 className="server-sub-header fade-in">
-                                Hosting, and Innovating
+                                Life, Work, and Innovation
                             </h2>
 
                             <h2 className="server-header-description fade-in">
-                                Discover how I manage, automate, and deploy
-                                projects from my custom-built home server.
-
+                                Discover how I manage, automate, and deploy projects from my custom-built home server.
                             </h2>
                         </Col>
                     </Row>
