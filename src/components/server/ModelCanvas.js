@@ -1,20 +1,54 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import { Box3, Vector3 } from "three";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import React, { Suspense, useEffect, useRef, useState, useMemo } from "react";
+import { Box3, Vector3, VideoTexture, LinearFilter, RGBAFormat, ClampToEdgeWrapping } from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import server from "../../assets/server.glb";
+import monitor from "../../assets/monitor.mp4";
 
-function RoomModel({ controls }) {
+function RoomModel({ controls, zoomDistance }) {
   const { nodes, scene } = useGLTF(server);
   const [dragging, setDragging] = useState(false);
   const [focused, setFocused] = useState(false);
-
-  const chairRef = useRef();
   const originalPosition = useRef(new Vector3());
   const originalTarget = useRef(new Vector3());
 
+  const chairRef = useRef();
+  const monitorConfigs = [
+    { name: "Monitor1", offset: - 1 / 3 },
+    { name: "Monitor2", offset: 0 },
+    { name: "Monitor3", offset: 1 / 3 },
+  ];
 
+  scene.remove(nodes["Monitor1"]);
+  scene.remove(nodes["Monitor2"]);
+  scene.remove(nodes["Monitor3"]);
+
+  const [video] = useState(() => {
+    const video = document.createElement("video");
+    video.src = monitor; // your MP4 file path
+    video.crossOrigin = "anonymous";
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.autoplay = true;
+    video.play();
+    return video;
+  });
+
+  const videoTexture = useMemo(() => {
+    const texture = new VideoTexture(video);
+    texture.minFilter = LinearFilter;
+    texture.magFilter = LinearFilter;
+    texture.format = RGBAFormat;
+    texture.wrapS = ClampToEdgeWrapping;
+    texture.wrapT = ClampToEdgeWrapping;
+    texture.flipY = false;
+    return texture;
+  }, [video]);
+
+
+  // Neon Light Effect
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
     const hue = (t * 60) % 360;
@@ -37,15 +71,16 @@ function RoomModel({ controls }) {
     });
   });
 
+  // Make Chair invisible
   useEffect(() => {
     if (chairRef.current) {
       chairRef.current.visible = !focused;
     }
   }, [focused]);
 
+  // Zoom to Object
   const zoomToObject = (object) => {
     if (!object) return;
-
     const box = new Box3().setFromObject(object);
     const center = new Vector3();
     box.getCenter(center);
@@ -59,7 +94,7 @@ function RoomModel({ controls }) {
     object.localToWorld(frontDirection);
     frontDirection.sub(object.getWorldPosition(new Vector3())).normalize();
 
-    const distance = 2;
+    const distance = zoomDistance;
     const newPosition = center.clone().add(frontDirection.multiplyScalar(distance));
 
     // Move camera
@@ -118,6 +153,7 @@ function RoomModel({ controls }) {
           document.body.style.cursor = "default";
         }}
       />
+      {/* Render TV separately with click */}
       <primitive
         object={nodes["TV"]}
         onPointerDown={(e) => {
@@ -134,44 +170,93 @@ function RoomModel({ controls }) {
         }}
       />
 
+      {monitorConfigs.map(({ name, offset }) => {
+        const originalGroup = nodes[name];
+        const groupClone = originalGroup.clone(true);
+
+        // Clone all materials
+        groupClone.traverse((child) => {
+          if (child.isMesh) {
+            child.material = Array.isArray(child.material)
+              ? child.material.map((m) => m.clone())
+              : child.material.clone();
+          }
+        });
+
+        // Replace "Screen 1" material's map
+        groupClone.traverse((child) => {
+          if (child.isMesh) {
+            const mats = Array.isArray(child.material)
+              ? child.material
+              : [child.material];
+            mats.forEach((mat) => {
+              if (mat.name.includes("Screen")) {
+                mat.map = videoTexture;
+                mat.emissiveMap = videoTexture;
+                mat.needsUpdate = true;
+                mat.map.repeat.set(1 / 3, 1);
+                mat.map.offset.set(offset, 0);
+                if (mat.map) mat.map.needsUpdate = true;
+                if (mat.emissiveMap) mat.emissiveMap.needsUpdate = true;
+              }
+            });
+          }
+        });
+
+        return (
+          <group
+            onPointerDown={(e) => {
+              e.stopPropagation();
+              if (!focused) {
+                zoomToObject(e.object);
+              }
+            }}
+            onPointerOver={() => {
+              document.body.style.cursor = "pointer";
+            }}
+            onPointerOut={() => {
+              document.body.style.cursor = "default";
+            }}>
+            <primitive
+              key={name}
+              object={groupClone} />
+          </group>
+        );
+      })}
     </>
   );
 }
 
-function CameraController({ controls }) {
-  const { camera } = useThree();
-
-  useEffect(() => {
-    camera.position.set(2, 1, 2);
-    controls.current.update();
-  }, [camera]);
-
-  return (
-    <OrbitControls
-      ref={controls}
-      target={[0, 1, 0]}
-      maxDistance={5}
-      minDistance={1}
-      minPolarAngle={Math.PI / 4}
-      maxPolarAngle={Math.PI / 2}
-      minAzimuthAngle={0}
-      maxAzimuthAngle={Math.PI / 2}
-      enablePan={false}
-      enableZoom={true}
-      zoomSpeed={0.5}
-    />
-  );
-}
 
 export default function ModelCanvas() {
+  const [width, setWidth] = useState(window.innerWidth);
   const controls = useRef();
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+  // Compute distances based on screen width
+  const { minDistance, maxDistance, fov, zoomDistance } = React.useMemo(() => {
+    if (width < 576) {
+      return { minDistance: 1, maxDistance: 6, fov: 50, zoomDistance: 2 };
+    } else if (width < 992) {
+      return { minDistance: 1, maxDistance: 5, fov: 40, zoomDistance: 1.5 };
+    } else {
+      return { minDistance: 1, maxDistance: 4, fov: 40, zoomDistance: 1 };
+    }
+  }, [width]);
+
   return (
-    <Canvas camera={{ fov: 40 }}>
+    <Canvas camera={{ fov: fov, position: [2, 1, 2], }}>
       <ambientLight intensity={0.6} />
       <directionalLight position={[3, 3, 3]} intensity={0.8} />
 
       <Suspense fallback={null}>
-        <RoomModel controls={controls} />
+        <RoomModel controls={controls} zoomDistance={zoomDistance} />
       </Suspense>
 
       <EffectComposer>
@@ -182,7 +267,19 @@ export default function ModelCanvas() {
           height={300}
         />
       </EffectComposer>
-      <CameraController controls={controls} />
+      <OrbitControls
+        ref={controls}
+        target={[0, 1, 0]}
+        maxDistance={maxDistance}
+        minDistance={minDistance}
+        minPolarAngle={Math.PI / 4}
+        maxPolarAngle={Math.PI / 2}
+        minAzimuthAngle={0}
+        maxAzimuthAngle={Math.PI / 2}
+        enablePan={false}
+        enableZoom={true}
+        zoomSpeed={0.5}
+      />
     </Canvas>
   );
 }
