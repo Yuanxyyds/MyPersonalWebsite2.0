@@ -37,6 +37,12 @@ function RoomModel({ controls }) {
     });
   });
 
+  useEffect(() => {
+    if (chairRef.current) {
+      chairRef.current.visible = !focused;
+    }
+  }, [focused]);
+
   const zoomToObject = (object) => {
     if (!object) return;
 
@@ -53,7 +59,7 @@ function RoomModel({ controls }) {
     object.localToWorld(frontDirection);
     frontDirection.sub(object.getWorldPosition(new Vector3())).normalize();
 
-    const distance = 1.5;
+    const distance = 2;
     const newPosition = center.clone().add(frontDirection.multiplyScalar(distance));
 
     // Move camera
@@ -150,7 +156,7 @@ function CameraController({ controls }) {
       maxPolarAngle={Math.PI / 2}
       minAzimuthAngle={0}
       maxAzimuthAngle={Math.PI / 2}
-      enablePan={true}
+      enablePan={false}
       enableZoom={true}
       zoomSpeed={0.5}
     />
