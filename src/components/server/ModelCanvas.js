@@ -1,14 +1,14 @@
 import React, { Suspense, useEffect, useRef, useState, useMemo } from "react";
-import { Box3, Vector3, VideoTexture, LinearFilter, TextureLoader, RGBAFormat, ClampToEdgeWrapping, MeshBasicMaterial, FrontSide } from "three";
+import { Box3, Vector3, VideoTexture, LinearFilter, TextureLoader, RGBAFormat, ClampToEdgeWrapping } from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import server from "../../assets/server/server.glb";
 import monitor from "../../assets/server/monitor.mp4";
 import tv from "../../assets/server/tv.mp4";
-import node1 from "../../assets/server/node1.png";
-import node2 from "../../assets/server/node2.png";
-import hosting from "../../assets/server/hosting.png";
+import node1 from "../../assets/server/node1.jpg";
+import node2 from "../../assets/server/node2.jpg";
+import hosting from "../../assets/server/hosting.jpg";
 
 function RoomModel({ controls, zoomDistance }) {
   const { nodes, scene } = useGLTF(server);
