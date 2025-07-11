@@ -6,9 +6,7 @@ import "./style/style.css";
 import "./style/Navbar.css";
 import "./style/Footer.css";
 import "./style/App.css";
-import "./style/Home.css"
 import "./style/Pre.css"
-import "./style/About.css"
 import "./style/FileDropUpload.css"
 import "./style/FoodImageClassify.css"
 import "./style/Server.css"

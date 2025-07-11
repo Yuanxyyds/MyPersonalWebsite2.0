@@ -1,92 +1,189 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../assets/home-animation.gif";
-import Particle from "../../components/common/Particle";
-import Tilt from "react-parallax-tilt";
-import myImg from "../../assets/avatar.gif";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
+import ProgressCard from "../../components/home/ProgressCard";
+import CodeCard from "../../components/home/CodeCard";
+import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
+import "./../../style/Home.css"
 
+function useIsMobile(breakpoint = 768) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= breakpoint);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [breakpoint]);
+
+    return isMobile;
+}
 
 
 function Home() {
+    const isMobile = useIsMobile();
+
+    useEffect(() => {
+        const elements = [
+            { headerId: 'whoami', lineId: 'whoami-line' },
+            { headerId: 'fullstack', lineId: 'fullstack-line' },
+            { headerId: 'github', lineId: 'github-line' },
+            // Add more pairs as needed
+        ];
+
+        function handleScroll() {
+            const viewportHeight = window.innerHeight;
+
+            elements.forEach(({ headerId, lineId }) => {
+                const header = document.getElementById(headerId);
+                const line = document.getElementById(lineId);
+
+                if (!header || !line) return;
+
+                const rect = header.getBoundingClientRect();
+                const distanceFromBottom = viewportHeight - rect.top;
+                const scrollRatio = distanceFromBottom / viewportHeight;
+
+                let widthPercent = 0;
+                if (scrollRatio < 0.2) {
+                    widthPercent = 0;
+                } else if (scrollRatio >= 0.5) {
+                    widthPercent = 100;
+                } else {
+                    widthPercent = ((scrollRatio - 0.2) / (0.5 - 0.2)) * 100;
+                }
+
+                widthPercent = Math.min(Math.max(widthPercent, 0), 100);
+                line.style.width = `${widthPercent}%`;
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
+
     return (
         <section>
-            <Container className="home-content">
-                <Particle />
-                <Container fluid id="home">
-                    <Row fluid id="home">
-                        <Col xl={7}>
-                            <h1 className="home-primary-header fade-in">
-                                Welcome to my Website!{"  "}
-                                <span className="wave" role="img" aria-labelledby="wave"> 👋🏻 </span>
-                            </h1>
+            <Container fluid id="home" className="home-content">
+                <Container fluid className="home-landing-page">
+                    <video className="home-bg-desktop" src="/home/bg.mp4" autoPlay muted loop />
+                    <Container fluid className="one-column-content-padding">
+                        <Row>
+                            <Col xs={8} md={6} lg={5}>
+                                <h1 className="thin fade-in mb-0 with-line delay-in delay-0">
+                                    MAKE IT
+                                </h1>
+                                <h1 className="fade-in">
+                                    <Typewriter
+                                        options={{
+                                            strings: [
+                                                "INNOVATIVE",
+                                                "IMPACTFUL",
+                                            ],
+                                            cursor: '|',
+                                            autoStart: true,
+                                            loop: true,
+                                            deleteSpeed: 80,
+                                        }}
+                                    />
+                                </h1>
 
-                            <h1 className="heading-name fade-in">
-                                I'M
-                                <strong className="primary-color"> Hongyuan (Steven) Liu</strong>
-                            </h1>
-
-                            <div className="typewriter-wrapper-home fade-in">
-                                <Typewriter
-                                    options={{
-                                        strings: [
-                                            "> Student at University of Toronto => University of Pennsylvania",
-                                            "> Machine Learning Developer",
-                                            "> Full-stack Mobile/Web Developer",
-                                        ],
-                                        cursor: '_',
-                                        autoStart: true,
-                                        loop: true,
-                                        deleteSpeed: 80,
-                                    }}
-                                />
-                            </div>
-                        </Col>
-
-                        <Col xl={5}>
-                            <Tilt>
-                                <img src={homeLogo} className="img-fluid fade-in" style={{ maxHeight: "450px" }}
-                                    alt="avatar" />
-                            </Tilt>
-                        </Col>
-                    </Row>
+                                <p className="fade-in ms-1 delay-in delay-2 bold">
+                                    I'm Steven, a Master's student at the University of Pennsylvania, specializing in Machine Learning, Software Engineering and UI/UX Design.
+                                </p>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Container>
-                <Container className={"section-divider"} fluid id="about">
+
+
+                <Container fluid className="two-column-content-padding" id="about">
                     <Row>
                         <Col xl={8}>
-                            <h1 className="fade-in section-header">
-                                LET ME <span className="primary-color"> INTRODUCE </span> MYSELF
-                            </h1>
-                            <p className="paragraph fade-in">
-                                I recently graduated from University of Toronto (June 2025), where I completed my double specialist
-                                in Computer Science & Data Science with a GPA 3.90/4.0. Starting Fall 2025, I will pursue a Master 
+                            <div className="text-with-animated-underline">
+                                <h2 id="whoami" className="fade-in mb-0">WHO AM I</h2>
+                                <div id="whoami-line" className="animated-underline"></div>
+                            </div>
+
+                            <p className="fade-in mt-5">
+                                I'm Hongyuan (Steven) Liu. I recently graduated from University of Toronto (June 2025), where I completed
+                                my Bachelor of Science in Computer Science with a GPA 3.90/4.0. Starting Fall 2025, I will pursue a Master
                                 of Engineering in AI at the University of Pennsylvania. I previously worked as a
-                                <i>
-                                    <b className="primary-color"> Cloud and Mobile App Co-op developer at Johnson
-                                        Controls </b>
-                                </i> and served as the Founder of the Campus Eats.
+                                <i> <b className="primary-color"> Full-Stack Mobile Developer at Johnson Controls </b> </i> and served
+                                as the  <i> <b className="primary-color">  Founder of the Campus Eats. </b> </i>
                             </p>
-                            <p className="paragraph fade-in">I am expertise in
+
+                            <p className="fade-in mt-4">I am expertise in
                                 <i>
-                                    <b className="primary-color"> Machine Learning, Full Stack Mobile App Development,
-                                        Full Stack Web Development, and Data Analysis. </b>
+                                    <b className="primary-color"> Machine Learning, Full-Stack Mobile/Web Development, Software Business, and UI/UX Design. </b>
                                 </i>
                                 Besides, I am actively contributing to a diverse range of 10+ projects, software
                                 business startups, over 1000+ contribution on github.
                             </p>
-                            <p className="paragraph fade-in">
-                                I am currently seeking full-time roles.
-                            </p>
                         </Col>
                         <Col xl={4} className="my-avtar">
-                            <img src={myImg} className="fade-in img-fluid" style={{ maxHeight: "400px" }}
+                            <img src='/home/avatar.gif' className="fade-in img-fluid" style={{ maxHeight: "400px" }}
                                 alt="avatar" />
                         </Col>
                     </Row>
                 </Container>
+
+
+                <Container fluid className="two-column-content-padding" id="about">
+                    <Row className="align-items-stretch">
+                        <Col xs={12} md={10} lg={8} xl={6}>
+                            <div className="text-with-animated-underline mb-4">
+                                <h2 id="fullstack" className="fade-in mb-0">WHAT I DO</h2>
+                                <div id="fullstack-line" className="animated-underline"></div>
+                            </div>
+                            <h5 className="fade-in mb-4">I am expertise in
+                                I create engaging, interactive software powered by cutting-edge technologies.
+                            </h5>
+                            <div className="fade-in"> <ProgressCard /> </div>
+
+                        </Col>
+                        <Col xs={12} md={10} lg={8} xl={6} style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div className="my-life fade-in">
+                                <CodeCard />
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+                {/* <Container fluid className="two-column-content-padding">
+                    <Container fluid className="">
+                        <h2 className="fade-in">
+                            Programming Language <strong className="primary-color">Skill </strong>
+                        </h2>
+                        <Language className="fade-in" />
+                    </Container>
+                    <Container className="">
+                        <h2 className="fade-in">
+                            Framework and System <strong className="primary-color">Skill </strong>
+                        </h2>
+                        <Framework className="fade-in" />
+                    </Container>
+                    <Container className="">
+                        <h2 className="fade-in">
+                            Service and Tool <strong className="primary-color">Skill </strong>
+                        </h2>
+                        <Tool className="fade-in" />
+                    </Container>
+                    <Container className="">
+                        <h2 className="fade-in">
+                            Learning <strong className="primary-color">Topics </strong>
+                        </h2>
+                        <Topics className="fade-in" />
+
+                    </Container>
+                </Container> */}
+
+
                 <Container className={"section-divider"} fluid id="contact">
                     <h1 className="section-header fade-in">
                         <span className="primary-color"> CONTACT </span> {" "} ME AT
