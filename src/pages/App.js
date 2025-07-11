@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Preloader from "./primary/Pre";
 import Navbar from "../components/common/Navbar";
-import About from "./about/About";
 import Projects from "./project/Projects";
 import Resume from "./resume/Resume";
 import CampusEats from "./project_demo/CampusEats";
 import LandSink from "./project_demo/LandSink";
-import Home from "./home/Home";
 import Footer from "../components/common/Footer";
 import ScrollToTop from "../effect/ScrollToTop";
 import FoodImageClassify from "./project_demo/FoodImageClassify";
@@ -21,6 +19,7 @@ import FadeIn from "../effect/FadeIn";
 import Sever from "./server/Sever";
 import StevenAI from "./project_demo/StevenAI";
 import MentorAI from "./project_demo/MentorAI";
+import Home from "./home/Home";
 
 function App() {
     const [load, setLoad] = useState(true);
@@ -46,7 +45,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/project" element={<Projects />} />
-                    <Route path="/about" element={<About />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/campusEats*" element={<CampusEats />} />
                     <Route path="/landSink*" element={<LandSink />} />

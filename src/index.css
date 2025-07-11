@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 
 body {
     margin: 0;
-    font-family: "Raleway", serif !important;
+    font-family: "Poppins", serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: linear-gradient(to right, #000000, #000000);
@@ -12,15 +12,267 @@ body {
 html {
     --section-background-color: linear-gradient(to right, #000000, #000000);
 
-    --image-gradient: linear-gradient(
-            to bottom left,
+    --image-gradient: linear-gradient(to bottom left,
             rgba(17, 16, 16, 0.578),
-            rgba(12, 10, 22, 0.863)
-    );
+            rgba(12, 10, 22, 0.863));
 
     --primary-color: #ab31de;
 
     --secondary-color: #3b57c9;
+}
+
+/* Default: largest (xl and up) */
+h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 54pt !important;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 42pt !important;
+    letter-spacing: -1.5px;
+}
+
+h4 {
+    color: white;
+    font-weight: 600;
+    font-size: 16pt !important;
+}
+
+h5 {
+    color: white;
+    font-weight: 600;
+    font-size: 15pt !important;
+}
+
+h1.with-line {
+    display: flex;
+    align-items: center;
+}
+
+h1.with-line::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin-left: 20px;
+}
+
+h1.thin {
+    font-weight: 300;
+    letter-spacing: -1.75px;
+}
+
+.text-with-animated-underline {
+    display: inline-block;
+    text-align: left;
+}
+
+.animated-underline {
+    height: 4px;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.1s ease-out;
+}
+
+p {
+    color: gainsboro;
+    font-weight: 400;
+    font-size: 15pt !important;
+    line-height: 1.3;
+}
+
+p.md {
+    font-size: 13pt !important;
+}
+
+p.small {
+    font-size: 12pt !important;
+}
+
+p.bold {
+    font-weight: 600;
+}
+
+
+.one-column-content-padding {
+    padding-left: 8vw !important;
+    margin-top: 30vh;
+}
+
+.two-column-content-padding {
+    margin-top: 15vh;
+    padding-left: 8vw !important;
+    padding-right: 8vw !important;
+}
+
+/* lg (≤1199px) */
+@media (max-width: 1199.98px) {
+    h1 {
+        font-size: 52pt !important;
+        letter-spacing: -1.45px;
+    }
+
+    h1.with-line::after {
+        width: 75px;
+        height: 3.8px;
+    }
+
+    h2 {
+        color: white;
+        font-weight: 600;
+        font-size: 40pt !important;
+        letter-spacing: -1.5px;
+    }
+
+
+    h4 {
+        font-size: 16pt !important;
+    }
+
+
+    h5 {
+        font-size: 15pt !important;
+    }
+
+    p {
+        font-size: 14.5pt !important;
+    }
+
+    p.md {
+        font-size: 13pt !important;
+    }
+
+    p.small {
+        font-size: 12pt !important;
+    }
+}
+
+/* md (≤991px) */
+@media (max-width: 991.98px) {
+    h1 {
+        font-size: 48pt !important;
+        letter-spacing: -1.4px;
+    }
+
+    h1.with-line::after {
+        width: 70px;
+        height: 3.5px;
+    }
+
+    h2 {
+        color: white;
+        font-weight: 600;
+        font-size: 36pt !important;
+        letter-spacing: -1.5px;
+    }
+
+    h4 {
+        font-size: 15.5pt !important;
+    }
+
+    h5 {
+        font-size: 14.5pt !important;
+    }
+
+    p {
+        font-size: 13.5pt !important;
+    }
+
+    p.md {
+        font-size: 12.5pt !important;
+    }
+
+    p.small {
+        font-size: 11.5pt !important;
+    }
+}
+
+/* sm (≤767px) */
+@media (max-width: 767.98px) {
+    h1 {
+        font-size: 44pt !important;
+        letter-spacing: -1.3px;
+    }
+
+    h1.with-line::after {
+        width: 65px;
+        height: 3.2px;
+    }
+
+
+    h2 {
+        color: white;
+        font-weight: 600;
+        font-size: 32pt !important;
+        letter-spacing: -1.5px;
+    }
+
+    h4 {
+        font-size: 16pt !important;
+    }
+
+    h5 {
+        font-size: 14pt !important;
+    }
+
+    p {
+        font-size: 12.5pt !important;
+    }
+
+    p.md {
+        font-size: 12pt !important;
+    }
+
+    p.small {
+        font-size: 11.5pt !important;
+    }
+}
+
+/* xs (≤575px) */
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 40pt !important;
+        letter-spacing: -1.2px;
+    }
+
+    h1.with-line::after {
+        width: 60px;
+        height: 3px;
+    }
+
+
+    h2 {
+        color: white;
+        font-weight: 600;
+        font-size: 28pt !important;
+        letter-spacing: -1.5px;
+    }
+
+    h4 {
+        font-size: 14.5pt !important;
+    }
+
+    h5 {
+        font-size: 13.5pt !important;
+    }
+
+
+    p {
+        font-size: 12pt !important;
+    }
+
+    p.md {
+        font-size: 11.5pt !important;
+    }
+
+
+    p.small {
+        font-size: 11pt !important;
+    }
 }
 
 
@@ -36,66 +288,84 @@ html {
     0% {
         background: linear-gradient(45deg, #4a00e0, #8e2de2, #6a00ff, #2f00ff, #0077ff, #00aaff, #7300ff);
     }
+
     5% {
         background: linear-gradient(45deg, #4b00d8, #8b2dd1, #6500e8, #2c00e8, #006fe8, #00a2e8, #7200e8);
     }
+
     10% {
         background: linear-gradient(45deg, #4c00d0, #882dc0, #6400e0, #2b00e0, #0068e0, #009be0, #7100e0);
     }
+
     15% {
         background: linear-gradient(45deg, #4d00c8, #852daf, #6300d8, #2900d8, #0060d8, #0093d8, #7000d8);
     }
+
     20% {
         background: linear-gradient(45deg, #4e00c0, #822d9e, #6200d0, #2800d0, #0058d0, #008bd0, #6f00d0);
     }
+
     25% {
         background: linear-gradient(45deg, #4f00b8, #7f2d8d, #6100c8, #2700c8, #0050c8, #0083c8, #6e00c8);
     }
+
     30% {
         background: linear-gradient(45deg, #5000b0, #7c2d7c, #6000c0, #2600c0, #0048c0, #007bc0, #6d00c0);
     }
+
     35% {
         background: linear-gradient(45deg, #5100a8, #792d6b, #5f00b8, #2500b8, #0040b8, #0073b8, #6c00b8);
     }
+
     40% {
         background: linear-gradient(45deg, #5200a0, #762d5a, #5e00b0, #2400b0, #0038b0, #006bb0, #6b00b0);
     }
+
     45% {
         background: linear-gradient(45deg, #530098, #732d49, #5d00a8, #2300a8, #0030a8, #0063a8, #6a00a8);
     }
+
     50% {
         background: linear-gradient(45deg, #540090, #702d38, #5c00a0, #2200a0, #0028a0, #005ba0, #6900a0);
     }
+
     55% {
         background: linear-gradient(45deg, #530098, #732d49, #5d00a8, #2300a8, #0030a8, #0063a8, #6a00a8);
     }
+
     60% {
         background: linear-gradient(45deg, #5200a0, #762d5a, #5e00b0, #2400b0, #0038b0, #006bb0, #6b00b0);
     }
+
     65% {
         background: linear-gradient(45deg, #5100a8, #792d6b, #5f00b8, #2500b8, #0040b8, #0073b8, #6c00b8);
     }
+
     70% {
         background: linear-gradient(45deg, #5000b0, #7c2d7c, #6000c0, #2600c0, #0048c0, #007bc0, #6d00c0);
     }
+
     75% {
         background: linear-gradient(45deg, #4f00b8, #7f2d8d, #6100c8, #2700c8, #0050c8, #0083c8, #6e00c8);
     }
+
     80% {
         background: linear-gradient(45deg, #4e00c0, #822d9e, #6200d0, #2800d0, #0058d0, #008bd0, #6f00d0);
     }
+
     85% {
         background: linear-gradient(45deg, #4d00c8, #852daf, #6300d8, #2900d8, #0060d8, #0093d8, #7000d8);
     }
+
     90% {
         background: linear-gradient(45deg, #4c00d0, #882dc0, #6400e0, #2b00e0, #0068e0, #009be0, #7100e0);
     }
+
     95% {
         background: linear-gradient(45deg, #4b00d8, #8b2dd1, #6500e8, #2c00e8, #006fe8, #00a2e8, #7200e8);
     }
+
     100% {
         background: linear-gradient(45deg, #4a00e0, #8e2de2, #6a00ff, #2f00ff, #0077ff, #00aaff, #7300ff);
     }
 }
-
-

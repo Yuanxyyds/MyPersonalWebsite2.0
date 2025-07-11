@@ -1,61 +1,57 @@
-.wave {
-    animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.1s; /* Change to speed up or slow down */
-    animation-iteration-count: infinite; /* Never stop waving :) */
-    transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
-    display: inline-block;
+.delay-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-@keyframes wave-animation {
-    0% {
-        transform: rotate(0deg);
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    10% {
-        transform: rotate(14deg);
-    }
-    20% {
-        transform: rotate(-8deg);
-    }
-    30% {
-        transform: rotate(14deg);
-    }
-    40% {
-        transform: rotate(-4deg);
-    }
-    50% {
-        transform: rotate(10deg);
-    }
-    60% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+}
+
+.delay-0 {
+    animation-delay: 0s;
+}
+
+.delay-1 {
+    animation-delay: 0.25s;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
 }
 
 .home-content {
-    padding: 20vh 4vw !important;
     color: whitesmoke;
     text-align: left;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-
-.home-primary-header {
+.home-landing-page {
     position: relative;
-    padding-top: 80px !important;
-    color: white;
-    font-weight: 900;
-    font-size: 50pt;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
 }
 
-.heading-name {
-    font-size: 2.5em !important;
-    margin-left: 8pt;
+.home-bg-desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
+
+
 
 .typewriter-wrapper-home {
-    font-family: "Courier Prime", serif;
-    font-size: 2.3em !important;
     color: var(--primary-color) !important;
     font-weight: 600 !important;
     padding-top: 16pt;
@@ -72,55 +68,48 @@
     justify-content: center !important;
 }
 
-@media (max-width: 1200px) {
-    .home-primary-header {
-        padding-right: 8vw;
-        font-size: 40pt;
-    }
+.my-life {
+    border-radius: 20px;
+    background-color: #380b4a;
+    margin-top: auto;
+    padding: 12px;
+    width: 90%;
+    height: 85%;
+}
 
-    .heading-name {
-        font-size: 2em !important;
-        padding-right: 8vw;
-        margin-left: 4pt;
-    }
+.tech-icons {
+    font-weight: 1000 !important;
+    padding: 10px !important;
+    margin: 10% 0 !important;
+    height: 80% !important;
+    width: 100% !important;
+    border: 2px solid #420a81 !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 20px rgba(89, 4, 168, 0.3) !important;
+    transition: all 0.4s ease 0s !important;
+}
 
-    .typewriter-wrapper-home {
-        font-size: 2em !important;
-        font-weight: 500 !important;
-        padding-right: 8vw;
-        padding-top: 8pt;
-        margin-left: 4pt;
-    }
+.tech-icons:hover {
+    font-size: medium !important;
+    transition: all 0.4s ease 0s !important;
+    transform: scale(1.1) !important;
+    overflow: hidden !important;
+    border: 2px solid var(--primary-color) !important;
+}
 
-    .my-avtar {
-        padding-top: 2em !important;
-        padding-bottom: 2em !important;
+/* lg (≤1199px) */
+@media (max-width: 1199.98px) {
+    .my-life {
+        margin-top: 32px;
+        height: 85%;
     }
 }
 
 
-@media (max-width: 576px) {
-    .home-content {
-        padding: 15vh 4vw !important;
-    }
-
-    .home-primary-header {
-        padding-right: 8vw;
-        font-size: 30pt;
-    }
-
-    .heading-name {
-        font-size: 1.5em !important;
-        padding-right: 8vw;
-        margin-left: 4pt;
-    }
-
-    .typewriter-wrapper-home {
-        font-size: 1.5em !important;
-        font-weight: 500 !important;
-        padding-right: 8vw;
-        padding-top: 8pt;
-        margin-left: 4pt;
+/* xs */
+@media (max-width: 575.98px) {
+    .my-life {
+        width: 100%;
     }
 }
 
