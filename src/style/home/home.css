@@ -1,0 +1,131 @@
+.home-content {
+    color: whitesmoke;
+    text-align: left;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.home-landing-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.home-bg-desktop {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.my-avtar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-life {
+    border-radius: 20px;
+    background-color: #380b4a;
+    margin-top: auto;
+    padding: 12px;
+    width: 90%;
+    height: 85%;
+}
+
+.tech-icons {
+    font-weight: 1000 !important;
+    padding: 10px !important;
+    margin: 10% 0 !important;
+    height: 80% !important;
+    width: 100% !important;
+    border: 2px solid #420a81 !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 20px rgba(89, 4, 168, 0.3) !important;
+    transition: all 0.4s ease 0s !important;
+}
+
+.tech-icons:hover {
+    font-size: medium !important;
+    transition: all 0.4s ease 0s !important;
+    transform: scale(1.1) !important;
+    overflow: hidden !important;
+    border: 2px solid var(--primary-color) !important;
+}
+
+/* lg (≤1199px) */
+@media (max-width: 1199.98px) {
+    .my-life {
+        margin-top: 32px;
+        height: 85%;
+    }
+}
+
+
+/* xs */
+@media (max-width: 575.98px) {
+    .my-life {
+        width: 100%;
+    }
+}
+
+
+.home-contact-info {
+    padding-top: 20px;
+    font-size: 1.2em !important;
+    text-align: center !important;
+}
+
+.social_icon_list {
+    justify-content: center !important;
+    text-align: center !important;
+    padding-top: 25px;
+    color: white !important;
+    display: flex;
+}
+
+.social-icons {
+    padding-right: 30px;
+}
+
+.home-social-icons {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    line-height: 2em;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.home-social-icons:hover {
+    color: var(--primary-color);
+}
+
+.home-social-icons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: scale(0.9);
+    z-index: -1;
+}
+
+.home-social-icons:hover::before {
+    transform: scale(1.15);
+    animation: neonBluePurpleGradient 3s infinite;
+}

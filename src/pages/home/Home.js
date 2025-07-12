@@ -7,7 +7,7 @@ import Typewriter from "typewriter-effect";
 import ProgressCard from "../../components/home/ProgressCard";
 import CodeCard from "../../components/home/CodeCard";
 import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
-import "./../../style/Home.css"
+import "./../../style/home/home.css"
 
 
 function Home() {
@@ -78,9 +78,9 @@ function Home() {
                                     />
                                 </h1>
 
-                                <p className="fade-in ms-1 delay-in delay-2 bold">
+                                <h5 className="fade-in ms-1 delay-in delay-2 bold">
                                     I'm Steven, a Master's student at the University of Pennsylvania, specializing in Machine Learning, Software Engineering and UI/UX Design.
-                                </p>
+                                </h5>
                             </Col>
                         </Row>
                     </Container>

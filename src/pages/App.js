@@ -1,24 +1,20 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Preloader from "./primary/Pre";
 import Navbar from "../components/common/Navbar";
-import Projects from "./project/Projects";
+import Project from "./project/Project";
 import Resume from "./resume/Resume";
-import CampusEats from "./project_demo/CampusEats";
-import LandSink from "./project_demo/LandSink";
+import FoodImageClassify from "./project/FoodImageClassify";
+import CampusEats from "./project/CampusEats";
+import LandSink from "./project/LandSink";
+import StevenAI from "./project/StevenAI";
+import MentorAI from "./project/MentorAI";
 import Footer from "../components/common/Footer";
 import ScrollToTop from "../effect/ScrollToTop";
-import FoodImageClassify from "./project_demo/FoodImageClassify";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-    Route,
-    Routes,
-    Navigate
-} from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import FadeIn from "../effect/FadeIn";
 import Sever from "./server/Sever";
-import StevenAI from "./project_demo/StevenAI";
-import MentorAI from "./project_demo/MentorAI";
 import Home from "./home/Home";
 
 function App() {
@@ -44,7 +40,7 @@ function App() {
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/project" element={<Projects />} />
+                    <Route path="/project" element={<Project />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/campusEats*" element={<CampusEats />} />
                     <Route path="/landSink*" element={<LandSink />} />
