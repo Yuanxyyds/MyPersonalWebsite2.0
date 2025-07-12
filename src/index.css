@@ -37,6 +37,14 @@ h2 {
     letter-spacing: -1.5px;
 }
 
+h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 32pt !important;
+    letter-spacing: -1.2px;
+}
+
+
 h4 {
     color: white;
     font-weight: 600;
@@ -82,7 +90,7 @@ h1.thin {
 p {
     color: gainsboro;
     font-weight: 400;
-    font-size: 15pt !important;
+    font-size: 14pt !important;
     line-height: 1.3;
 }
 
@@ -94,7 +102,7 @@ p.small {
     font-size: 12pt !important;
 }
 
-p.bold {
+.bold {
     font-weight: 600;
 }
 
@@ -108,6 +116,11 @@ p.bold {
     padding-top: 15vh;
     padding-left: 8vw !important;
     padding-right: 8vw !important;
+}
+
+.section-margin {
+    margin-top: 12vh;
+    margin-bottom: 16px;
 }
 
 .delay-in {
@@ -156,6 +169,10 @@ p.bold {
         letter-spacing: -1.5px;
     }
 
+    h3 {
+        font-size: 30pt !important;
+    }
+
 
     h4 {
         font-size: 16pt !important;
@@ -167,7 +184,7 @@ p.bold {
     }
 
     p {
-        font-size: 14.5pt !important;
+        font-size: 14pt !important;
     }
 
     p.md {
@@ -194,6 +211,10 @@ p.bold {
     h2 {
         font-size: 36pt !important;
         letter-spacing: -1.5px;
+    }
+
+    h3 {
+        font-size: 26pt !important;
     }
 
     h4 {
@@ -235,6 +256,10 @@ p.bold {
         letter-spacing: -1.5px;
     }
 
+    h3 {
+        font-size: 24pt !important;
+    }
+
     h4 {
         font-size: 16pt !important;
     }
@@ -272,6 +297,10 @@ p.bold {
     h2 {
         font-size: 28pt !important;
         letter-spacing: -1.5px;
+    }
+
+    h3 {
+        font-size: 20pt !important;
     }
 
     h4 {
@@ -319,6 +348,10 @@ p.bold {
         letter-spacing: -1.5px;
     }
 
+    h3 {
+        font-size: 18pt !important;
+    }
+
     h4 {
         font-size: 14pt !important;
     }
@@ -349,7 +382,7 @@ p.bold {
         letter-spacing: -1.2px;
     }
 
-     h1.with-line::after {
+    h1.with-line::after {
         margin-left: 10px;
     }
 
@@ -362,6 +395,10 @@ p.bold {
     h2 {
         font-size: 20pt !important;
         letter-spacing: -1.5px;
+    }
+
+    h3 {
+        font-size: 16pt !important;
     }
 }
 
@@ -381,6 +418,10 @@ p.bold {
     h2 {
         font-size: 24pt !important;
         letter-spacing: -1.5px;
+    }
+
+    h3 {
+        font-size: 18pt !important;
     }
 
     h4 {

@@ -1,75 +1,69 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Particle from "../../components/common/Particle";
-import React, { useState } from "react";
-import campusEats1 from "../../assets/project_demo/campusEats1.0.png";
+import { useState, useEffect } from "react";
 import UTFT from "../../assets/utft.png";
 import { BiCheck } from "react-icons/bi";
 import ReactPlayer from "react-player";
-import campusEats2 from "../../assets/project_demo/campusEats2.0.jpeg";
-import campusEatsLogo from "../../assets/project_demo/campus-eats.jpg";
-import {
-    AiFillGithub,
-    AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
+import "./../../style/project/campus-eats.css"
 
 function CampusEats() {
     const [activeTab, setActiveTab] = useState('campusEats2');
+    const location = useLocation();
+
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        if (hash) {
+            setActiveTab(hash);
+        }
+    }, [location]);
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
         window.location.hash = tab;
     };
 
-    React.useEffect(() => {
-        const hash = window.location.hash.replace('#', '');
-        if (hash) {
-            handleTabChange(hash);
-        }
-    }, []);
     if (activeTab === 'campusEats2') {
         return (
             <Container fluid className="project-demo-section">
-                <Particle />
-                <Container>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
+                <Container fluid className="two-column-content-padding">
+                    <Row>
                         <Col xs={12} md={12} lg={7}>
-                            <div className="project-heading">
-                                Campus Eats Series Demo
-                            </div>
+                            <h3>
+                                Campus Eats Series <span className="primary-color">Demo</span>
+                            </h3>
                             <ul className="project-tab-section">
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('campusEats2')}
                                         className="project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 2.0 <BiCheck />
-                                    </div>
+                                    </h5>
                                 </li>
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('campusEats1')}
-                                        className=" project-tab-content"
+                                        className="project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 1.0
-                                    </div>
+                                    </h5>
                                 </li>
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('utft')}
                                         className="project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         UofT FoodTruck Group Asoul
-                                    </div>
+                                    </h5>
                                 </li>
                             </ul>
 
-                            <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
+                            <h4 style={{ textAlign: "justify", paddingTop: 20 }}>
                                 <strong> Specification </strong>
-                            </h5>
+                            </h4>
 
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
                                 Currently, it has come to our attention that there are a variety of food service options on our campus,
@@ -88,28 +82,16 @@ function CampusEats() {
                                 to students. Our mission is to provide a better dining solution for all campus members.
                             </p>
 
-                            <h5 style={{ textAlign: "justify", paddingTop: 20 }}>
+                            <h4 style={{ textAlign: "justify", paddingTop: 20 }}>
                                 <strong> Updates from Version 1.0 </strong>
-                            </h5>
+                            </h4>
 
 
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
-                                Unfortunately, the repository for this Version 2.0 is set to private. However, feel
-                                free also to checkout the repository for the
-                                <a onClick={() => handleTabChange('campusEats1')}
-                                    style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="primary-color"> Version 1.0
-                                </a> and the
-                                <a onClick={() => handleTabChange('utft')}
-                                    style={{ cursor: "pointer", textDecoration: "none" }}
-                                    className="primary-color"> UofT Food Truck Project
-                                </a>
-                                <br />
-                                <br />
                                 In the second version, we have implemented a more modern UI design and incorporated
                                 additional stateful widgets to enhance user interaction. The database and back-end
                                 implementation have been redesigned to enable faster data querying. We now have all
-                                the User-end, Restaurant-end, Driver-end, and a  
+                                the User-end, Restaurant-end, Driver-end, and a
                                 <a href="https://campuseats.ca"
                                     style={{ cursor: "pointer", textDecoration: "none" }}
                                     className="primary-color"> general-purpose website
@@ -120,17 +102,17 @@ function CampusEats() {
                         </Col>
                         <Col xs={12} md={12} lg={5}>
                             <Row>
-                                <Col xs={12} md={6} lg={12} style={{ justifyContent: "center", paddingTop: 40 }}>
+                                <Col xs={12} md={6} lg={12} style={{ justifyContent: 'center', paddingTop: 40 }}>
                                     <img
-                                        src={campusEatsLogo}
+                                        src="/project-demo/campus-eats.jpg"
                                         alt="Campus Eats"
                                         className="img-fluid"
                                         style={{ maxWidth: "300px" }}
                                     />
                                 </Col>
-                                <Col xs={12} md={6} lg={12} style={{ display: "flex", justifyContent: "center", paddingTop: 40 }}>
+                                <Col xs={12} md={6} lg={12} style={{ display: "flex", justifyContent: 'center', paddingTop: 40 }}>
                                     <img
-                                        src={campusEats2}
+                                        src="/project-demo/campus-eats2.jpeg"
                                         alt="Campus Eats"
                                         className="img-fluid"
                                         style={{ maxWidth: "300px" }}
@@ -139,10 +121,10 @@ function CampusEats() {
                             </Row>
                         </Col>
                     </Row>
-                    <div className="project-heading">
-                        Hult Prize Pitch <strong className="primary-color">2024 </strong>
-                    </div>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
+                    <h3 className="section-margin">
+                        Hult Prize Pitch <span className="primary-color">2024 </span>
+                    </h3>
+                    <Row style={{ padding: "10px" }}>
                         <Col>
                             <ReactPlayer
                                 style={{ marginTop: 20, }}
@@ -152,14 +134,14 @@ function CampusEats() {
                         </Col>
                     </Row>
 
-                    <div className="project-heading">
-                        Mobile App Video <strong className="primary-color">Demo </strong>
-                    </div>
+                    <h3 className="section-margin">
+                        Mobile App Video <span className="primary-color">Demo </span>
+                    </h3>
 
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
+                    <Row style={{ padding: "10px" }}>
                         <Col xs={12} md={6} lg={6}>
                             <ReactPlayer
-                                style={{ marginTop: 20, }}
+                                style={{ marginTop: 20 }}
                                 width="100%"
                                 controls={true}
                                 url='https://youtu.be/H6pUOCezsl0' />
@@ -207,84 +189,45 @@ function CampusEats() {
                                 url='https://youtu.be/oQ6Wbr5k9yM' />
                         </Col>
                     </Row>
-
-                    <div className="project-heading">
-                        Follow <strong className="primary-color">Campus Eats </strong> on Social Media
-                    </div>
-                    <ul className="social_icon_list">
-                        <div className="social-icons">
-                            <a
-                                href="https://github.com/CampusEatsUofT"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="home-social-icons"
-                            >
-                                <AiFillGithub />
-                            </a>
-                        </div>
-                        <div className="social-icons">
-                            <a
-                                href="https://www.linkedin.com/company/100274536/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="home-social-icons"
-                            >
-                                <FaLinkedinIn />
-                            </a>
-                        </div>
-                        <div className="social-icons">
-                            <a
-                                href="https://www.instagram.com/campus_eats_uoft/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="home-social-icons"
-                            >
-                                <AiFillInstagram />
-                            </a>
-                        </div>
-                    </ul>
-
-
                 </Container>
             </Container>
         );
     } else if (activeTab === 'campusEats1') {
         return (
             <Container fluid className="project-demo-section">
-                <Particle />
-                <Container>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
+                <Container fluid className="two-column-content-padding">
+                    <Row>
                         <Col>
-                            <div className="project-heading">
-                                Campus Eats Series Demo
-                            </div>
+                            <h3 className="project-heading">
+                                Campus Eats Series <span className="primary-color">Demo</span>
+                            </h3>
                             <ul className="project-tab-section">
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('campusEats2')}
                                         className=" project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 2.0
-                                    </div>
+                                    </h5>
                                 </li>
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('campusEats1')}
                                         className="  project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 1.0 <BiCheck />
-                                    </div>
+                                    </h5>
                                 </li>
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('utft')}
                                         className=" project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         UofT FoodTruck Group Asoul
-                                    </div>
+                                    </h5>
                                 </li>
                             </ul>
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
@@ -328,7 +271,7 @@ function CampusEats() {
                         </Col>
                         <Col md={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                             <img
-                                src={campusEats1}
+                                src="/project-demo/campus-eats1.png"
                                 alt="Campus Eats Version 1.0"
                                 className="img-fluid"
                                 style={{ maxHeight: "700px" }}
@@ -336,10 +279,10 @@ function CampusEats() {
                         </Col>
 
                     </Row>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
-                        <div className="project-heading">
-                            Video <strong className="primary-color">Demo </strong>
-                        </div>
+                    <h3 className="section-margin">
+                        Video <span className="primary-color">Demo </span>
+                    </h3>
+                    <Row style={{ justifyContent: 'center' }}>
                         <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=0pP6WPmZV9M' />
                     </Row>
 
@@ -350,42 +293,43 @@ function CampusEats() {
     } else if (activeTab === 'utft') {
         return (
             <Container fluid className="project-demo-section">
-                <Particle />
-                <Container>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
+                <Container fluid className="two-column-content-padding">
+                    <Row>
                         <Col>
-                            <div className="project-heading">
-                                Campus Eats Series Demo
-                            </div>
+                            <h3 className="project-heading">
+                                Campus Eats Series <span className="primary-color">Demo</span>
+                            </h3>
                             <ul className="project-tab-section">
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('campusEats2')}
                                         className=" project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 2.0
-                                    </div>
+                                    </h5>
                                 </li>
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('campusEats1')}
                                         className="  project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         Campus Eats 1.0
-                                    </div>
+                                    </h5>
                                 </li>
                                 <li className="project-tab">
-                                    <div
+                                    <h5
                                         onClick={() => handleTabChange('utft')}
                                         className=" project-tab-content"
                                         style={{ cursor: "pointer" }}
                                     >
                                         UofT FoodTruck Group Asoul <BiCheck />
-                                    </div>
+                                    </h5>
                                 </li>
                             </ul>
+
+
                             <p style={{ textAlign: "justify", paddingTop: 20 }}>
                                 This project was developed by Group Asoul as the final project for CSC207. The project
                                 is hosted on GitHub, and you can access the source code through
@@ -420,16 +364,16 @@ function CampusEats() {
                         </Col>
 
                     </Row>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
-                        <div className="project-heading">
-                            Command Line Interface <strong className="primary-color">Demo </strong>
-                        </div>
+                    <h3 className="section-margin">
+                        Command Line Interface <strong className="primary-color">Demo </strong>
+                    </h3>
+                    <Row style={{ justifyContent: 'center' }}>
                         <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=J3kfU4Ic8Uc' />
                     </Row>
-                    <Row style={{ justifyContent: "center", padding: "10px" }}>
-                        <div className="project-heading">
-                            Android App <strong className="primary-color">Demo </strong>
-                        </div>
+                    <h3 className="section-margin">
+                        Android App <strong className="primary-color">Demo </strong>
+                    </h3>
+                    <Row style={{ justifyContent: 'center' }}>
                         <ReactPlayer style={{ marginTop: 20 }} url='https://www.youtube.com/watch?v=RT-l98ZasE4' />
                     </Row>
 

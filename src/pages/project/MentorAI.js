@@ -1,7 +1,6 @@
-import {Col, Container, Row} from "react-bootstrap";
-import Particle from "../../components/common/Particle";
-import React, {useState} from "react";
-import MentorAIQA from "../../assets/project_demo/mentorai_qa.png";
+import { Col, Container, Row } from "react-bootstrap";
+import { useState } from "react";
+import "./../../style/project/steven-ai.css"
 
 function MentorAI() {
     // States for managing WebSocket connection and chat messages
@@ -31,7 +30,7 @@ function MentorAI() {
             socket.onmessage = (e) => {
                 const data = JSON.parse(e.data);
                 if (data.code === "MR") {  // Model Response
-                    setMessages((prevMessages) => [...prevMessages, {sender: "AI", text: data.message}]);
+                    setMessages((prevMessages) => [...prevMessages, { sender: "AI", text: data.message }]);
                 } else if (data.code === "CA") {// Connection accepted
                     setConnectionStatus(data.message);
                 } else if (data.code === "ML") {  // Model loaded
@@ -58,32 +57,31 @@ function MentorAI() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (chatSocket && chatSocket.readyState === WebSocket.OPEN) {
-            chatSocket.send(JSON.stringify({message: messageInput}));
-            setMessages((prevMessages) => [...prevMessages, {sender: "You", text: messageInput}]);
+            chatSocket.send(JSON.stringify({ message: messageInput }));
+            setMessages((prevMessages) => [...prevMessages, { sender: "You", text: messageInput }]);
             setMessageInput("");  // Clear input
         }
     };
 
     return (
         <Container fluid className="project-demo-section">
-            <Particle/>
-            <Container>
-                <Row style={{justifyContent: "center", padding: "10px"}}>
+            <Container fluid className="two-column-content-padding">
+                <Row>
                     <Col lg={12} xl={7}>
-                        <div className="project-heading fade-in">
-                            Mentorship Chatbot - <strong className='primary-color'> Mentor AI </strong>
-                        </div>
-                        <p className="paragraph fade-in">
+                        <h3 className="fade-in">
+                            Mentorship Chatbot - <span className='primary-color'> Mentor AI </span>
+                        </h3>
+                        <p className="fade-in" style={{ textAlign: "justify", paddingTop: 20 }}>
                             MentorAI is a research project that <span className="primary-color">automates the creation
-                            of an LLM pipeline</span> using only <span className="primary-color">YouTube links</span> to
+                                of an LLM pipeline</span> using only <span className="primary-color">YouTube links</span> to
                             generate personalized mentorship advice. It leverages NLP mentorship
                             videos, transcripts, and user-specific data to guide aspiring researchers in finding
                             mentors, conducting literature reviews, and preparing for PhD applications with tailored,
                             actionable suggestions.
                         </p>
-                        <p className="paragraph fade-in">
+                        <p className="fade-in" style={{ textAlign: "justify", paddingTop: 20 }}>
                             <span className="primary-color">Note: </span> MentorAI is an <span
-                            className="primary-color">ongoing research project</span> aimed
+                                className="primary-color">ongoing research project</span> aimed
                             at automating the creation of an LLM pipeline using YouTube links to generate personalized
                             mentorship advice. We are experimenting with advanced models and techniques, such as
                             Retrieval-Augmented Generation (RAG), to enhance the automation process. On this page, we
@@ -93,37 +91,37 @@ function MentorAI() {
                             some questions!
                         </p>
                     </Col>
-                    <Col lg={12} xl={5} style={{paddingBottom: 20, textAlign: "center"}}>
+                    <Col lg={12} xl={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                         <img
-                            src={MentorAIQA}
+                            src="/project-demo/mentor-ai-qa.png"
                             alt="Mentor AI QA"
                             className="img-fluid fade-in food-classify-image"
                         />
                     </Col>
                 </Row>
             </Container>
-            <Container>
-                <div className="project-heading fade-in">
-                    READ<strong className="primary-color"> ME </strong> Before Start
-                </div>
-
-                <p className="sub-title fade-in">
+            <Container className="section-margin">
+                <h3 className="fade-in ">
+                    READ <span className="primary-color"> ME </span> Before Start
+                </h3>
+                <p className="sm fade-in sub-title" >
                     Due to limited resources, only one connection is
                     allowed at a time. The model is lazy-loaded, so please allow up to 20 seconds for it to load
                     initially. Since text streaming isn't implemented, longer messages may take up to 10 seconds to
                     generate. The chat will timeout if no new requests are received within 60 seconds.
                 </p>
             </Container>
-            <Container>
-                <div className="project-heading fade-in">
+
+            <Container className="section-margin">
+                <h3 className="fade-in">
                     Start a Chat - <strong className="primary-color">
-                    {!isConnected ? (
-                        <span onClick={requestConnection} style={{cursor: "pointer"}}> Click to Connect</span>
-                    ) : (
-                        <span onClick={requestConnection}> Connected</span>
-                    )}
-                </strong>
-                </div>
+                        {!isConnected ? (
+                            <span onClick={requestConnection} style={{ cursor: "pointer" }}> Click to Connect</span>
+                        ) : (
+                            <span onClick={requestConnection}> Connected</span>
+                        )}
+                    </strong>
+                </h3>
                 <p className="sub-title fade-in">
                     {connectionStatus}
                 </p>
@@ -132,7 +130,7 @@ function MentorAI() {
                     <div id="chatLog" className="chat-log">
                         {messages.map((msg, index) => (
                             <div key={index}
-                                 className={`chat-message ${msg.sender === 'You' ? 'chat-message-sender' : 'chat-message-receiver'}`}>
+                                className={`chat-message ${msg.sender === 'You' ? 'chat-message-sender' : 'chat-message-receiver'}`}>
                                 {msg.text}
                             </div>
                         ))}
@@ -155,7 +153,7 @@ function MentorAI() {
                     </form>
                 )}
             </Container>
-            <div className="bottom-space"/>
+            <div className="bottom-space" />
         </Container>
     );
 }

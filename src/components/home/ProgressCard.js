@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './../../style/home/ProgressCard.css';
+import './../../style/home/progress-card.css';
 
 const designTasks = ["User Research", "UI Design", "UI Rendering"];
 const devTasks = ["Frontend", "Backend/ML", "Testing"];

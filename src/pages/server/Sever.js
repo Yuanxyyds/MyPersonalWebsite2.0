@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import ModelCanvas from "../../components/server/ModelCanvas";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
+import "./../../style/server/server.css"
 
 
 function useIsVerticalLayout() {
@@ -102,9 +103,9 @@ function Server() {
                                 <h1 className="fade-in mb-2 delay-in delay-1 primary-color">
                                     3D SERVER ROOM
                                 </h1>
-                                <p className="fade-in mb-4 delay-in delay-2 bold">
+                                <h5 className="fade-in mb-4 delay-in delay-2 bold">
                                     Discover how I manage, automate, and deploy projects from my custom-built home server.
-                                </p>
+                                </h5>
                             </Col>
                         </Row>
                     </Container>

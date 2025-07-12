@@ -1,10 +1,10 @@
 import React from "react";
-import {Col, Container, Row,} from "react-bootstrap";
+import { Col, Container, Row, } from "react-bootstrap";
 import {
     AiFillGithub,
     AiFillInstagram,
 } from "react-icons/ai";
-import {FaLinkedinIn} from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
     let date = new Date();
@@ -14,10 +14,10 @@ function Footer() {
             <Container fluid className="footer">
                 <Row>
                     <Col md={4} className="footer-paragraph">
-                        <h3>Developed by Steven Liu</h3>
+                        <p>Developed by Steven Liu</p>
                     </Col>
                     <Col md={4} className="footer-paragraph">
-                        <h3>Copyright © {year} SL</h3>
+                        <p>Copyright © {year} SL</p>
                     </Col>
                     <Col md={4}>
                         <ul className="footer-icon-list">
@@ -28,7 +28,7 @@ function Footer() {
                                     rel="noopener noreferrer"
                                     className="footer-social-icons"
                                 >
-                                    <AiFillGithub/>
+                                    <AiFillGithub />
                                 </a>
                             </div>
                             <div className="footer-icons">
@@ -38,7 +38,7 @@ function Footer() {
                                     rel="noopener noreferrer"
                                     className="footer-social-icons"
                                 >
-                                    <FaLinkedinIn/>
+                                    <FaLinkedinIn />
                                 </a>
                             </div>
                             <div className="footer-icons">
@@ -48,7 +48,7 @@ function Footer() {
                                     rel="noopener noreferrer"
                                     className="footer-social-icons"
                                 >
-                                    <AiFillInstagram/>
+                                    <AiFillInstagram />
                                 </a>
                             </div>
                         </ul>

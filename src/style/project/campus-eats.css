@@ -1,0 +1,32 @@
+.project-tab-section {
+    justify-content: center;
+    padding-top: 15px;
+    display: inline-block;
+    position: relative;
+    padding-inline-start: 0;
+}
+
+.project-tab {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.project-tab-content {
+    position: relative !important;
+    display: inline-block !important;
+    text-align: center !important;
+    transition: 0.5s !important;
+    padding: 4px 10px;
+    border-radius: 10%;
+}
+
+.project-tab-content:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.tab-colour {
+    color: white !important;
+    text-decoration: none;
+}

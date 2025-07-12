@@ -3,14 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import "./style/style.css";
-import "./style/Navbar.css";
 import "./style/Footer.css";
-import "./style/App.css";
 import "./style/Pre.css"
-import "./style/FileDropUpload.css"
-import "./style/FoodImageClassify.css"
-import "./style/Server.css"
-import "./style/StevenAI.css"
 import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 

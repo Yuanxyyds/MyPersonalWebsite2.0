@@ -1,8 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Particle from "../../components/common/Particle";
-import React, {useState } from "react";
-import landSink from "../../assets/projects/landSink.png";
+import { useState } from "react";
 import { ImPointLeft } from "react-icons/im";
+import "./../../style/project/land-sink.css"
 
 
 function LandSink() {
@@ -30,15 +29,13 @@ function LandSink() {
 
     return (
         <Container fluid className="project-demo-section">
-            <Particle />
-            <Container>
-                <Row style={{ justifyContent: "center", padding: "10px" }}>
+            <Container fluid className="two-column-content-padding">
+                <Row>
                     <Col xs={12} md={12} lg={7}>
-                        <div className="project-heading">
-                            Estimate LandSink Percentage <strong className='primary-color'> Demo </strong>
-                        </div>
-                        <p style={{ textAlign: "justify", paddingTop: 20 }}>
-
+                        <h3 className="fade-in">
+                            Estimate  <span className='primary-color'> LandSink </span> Percentage
+                        </h3>
+                        <p className="fade-in" style={{ textAlign: "justify", paddingTop: 20 }}>
                             This project represents the culminating effort of CSC110, where our team gathered sea level
                             data, temperature data, and elevation data from various locations worldwide. Our objective
                             was to construct a linear regression model capable of predicting the percentage of country
@@ -56,42 +53,39 @@ function LandSink() {
                             project. This allows users to send API requests for predictions. The back-end server is now
                             hosted on AWS. You can try out the prediction feature <strong
                                 className="primary-color">below</strong>.
-
-
                         </p>
                     </Col>
                     <Col xs={12} md={12} lg={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                         <img
-                            src={landSink}
+                            src="/project/land-sink.png"
                             alt="Land Sink"
                             className="img-fluid"
                             style={{ maxHeight: "600px" }}
                         />
                     </Col>
                 </Row>
-                <div className="project-heading">
-                    Make a <strong className="primary-color">Prediction </strong>
-                </div>
-
-                <h5 style={{ paddingTop: 20 }}>
-                    <strong className="primary-color">Note: </strong> Enter some large numbers as input year
-                </h5>
-
-                <div style={{ paddingTop: 20 }}>
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            value={year}
-                            onChange={handleOnChange}
-                            placeholder="Enter the year"
-                            className="input-field"
-                        />
-                        <button type="submit" className=" text-button">
-                            <ImPointLeft /> Generate
-                        </button>
-                    </form>
-                </div>
-
+                <Container className="section-margin">
+                    <h3 className="fade-in ">
+                        Make a <span className="primary-color">Prediction </span>
+                    </h3>
+                    <h5 style={{ paddingTop: 20 }}>
+                        <strong className="primary-color">Note: </strong> Enter some large numbers as input year
+                    </h5>
+                    <div style={{ paddingTop: 20 }}>
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                value={year}
+                                onChange={handleOnChange}
+                                placeholder="Enter the year"
+                                className="input-field"
+                            />
+                            <button type="submit" className=" text-button">
+                                <ImPointLeft /> Generate
+                            </button>
+                        </form>
+                    </div>
+                </Container>
             </Container>
         </Container>
     );

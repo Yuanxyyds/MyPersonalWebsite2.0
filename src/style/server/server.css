@@ -1,5 +1,7 @@
 .server-horizontal-section {
     height: 100vh;
+    padding: 0 !important;
+    margin: 0 !important;
     position: relative;
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
@@ -120,20 +122,6 @@
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
 }
-
-#loader {
-    position: absolute;
-    top: 100vh;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background-color: #000000;
-    background-image: url(../assets/pre.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 
 @keyframes pulse-scale {
     0% {

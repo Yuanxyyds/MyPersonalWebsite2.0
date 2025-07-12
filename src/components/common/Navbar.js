@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 import { TbServer2 } from "react-icons/tb";
+import "./../../style/Navbar.css"
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -33,9 +34,9 @@ function NavBar() {
       expand="xl"
       className={navColour ? "sticky" : "navbar"}
     >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          Steven&apos;s Server
+      <Container fluid className="p-0">
+        <Navbar.Brand href="/" className="d-flex" style={{fontWeight: 700}}>
+          STEV.LIU
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -47,7 +48,7 @@ function NavBar() {
           <span></span>
           <span></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-center text-center">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>

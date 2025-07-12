@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Container} from "react-bootstrap";
 import {IoTrashBin} from "react-icons/io5";
 import Typewriter from "typewriter-effect";
+import "./../../style/project/file-drop-upload.css";
 
 const FileDropUpload = ({submitText, onSubmit, isProcessing = false, processingMessage = ""}) => {
     const [selectedFile, setSelectedFile] = useState(null);
