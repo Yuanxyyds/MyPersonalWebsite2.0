@@ -1,0 +1,75 @@
+.progress-card {
+    margin: 0;
+    padding: 25px;
+    width: 90%;
+    border-radius: 20px;
+    border: 4px solid #380b4a;
+    cursor: pointer;
+    color: #cfe9ff !important;
+    background-color: #0a0a23;
+}
+
+.progress-card:hover {
+    transition: all 0.4s ease 0s !important;
+    transform: scale(1.05) !important;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 6px 0 25px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #7dd3fc;
+    width: 0%;
+    transition: width 0.02s ease-in-out;
+}
+
+.phases {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.phase {
+    flex: 1;
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #7dd3fc;
+}
+
+
+.trans {
+    transition: opacity 0.4s ease;
+}
+
+.undone {
+    color: gray !important;
+}
+
+.done {
+    color: #90caff !important;
+    font-weight: bold;
+}
+
+
+/* xs */
+@media (max-width: 575.98px) {
+    .progress-card {
+        width: 100%;
+    }
+}

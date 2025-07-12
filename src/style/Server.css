@@ -1,10 +1,38 @@
-.server-top-section {
+.server-horizontal-section {
     height: 100vh;
-    position: relative !important;
-    padding-top: 150px;
-    padding-bottom: 30px !important;
-    background-image: var(--image-gradient), url(../assets/server/server.gif);
-    background-size: 100vw 100vh;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.server-vertical-section {
+    height: 100vh;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    color: white;
+}
+
+.server-bg-desktop {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+}
+
+.server-video-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.clickable-text {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .canvas-container {
@@ -121,42 +149,7 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .server-primary-header {
-        font-size: 35pt;
-    }
-
-    .server-sub-header {
-        font-size: 20pt;
-    }
-
-    .server-header-description {
-        font-size: 14pt;
-    }
-
-    .server-info-header {
-        padding-top: 40px !important;
-    }
-}
-
-
 @media (max-width: 576px) {
-    .server-primary-header {
-        font-size: 30pt;
-    }
-
-    .server-sub-header {
-        font-size: 18pt;
-    }
-
-    .server-header-description {
-        font-size: 12pt;
-    }
-
-    .server-info-header {
-        padding-top: 80px !important;
-    }
-
     .scroll-to-bottom {
         position: fixed;
         bottom: 20px;
@@ -167,23 +160,6 @@
 }
 
 @media (max-height: 600px) {
-    .server-top-section {
-        padding-top: 100px;
-    }
-
-    .server-primary-header {
-        font-size: 28pt;
-        padding-top: 20px;
-    }
-
-    .server-sub-header {
-        font-size: 16pt;
-    }
-
-    .server-header-description {
-        font-size: 11pt;
-    }
-
     .scroll-to-bottom {
         position: fixed;
         bottom: 20px;
@@ -195,23 +171,6 @@
 
 
 @media (max-height: 500px) {
-    .server-top-section {
-        padding-top: 80px;
-    }
-
-    .server-primary-header {
-        font-size: 22pt;
-        padding-top: 10px;
-    }
-
-    .server-sub-header {
-        font-size: 14pt;
-    }
-
-    .server-header-description {
-        font-size: 11pt;
-    }
-
     .scroll-to-bottom {
         position: fixed;
         bottom: 16px;
