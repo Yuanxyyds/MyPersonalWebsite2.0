@@ -20,114 +20,14 @@
     text-align: center;
 }
 
-.sub-title {
-    max-width: max(500px, 60%);
-    font-size: 1.1em !important;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 .bottom-space {
     padding-top: 10vh;
 }
 
 
-/* --------- */
-/* Projects */
-/* --------- */
 
-
-.project-section {
-    position: relative !important;
-    padding-top: 150px !important;
-    padding-bottom: 30px !important;
-    background-image: var(--section-background-color) !important;
-}
-
-.project-card {
-    padding: 50px 25px !important;
-    height: auto !important;
-}
-
-.project-card-view {
-    box-shadow: 0 0 5px 3px rgba(119, 53, 136, 0.459) !important;
-    color: white !important;
-    background-color: transparent !important;
-    opacity: 0.9 !important;
-    transition: all 0.5s ease 0s !important;
-    height: 100% !important;
-}
-
-.project-card-view:hover {
-    transform: scale(1.02) !important;
-    overflow: hidden !important;
-    box-shadow: 0 0 4px 5px rgba(129, 72, 144, 0.561) !important;
-}
-
-.blog-card {
-    padding: 50px 25px !important;
-    height: auto !important;
-}
-
-.blog-card-view {
-    background-color: transparent !important;
-    box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
-    color: white !important;
-    transition: all 0.5s ease 0s !important;
-    height: 100% !important;
-}
-
-.blog-link {
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.blog-link:hover {
-    cursor: pointer !important;
-}
-
-.blog-card-view:hover {
-    transform: scale(1.02) !important;
-    overflow: hidden !important;
-    box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
-}
-
-.card-img-top {
-    padding: 20px !important;
-    opacity: 0.8 !important;
-    border-radius: 10px !important;
-}
-
-.blog-img {
-    padding: 0px !important;
-    opacity: 0.8 !important;
-    border-radius: 0px !important;
-}
-
-.btn-primary {
-    color: #fff !important;
-    background-color: #001d52 !important;
-    border-color: #001d52 !important;
-}
-
-.btn-primary:hover {
-    color: #fff !important;
-    background-color: #002365 !important;
-    border-color: #002365 !important;
-}
-
-.btn:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.project-heading {
-    color: white !important;
-    font-size: 2.3em !important;
-    font-weight: 500 !important;
-    padding: 20px 0 !important;
-}
 
 
 /* --------- */
@@ -223,95 +123,9 @@
 /* Project Demo */
 /* --------- */
 
-.project-demo-section {
-    position: relative !important;
-    padding-top: 150px !important;
-    padding-bottom: 30px !important;
-    color: white !important;
-}
-
-.project-tab-section {
-    justify-content: center !important;
-    padding-top: 15px !important;
-    display: inline-block !important;
-    position: relative !important;
-    padding-inline-start: 0 !important;
-}
-
-.project-tab {
-    display: inline-block !important;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.project-tab-content {
-    position: relative !important;
-    display: inline-block !important;
-    width: 100% !important;
-    height: 100% !important;
-    text-align: center !important;
-    font-size: 1.2em !important;
-    line-height: 2em !important;
-    transition: 0.5s !important;
-    padding: 4px 10px;
-    border-radius: 10%;
-}
-
-.project-tab-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    transform: scale(0.9);
-    z-index: -1;
-    border-radius: 10%;
-}
-
-.project-tab-content:hover::before {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #0147a9;
-}
-
-.tab-colour {
-    color: white !important;
-    text-decoration: none;
-}
 
 
 /* --------- */
 /* Land Sink */
 /* --------- */
 
-.input-field {
-    width: 200px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.input-field:focus {
-    outline: none;
-    border-color: #0147a9;
-}
-
-.text-button {
-    background: none;
-    color: whitesmoke;
-    position: relative !important;
-    text-align: center !important;
-    font-size: 1.2em !important;
-    line-height: 2em !important;
-    transition: 0.5s !important;
-    padding: 4px 10px !important;
-    border-radius: 10% !important;
-    margin-left: 8px !important;
-    border: none !important;
-}
-
-.text-button:hover {
-    transform: scale(1.05);
-}

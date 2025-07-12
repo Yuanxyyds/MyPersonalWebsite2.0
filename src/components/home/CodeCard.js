@@ -1,4 +1,4 @@
-import './../../style/home/CodeCard.css';
+import './../../style/home/code-card.css';
 
 export default function CodeCard() {
   return (
