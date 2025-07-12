@@ -9,24 +9,8 @@ import CodeCard from "../../components/home/CodeCard";
 import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
 import "./../../style/Home.css"
 
-function useIsMobile(breakpoint = 768) {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= breakpoint);
-        };
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [breakpoint]);
-
-    return isMobile;
-}
-
 
 function Home() {
-    const isMobile = useIsMobile();
-
     useEffect(() => {
         const elements = [
             { headerId: 'whoami', lineId: 'whoami-line' },
@@ -72,10 +56,10 @@ function Home() {
         <section>
             <Container fluid id="home" className="home-content">
                 <Container fluid className="home-landing-page">
-                    <video className="home-bg-desktop" src="/home/bg.mp4" autoPlay muted loop />
+                    <video className="home-bg-desktop" src="/home/bg.mp4" autoPlay muted loop playsInline />
                     <Container fluid className="one-column-content-padding">
                         <Row>
-                            <Col xs={8} md={6} lg={5}>
+                            <Col xs={10} md={6} lg={5}>
                                 <h1 className="thin fade-in mb-0 with-line delay-in delay-0">
                                     MAKE IT
                                 </h1>
@@ -128,8 +112,7 @@ function Home() {
                             </p>
                         </Col>
                         <Col xl={4} className="my-avtar">
-                            <img src='/home/avatar.gif' className="fade-in img-fluid" style={{ maxHeight: "400px" }}
-                                alt="avatar" />
+                            <video src='/home/avatar.mp4' autoPlay muted loop playsInline style={{ maxHeight: "400px" }} />
                         </Col>
                     </Row>
                 </Container>

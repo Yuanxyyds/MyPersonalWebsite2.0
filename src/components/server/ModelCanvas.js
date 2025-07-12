@@ -3,15 +3,9 @@ import { Box3, Vector3, VideoTexture, LinearFilter, TextureLoader, RGBAFormat, C
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import server from "../../assets/server/server.glb";
-import monitor from "../../assets/server/monitor.mp4";
-import tv from "../../assets/server/tv.mp4";
-import node1 from "../../assets/server/node1.jpg";
-import node2 from "../../assets/server/node2.jpg";
-import hosting from "../../assets/server/hosting.jpg";
 
 function RoomModel({ controls, zoomDistance }) {
-  const { nodes, scene } = useGLTF(server);
+  const { nodes, scene } = useGLTF('/server/server.glb');
   const [dragging, setDragging] = useState(false);
   const [focused, setFocused] = useState(false);
   const [focusedMedia, setFocusedMedia] = useState(null);
@@ -20,9 +14,9 @@ function RoomModel({ controls, zoomDistance }) {
 
   const chairRef = useRef();
   const monitorConfigs = [
-    { name: "Monitor1"},
-    { name: "Monitor2"},
-    { name: "Monitor3"},
+    { name: "Monitor1" },
+    { name: "Monitor2" },
+    { name: "Monitor3" },
   ];
 
   scene.remove(nodes["Monitor1"]);
@@ -31,7 +25,7 @@ function RoomModel({ controls, zoomDistance }) {
 
   const [monitorVideo] = useState(() => {
     const video = document.createElement("video");
-    video.src = monitor;
+    video.src = "/server/monitor.mp4";
     video.crossOrigin = "anonymous";
     video.loop = true;
     video.muted = true;
@@ -55,7 +49,7 @@ function RoomModel({ controls, zoomDistance }) {
   // Focus video
   const [TvVideo] = useState(() => {
     const v = document.createElement("video");
-    v.src = tv;
+    v.src = "/server/tv.mp4";
     v.crossOrigin = "anonymous";
     v.loop = true;
     v.muted = true;
@@ -73,13 +67,13 @@ function RoomModel({ controls, zoomDistance }) {
 
   const loader = new TextureLoader();
   const monitorImageTextures = [
-    loader.load(node1, (texture) => {
+    loader.load("/server/node1.jpg", (texture) => {
       texture.flipY = false;
     }),
-    loader.load(hosting, (texture) => {
+    loader.load("/server/hosting.jpg", (texture) => {
       texture.flipY = false;
     }),
-    loader.load(node2, (texture) => {
+    loader.load("/server/node2.jpg", (texture) => {
       texture.flipY = false;
     }),
   ];
@@ -309,7 +303,6 @@ function RoomModel({ controls, zoomDistance }) {
       }
     });
   }, [focusedMedia, nodes, zoomToObject, monitorImageTextures]);
-
 
 
 
