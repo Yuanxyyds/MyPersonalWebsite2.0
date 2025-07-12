@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './../../style/home/ProgressCard.css';
 
-const designTasks = ["User Research", "2D/3D Rendering", "UI Design"];
+const designTasks = ["User Research", "UI Design", "UI Rendering"];
 const devTasks = ["Frontend", "Backend/ML", "Testing"];
 
 export default function ProgressCard() {
@@ -87,7 +87,7 @@ export default function ProgressCard() {
                     <p className='md' style={{ marginBottom: '6px' }}>✎ Design</p>
                     {designTasks.map((task) => (
                         <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
-                            {isCompleted(task) ? `✓ ` : ''}{task}
+                            {isCompleted(task) ? `✓ ` : '☐ '}{task}
                         </p>
                     ))}
                 </div>
@@ -95,7 +95,7 @@ export default function ProgressCard() {
                     <p className='md' style={{ marginBottom: '6px' }}>&lt;&nbsp;&gt; Develop</p>
                     {devTasks.map((task) => (
                         <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
-                            {isCompleted(task) ? '✓ ' : ''}{task}
+                            {isCompleted(task) ? '✓ ' : '☐ '}{task}
                         </p>
                     ))}
                 </div>

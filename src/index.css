@@ -3,6 +3,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: "Poppins", serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -100,13 +101,42 @@ p.bold {
 
 .one-column-content-padding {
     padding-left: 8vw !important;
-    margin-top: 30vh;
+    padding-top: 30vh;
 }
 
 .two-column-content-padding {
-    margin-top: 15vh;
+    padding-top: 15vh;
     padding-left: 8vw !important;
     padding-right: 8vw !important;
+}
+
+.delay-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-0 {
+    animation-delay: 0s;
+}
+
+.delay-1 {
+    animation-delay: 0.25s;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
+
+.delay-3 {
+    animation-delay: 0.75s;
 }
 
 /* lg (≤1199px) */
@@ -122,8 +152,6 @@ p.bold {
     }
 
     h2 {
-        color: white;
-        font-weight: 600;
         font-size: 40pt !important;
         letter-spacing: -1.5px;
     }
@@ -164,8 +192,6 @@ p.bold {
     }
 
     h2 {
-        color: white;
-        font-weight: 600;
         font-size: 36pt !important;
         letter-spacing: -1.5px;
     }
@@ -205,8 +231,6 @@ p.bold {
 
 
     h2 {
-        color: white;
-        font-weight: 600;
         font-size: 32pt !important;
         letter-spacing: -1.5px;
     }
@@ -246,8 +270,6 @@ p.bold {
 
 
     h2 {
-        color: white;
-        font-weight: 600;
         font-size: 28pt !important;
         letter-spacing: -1.5px;
     }
@@ -272,6 +294,115 @@ p.bold {
 
     p.small {
         font-size: 11pt !important;
+    }
+}
+
+/* xxs (≤440px) */
+@media (max-width: 440px) {
+    h1 {
+        font-size: 32pt !important;
+        letter-spacing: -1.2px;
+    }
+
+    h1.with-line::after {
+        width: 50px;
+        height: 3px;
+    }
+
+
+    h1.with-line::after {
+        margin-left: 15px;
+    }
+
+    h2 {
+        font-size: 24pt !important;
+        letter-spacing: -1.5px;
+    }
+
+    h4 {
+        font-size: 14pt !important;
+    }
+
+    h5 {
+        font-size: 12pt !important;
+    }
+
+
+    p {
+        font-size: 11pt !important;
+    }
+
+    p.md {
+        font-size: 10.5pt !important;
+    }
+
+
+    p.small {
+        font-size: 10pt !important;
+    }
+}
+
+/* xxxs (≤440px) */
+@media (max-width: 350px) {
+    h1 {
+        font-size: 28pt !important;
+        letter-spacing: -1.2px;
+    }
+
+     h1.with-line::after {
+        margin-left: 10px;
+    }
+
+    h1.with-line::after {
+        width: 45px;
+        height: 3px;
+    }
+
+
+    h2 {
+        font-size: 20pt !important;
+        letter-spacing: -1.5px;
+    }
+}
+
+
+
+@media (max-height: 400px) {
+    h1 {
+        font-size: 35pt !important;
+        letter-spacing: -1.2px;
+    }
+
+    h1.with-line::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    h2 {
+        font-size: 24pt !important;
+        letter-spacing: -1.5px;
+    }
+
+    h4 {
+        font-size: 14pt !important;
+    }
+
+    h5 {
+        font-size: 12pt !important;
+    }
+
+
+    p {
+        font-size: 11pt !important;
+    }
+
+    p.md {
+        font-size: 10.5pt !important;
+    }
+
+
+    p.small {
+        font-size: 10pt !important;
     }
 }
 
