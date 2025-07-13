@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ModelCanvas from "../../components/server/ModelCanvas";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 import "./../../style/server/server.css"
+import InPageLoader from "../../components/common/InPageLoader";
 
 
 function useIsVerticalLayout() {
@@ -141,6 +142,7 @@ function Server() {
                 </Container>
             }
             <Container fluid className="canvas-container p-0">
+                <InPageLoader />
                 <ModelCanvas />
             </Container>
         </section>
