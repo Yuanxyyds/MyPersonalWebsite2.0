@@ -1,45 +1,9 @@
-/* --------- */
-/* Home section */
-/* --------- */
-#tsparticles {
-    position: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    width: 100%;
-    height: 100%;
-}
-
-.section-divider {
-    padding-top: 25vh;
-}
-
-.section-header {
-    color: white !important;
-    font-size: 2.6em;
-    padding-bottom: 20px !important;
-    text-align: center;
-}
-
-
-
-.bottom-space {
-    padding-top: 10vh;
-}
-
-
-
-
-
-/* --------- */
-/* Resume */
-/* --------- */
-
 .resume-section {
-    position: relative !important;
-    padding-top: 110px !important;
-    padding-bottom: 30px !important;
-    background-image: var(--section-background-color) !important;
-    color: white !important;
+    position: relative;
+    padding-top: 110px;
+    padding-bottom: 30px;
+    color: white;
+    text-align: center;
 }
 
 .resume {
@@ -118,14 +82,3 @@
     border: 2px solid #001d52;
 
 }
-
-/* --------- */
-/* Project Demo */
-/* --------- */
-
-
-
-/* --------- */
-/* Land Sink */
-/* --------- */
-
