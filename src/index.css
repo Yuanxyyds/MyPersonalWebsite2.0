@@ -25,21 +25,19 @@ html {
 /* Default: largest (xl and up) */
 h1 {
     color: white;
-    font-weight: 600;
     font-size: 54pt !important;
     letter-spacing: -1.5px;
 }
 
 h2 {
     color: white;
-    font-weight: 600;
     font-size: 42pt !important;
     letter-spacing: -1.5px;
 }
 
 h3 {
     color: white;
-    font-weight: 600;
+    font-weight: 600 !important;
     font-size: 32pt !important;
     letter-spacing: -1.2px;
 }
@@ -47,13 +45,11 @@ h3 {
 
 h4 {
     color: white;
-    font-weight: 600;
     font-size: 16pt !important;
 }
 
 h5 {
     color: white;
-    font-weight: 600;
     font-size: 15pt !important;
 }
 
@@ -104,6 +100,10 @@ p.small {
 
 .bold {
     font-weight: 600;
+}
+
+.bbold {
+    font-weight: 700;
 }
 
 
