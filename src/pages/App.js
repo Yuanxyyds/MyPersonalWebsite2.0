@@ -11,9 +11,9 @@ import LandSink from "./project/LandSink";
 import StevenAI from "./project/StevenAI";
 import MentorAI from "./project/MentorAI";
 import Footer from "../components/common/Footer";
-import ScrollToTop from "../effect/ScrollToTop";
+import ScrollToTop from "../components/effects/ScrollToTop";
 import { Route, Routes, Navigate } from "react-router-dom";
-import FadeIn from "../effect/FadeIn";
+import FadeIn from "../components/effects/FadeIn";
 import Sever from "./server/Sever";
 import Home from "./home/Home";
 
