@@ -124,7 +124,7 @@ function Home() {
                                 <h2 id="fullstack" className="fade-in mb-0">WHAT I DO</h2>
                                 <div id="fullstack-line" className="animated-underline"></div>
                             </div>
-                            <h5 className="fade-in mb-4">I am expertise in
+                            <h5 className="fade-in mb-4">
                                 I create engaging, interactive software powered by cutting-edge technologies.
                             </h5>
                             <div className="fade-in"> <ProgressCard /> </div>
