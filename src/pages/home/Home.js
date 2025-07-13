@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { HiOutlineLocationMarker } from "react-icons/hi";
-import { AiFillGithub, AiFillInstagram, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import ProgressCard from "../../components/home/ProgressCard";
 import CodeCard from "../../components/home/CodeCard";
-import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
+// import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
 import "./../../style/home/home.css"
 
 
@@ -15,7 +14,7 @@ function Home() {
         const elements = [
             { headerId: 'whoami', lineId: 'whoami-line' },
             { headerId: 'fullstack', lineId: 'fullstack-line' },
-            { headerId: 'github', lineId: 'github-line' },
+            { headerId: 'contact', lineId: 'contact-line' },
             // Add more pairs as needed
         ];
 
@@ -166,58 +165,48 @@ function Home() {
                     </Container>
                 </Container> */}
 
+                <Container fluid id="about" className="contact-section" style={{ marginBottom: '10vh' }}>
+                    <Container fluid className="two-column-content-padding">
+                        <Row>
+                            <Col xl={8}>
+                                <div className="text-with-animated-underline">
+                                    <h2 id="contact" className="fade-in mb-0">CONTACT ME AT</h2>
+                                    <div id="contact-line" className="animated-underline"></div>
+                                </div>
 
-                <Container className={"section-divider"} fluid id="contact">
-                    <h1 className="section-header fade-in">
-                        <span className="primary-color"> CONTACT </span> {" "} ME AT
-                    </h1>
-                    <p className="home-contact-info fade-in">
-                        <HiOutlineLocationMarker c style={{
-                            width: '40px',
-                            height: '40px',
-                            fill: "white !important"
-                        }} /> {"  "} 65 Saint Mary Street, Toronto ON, M5S 0A6, Canada
-                    </p>
-                    <p className="home-contact-info fade-in">
-                        <AiOutlineMail style={{ width: '40px', height: '40px' }} /> {" "} liuhongyuan.liu AT
-                        mail.utoronto.ca
-                    </p>
-                    <p className="home-contact-info fade-in">
-                        <AiOutlinePhone style={{ width: '40px', height: '40px' }} /> {" "} +1 (647)-309-9649
-                    </p>
+                                <Container fluid id="contact" className="p-0">
+                                    <h4 className="fade-in mt-5">
+                                        <strong className="primary-color">Location:</strong> Toronto ON, Vancouver BC
+                                    </h4>
+                                    <h4 className="fade-in mt-3">
+                                        <strong className="primary-color">Email:</strong> liuhongyuan2001 AT
+                                        gmail.com
+                                    </h4>
+                                    <h4 className="fade-in mt-3">
+                                        <strong className="primary-color">Phone:</strong> +1 (647)-309-9649
+                                    </h4>
 
-                    <ul className="social_icon_list fade-in">
-                        <div className="social-icons">
-                            <a
-                                href="https://github.com/Yuanxyyds"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="home-social-icons"
-                            >
-                                <AiFillGithub />
-                            </a>
-                        </div>
-                        <div className="social-icons">
-                            <a
-                                href="https://www.linkedin.com/in/liustev6/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="home-social-icons"
-                            >
-                                <FaLinkedinIn />
-                            </a>
-                        </div>
-                        <div className="social-icons">
-                            <a
-                                href="https://www.instagram.com/yuanxyyds/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="home-social-icons"
-                            >
-                                <AiFillInstagram />
-                            </a>
-                        </div>
-                    </ul>
+                                    <ul className="social-icon-list fade-in mt-3">
+                                        <li className="me-4">
+                                            <a href="https://github.com/Yuanxyyds" target="_blank" rel="noreferrer" className="social-icon">
+                                                <AiFillGithub />
+                                            </a>
+                                        </li>
+                                        <li className="me-4">
+                                            <a href="https://www.linkedin.com/in/liustev6/" target="_blank" rel="noreferrer" className="social-icon">
+                                                <FaLinkedinIn />
+                                            </a>
+                                        </li>
+                                        <li className="me-4">
+                                            <a href="https://www.instagram.com/yuanxyyds/" target="_blank" rel="noreferrer" className="social-icon">
+                                                <AiFillInstagram />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </Container>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Container>
             </Container>
 

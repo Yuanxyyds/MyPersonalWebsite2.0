@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import axios from "axios";
+// import axios from "axios";
 import ModelCanvas from "../../components/server/ModelCanvas";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 import "./../../style/server/server.css"
@@ -23,7 +23,7 @@ function useIsVerticalLayout() {
 
 
 function Server() {
-    const [responseData, setResponseData] = useState(null);
+    // const [responseData, setResponseData] = useState(null);
     const [atTop, setAtTop] = useState(true);
     const isVertical = useIsVerticalLayout();
 
@@ -66,24 +66,24 @@ function Server() {
         window.addEventListener("touchmove", preventScroll, { passive: false });
         window.addEventListener("scroll", handleScroll);
 
-        const fetchStats = async () => {
-            try {
-                const response = await axios.get('https://webserver.liustev6.ca/serverstats/getServerStats');
-                if (response.status === 200) {
-                    setResponseData(response.data);
-                }
-            } catch (error) {
-                console.error("Error fetching system stats:", error);
-            }
-        };
+        // const fetchStats = async () => {
+        //     try {
+        //         const response = await axios.get('https://webserver.liustev6.ca/serverstats/getServerStats');
+        //         if (response.status === 200) {
+        //             setResponseData(response.data);
+        //         }
+        //     } catch (error) {
+        //         console.error("Error fetching system stats:", error);
+        //     }
+        // };
 
-        const interval = setInterval(fetchStats, 3000);
+        // const interval = setInterval(fetchStats, 3000);
         return () => {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("wheel", preventScroll);
             window.removeEventListener("touchmove", preventScroll);
             window.removeEventListener("keydown", preventKeys);
-            clearInterval(interval);
+            // clearInterval(interval);
         }
     }, []);
 

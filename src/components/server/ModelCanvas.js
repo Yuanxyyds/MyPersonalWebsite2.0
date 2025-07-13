@@ -7,18 +7,12 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 function RoomModel({ controls, zoomDistance }) {
   const { nodes, scene } = useGLTF('/server/server.glb');
   const [dragging, setDragging] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [focusedMedia, setFocusedMedia] = useState(null);
   const originalPosition = useRef(new Vector3());
   const originalTarget = useRef(new Vector3());
+  const selectedObject = useRef(null);
 
   const chairRef = useRef();
-  const monitorConfigs = [
-    { name: "Monitor1" },
-    { name: "Monitor2" },
-    { name: "Monitor3" },
-  ];
-
   scene.remove(nodes["Monitor1"]);
   scene.remove(nodes["Monitor2"]);
   scene.remove(nodes["Monitor3"]);
@@ -65,19 +59,14 @@ function RoomModel({ controls, zoomDistance }) {
     return tex;
   }, [TvVideo]);
 
-  const loader = new TextureLoader();
-  const monitorImageTextures = [
-    loader.load("/server/node1.jpg", (texture) => {
-      texture.flipY = false;
-    }),
-    loader.load("/server/hosting.jpg", (texture) => {
-      texture.flipY = false;
-    }),
-    loader.load("/server/node2.jpg", (texture) => {
-      texture.flipY = false;
-    }),
-  ];
-
+  const monitorImageTextures = useMemo(() => {
+    const loader = new TextureLoader();
+    return [
+      loader.load("/server/node1.jpg", (texture) => { texture.flipY = false }),
+      loader.load("/server/hosting.jpg", (texture) => { texture.flipY = false }),
+      loader.load("/server/node2.jpg", (texture) => { texture.flipY = false }),
+    ];
+  }, []);
 
   // Neon Light Effect
   useFrame(({ clock }) => {
@@ -102,41 +91,62 @@ function RoomModel({ controls, zoomDistance }) {
     });
   });
 
-  // Make Chair invisible
+
+
+
+  // Zoom Control
   useEffect(() => {
-    if (chairRef.current) {
-      chairRef.current.visible = !focused;
+    // Zoom to Object
+    const zoomToObject = (object) => {
+      if (!object) return;
+      const box = new Box3().setFromObject(object);
+      const center = new Vector3();
+      box.getCenter(center);
+
+      // Save original camera position and target
+      originalPosition.current.copy(controls.current.object.position);
+      originalTarget.current.copy(controls.current.target);
+
+      // Compute front-facing offset along the object's local Z axis
+      const frontDirection = new Vector3(0, 0, 1);
+      object.localToWorld(frontDirection);
+      frontDirection.sub(object.getWorldPosition(new Vector3())).normalize();
+
+      const distance = zoomDistance;
+      const newPosition = center.clone().add(frontDirection.multiplyScalar(distance));
+
+      // Move camera
+      controls.current.object.position.copy(newPosition);
+      controls.current.target.copy(center);
+
+      // Disable controls
+      controls.current.enabled = false;
+      controls.current.update();
+    };
+
+
+    if (focusedMedia === null) {
+      if (chairRef.current) {
+        chairRef.current.visible = true;
+        // chairRef.current.raycast = () => null;
+      }
+      if (selectedObject.current) {
+        selectedObject.current = null;
+        controls.current.object.position.copy(originalPosition.current);
+        controls.current.target.copy(originalTarget.current);
+        controls.current.enabled = true;
+        controls.current.update();
+      }
+    } else {
+      if (chairRef.current) {
+        chairRef.current.visible = false;
+      }
+      if (selectedObject.current) {
+        zoomToObject(selectedObject.current)
+      }
     }
-  }, [focused]);
+  }, [focusedMedia, controls, zoomDistance]);
 
-  // Zoom to Object
-  const zoomToObject = (object) => {
-    if (!object) return;
-    const box = new Box3().setFromObject(object);
-    const center = new Vector3();
-    box.getCenter(center);
-
-    // Save original camera position and target
-    originalPosition.current.copy(controls.current.object.position);
-    originalTarget.current.copy(controls.current.target);
-
-    // Compute front-facing offset along the object's local Z axis
-    const frontDirection = new Vector3(0, 0, 1);
-    object.localToWorld(frontDirection);
-    frontDirection.sub(object.getWorldPosition(new Vector3())).normalize();
-
-    const distance = zoomDistance;
-    const newPosition = center.clone().add(frontDirection.multiplyScalar(distance));
-
-    // Move camera
-    controls.current.object.position.copy(newPosition);
-    controls.current.target.copy(center);
-    controls.current.update();
-
-    // Disable controls
-    controls.current.enabled = false;
-    setFocused(true);
-  };
 
   const tvDisplay = useMemo(() => {
     if (focusedMedia !== "TV") {
@@ -145,11 +155,11 @@ function RoomModel({ controls, zoomDistance }) {
           object={nodes["TV"]}
           onPointerDown={(e) => {
             e.stopPropagation();
-            if (!focused) {
-              zoomToObject(e.object);
-              setFocusedMedia("TV");
+            if (focusedMedia === null) {
+              selectedObject.current = e.object;
               TvVideo.currentTime = 0;
               TvVideo.play();
+              setFocusedMedia("TV");
             }
           }}
           onPointerOver={() => {
@@ -204,10 +214,16 @@ function RoomModel({ controls, zoomDistance }) {
         />
       </group>
     );
-  }, [focusedMedia, TvVideoTexture, nodes, zoomToObject]);
+  }, [focusedMedia, TvVideo, TvVideoTexture, nodes]);
 
 
   const monitorDisplays = useMemo(() => {
+    const monitorConfigs = [
+      { name: "Monitor1" },
+      { name: "Monitor2" },
+      { name: "Monitor3" },
+    ];
+
     return monitorConfigs.map(({ name, }, i) => {
       if (focusedMedia !== "Monitor") {
         const originalGroup = nodes[name];
@@ -244,8 +260,8 @@ function RoomModel({ controls, zoomDistance }) {
           <group
             onPointerDown={(e) => {
               e.stopPropagation();
-              if (!focused) {
-                zoomToObject(e.object);
+              if (focusedMedia === null) {
+                selectedObject.current = e.object;
                 setFocusedMedia("Monitor");
               }
             }}
@@ -302,7 +318,7 @@ function RoomModel({ controls, zoomDistance }) {
         );
       }
     });
-  }, [focusedMedia, nodes, zoomToObject, monitorImageTextures]);
+  }, [focusedMedia, monitorImageTextures, monitorVideoTexture, nodes]);
 
 
 
@@ -312,14 +328,16 @@ function RoomModel({ controls, zoomDistance }) {
       <primitive
         object={scene}
         onPointerDown={(e) => {
-          if (focused) {
-            controls.current.object.position.copy(originalPosition.current);
-            controls.current.target.copy(originalTarget.current);
-            controls.current.enabled = true;
-            controls.current.update();
-            setFocused(false);
+          e.stopPropagation();
+          if (focusedMedia !== null) {
             setFocusedMedia(null);
           } else if (dragging) {
+            setDragging(false);
+            controls.current.enabled = true;
+          }
+        }}
+        onPointerUp={(e) => {
+          if (dragging) {
             setDragging(false);
             controls.current.enabled = true;
           }
@@ -331,13 +349,22 @@ function RoomModel({ controls, zoomDistance }) {
         ref={chairRef}
         onPointerDown={(e) => {
           e.stopPropagation();
-          setDragging(true);
-          controls.current.enabled = false;
+          if (focusedMedia !== null) {
+            setFocusedMedia(null);
+            return;
+          }
+          if (!dragging) {
+            setDragging(true);
+            controls.current.enabled = false;
+          }
+
         }}
         onPointerUp={(e) => {
           e.stopPropagation();
-          setDragging(false);
-          controls.current.enabled = true;
+          if (dragging) {
+            setDragging(false);
+            controls.current.enabled = true;
+          }
         }}
         onPointerMove={(e) => {
           if (dragging && chairRef.current) {
