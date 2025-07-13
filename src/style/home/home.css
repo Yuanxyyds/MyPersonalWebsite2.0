@@ -60,42 +60,18 @@
     border: 2px solid var(--primary-color) !important;
 }
 
-/* lg (≤1199px) */
-@media (max-width: 1199.98px) {
-    .my-life {
-        margin-top: 32px;
-        height: 85%;
-    }
-}
 
-
-/* xs */
-@media (max-width: 575.98px) {
-    .my-life {
-        width: 100%;
-    }
-}
-
-
-.home-contact-info {
-    padding-top: 20px;
-    font-size: 1.2em !important;
-    text-align: center !important;
-}
-
-.social_icon_list {
-    justify-content: center !important;
-    text-align: center !important;
-    padding-top: 25px;
-    color: white !important;
+.social-icon-list {
     display: flex;
+    text-align: center;
+    padding: 0;
+    color: white;
+    justify-content: flex-start;
+    list-style: none;
+    margin-bottom: 100px;
 }
 
-.social-icons {
-    padding-right: 30px;
-}
-
-.home-social-icons {
+.social-icon {
     position: relative;
     display: inline-block;
     width: 40px;
@@ -108,11 +84,11 @@
     transition: 0.5s;
 }
 
-.home-social-icons:hover {
+.social-icon:hover {
     color: var(--primary-color);
 }
 
-.home-social-icons::before {
+.social-icon::before {
     content: "";
     position: absolute;
     top: 0;
@@ -125,7 +101,36 @@
     z-index: -1;
 }
 
-.home-social-icons:hover::before {
+.social-icon::before {
     transform: scale(1.15);
     animation: neonBluePurpleGradient 3s infinite;
+}
+
+.contact-section {
+    background-image: url('./../../../public/home/get-in-touch.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+}
+
+
+/* lg (≤1199px) */
+@media (max-width: 1199.98px) {
+    .my-life {
+        margin-top: 32px;
+        height: 85%;
+    }
+
+    .contact-section {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url('./../../../public/home/get-in-touch.png');
+    }
+}
+
+
+/* xs */
+@media (max-width: 575.98px) {
+    .my-life {
+        width: 100%;
+    }
 }

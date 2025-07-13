@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 import { TbServer2 } from "react-icons/tb";
-import "./../../style/Navbar.css"
+import "./../../style/common/navbar.css";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -35,7 +35,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container fluid className="p-0">
-        <Navbar.Brand href="/" className="d-flex" style={{fontWeight: 700}}>
+        <Navbar.Brand href="/" className="d-flex" style={{ fontWeight: 700 }}>
           STEV.LIU
         </Navbar.Brand>
         <Navbar.Toggle

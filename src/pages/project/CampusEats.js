@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import UTFT from "../../assets/utft.png";
 import { BiCheck } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import { useLocation } from 'react-router-dom';
@@ -356,7 +355,7 @@ function CampusEats() {
                         </Col>
                         <Col md={5} style={{ paddingBottom: 20, textAlign: "center" }}>
                             <img
-                                src={UTFT}
+                                src="/project-demo/uftf.png"
                                 alt="UofT Food Truck App"
                                 className="img-fluid"
                                 style={{ maxHeight: "550px" }}
