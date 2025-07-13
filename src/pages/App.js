@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Preloader from "./primary/Pre";
+import Preloader from "./home/Pre";
 import Navbar from "../components/common/Navbar";
 import Project from "./project/Project";
 import Resume from "./resume/Resume";
