@@ -127,7 +127,7 @@ export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId
 
             const fadeStartY = fadeStartRect.top;
             const galleryBottomY = galleryRect.bottom;
-            const vh = window.innerHeight;
+            const vh = window.innerHeight * 1.1;
 
 
             if (fadeStartY >= vh) {
