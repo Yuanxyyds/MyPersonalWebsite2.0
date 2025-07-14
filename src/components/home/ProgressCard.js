@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import './../../style/home/progress-card.css';
 
 const designTasks = ["User Research", "UI Design", "UI Rendering"];

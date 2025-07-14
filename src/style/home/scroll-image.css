@@ -1,0 +1,9 @@
+.image-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+.image-wrapper img {
+    width: 100%;
+    object-fit: cover;
+}
