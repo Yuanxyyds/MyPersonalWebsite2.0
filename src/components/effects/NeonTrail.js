@@ -36,13 +36,14 @@ export function initNeonTrail() {
     }
 
     // Event handlers with references for removal
-    const mouseMoveHandler = (e) => handleMove(e.pageX, e.pageY);
+    const mouseMoveHandler = (e) => handleMove(e.clientX, e.clientY);
     const touchMoveHandler = (e) => {
         if (e.touches.length > 0) {
             const touch = e.touches[0];
-            handleMove(touch.pageX, touch.pageY);
+            handleMove(touch.clientX, touch.clientY);
         }
     };
+
 
     document.addEventListener("mousemove", mouseMoveHandler);
     document.addEventListener("touchmove", touchMoveHandler, { passive: true });
@@ -64,7 +65,7 @@ export function initNeonTrail() {
         let velX = direction.x * velocity * 2;
         let velY = direction.y * velocity * 2;
 
-        trail.style.position = "absolute";
+        trail.style.position = "fix";
         trail.style.left = `${posX}px`;
         trail.style.top = `${posY}px`;
         trail.style.backgroundColor = color;
