@@ -15,28 +15,35 @@ import FadeIn from "../components/effects/FadeIn";
 import Sever from "./server/Sever";
 import Home from "./home/Home";
 import Loader from "../components/common/Loader";
+import { useEffect } from "react";
+import { initNeonTrail } from "../components/effects/NeonTrail";
+
 
 function App() {
     const location = useLocation();
+
+    useEffect(() => {
+        initNeonTrail();
+    }, []);
 
     window.addEventListener("scroll", FadeIn);
     window.addEventListener("resize", FadeIn);
 
     return (
         <div>
-            <Loader/>
+            <Loader />
             <Navbar />
             <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/project" element={<Project />} />
                 <Route path="/resume" element={<Resume />} />
-                <Route path="/campusEats*" element={<CampusEats />} />
-                <Route path="/landSink*" element={<LandSink />} />
-                <Route path="/foodImageClassify*" element={<FoodImageClassify />} />
-                <Route path="/server*" element={<Sever />} />
-                <Route path="/stevenAI*" element={<StevenAI />} />
-                <Route path="/mentorAI*" element={<MentorAI />} />
+                <Route path="/campusEats" element={<CampusEats />} />
+                <Route path="/landSink" element={<LandSink />} />
+                <Route path="/foodImageClassify" element={<FoodImageClassify />} />
+                <Route path="/server" element={<Sever />} />
+                <Route path="/stevenAI" element={<StevenAI />} />
+                <Route path="/mentorAI" element={<MentorAI />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
             {/* Conditionally hide footer if path starts with /server */}
