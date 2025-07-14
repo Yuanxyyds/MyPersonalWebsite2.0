@@ -151,6 +151,13 @@ p.small {
     animation-delay: 0.75s;
 }
 
+.neon-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
 /* lg (≤1199px) */
 @media (max-width: 1199.98px) {
     h1 {

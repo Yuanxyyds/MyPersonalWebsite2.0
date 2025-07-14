@@ -52,14 +52,11 @@ function Server() {
             if (keys.includes(e.keyCode)) {
                 e.preventDefault();
             }
-        };
+        }
 
         const handleScroll = () => {
-            if (window.scrollY < window.innerHeight) {
-                setAtTop(true);
-            } else {
-                setAtTop(false);
-            }
+            const isNowTop = window.scrollY < window.innerHeight;
+            setAtTop(isNowTop);
         };
 
         window.addEventListener("keydown", preventKeys);
