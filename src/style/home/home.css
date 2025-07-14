@@ -113,6 +113,15 @@
     background-size: contain;
 }
 
+.gallery-section {
+    position: relative;
+    padding-top: 40vh;
+    padding-bottom: 10vh;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
 
 /* lg (≤1199px) */
 @media (max-width: 1199.98px) {

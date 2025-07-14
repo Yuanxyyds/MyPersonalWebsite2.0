@@ -7,6 +7,7 @@ import ProgressCard from "../../components/home/ProgressCard";
 import CodeCard from "../../components/home/CodeCard";
 // import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
 import "./../../style/home/home.css"
+import { ScrollImage, StickyText } from "../../components/home/Gallery";
 
 
 function Home() {
@@ -137,6 +138,31 @@ function Home() {
                         </Col>
                     </Row>
                 </Container>
+
+
+                <StickyText text="There are many of other things I do" />
+                <Container fluid className="two-column-content-padding" id="gallery">
+                    <Container fluid className="gallery-section">
+                        <Row className="m-0 p-0">
+                            <Col xs={12} md={6} id="first-image" className="m-0 p-0 text-center">
+                                <ScrollImage src="/home/lake.JPG" speed={1} z={0} />
+                                <p style={{ width: '70%', margin: '2px auto', marginTop: '15%',  marginBottom: '15%' }}>
+                                    Photography is one of my creative outlets — here’s a glimpse into my gallery.
+                                </p>
+                            </Col>
+                            <Col xs={12} md={6} className="m-0 p-0">
+                                <ScrollImage src="/home/winnie.JPG" speed={0.8} wrapperWidth="70%"
+                                    initialOffset={-20} />
+                            </Col>
+                        </Row>
+                        <Row className="m-0 p-0">
+                            <Col xs={12} md={6} className="m-0 p-0">
+                                <ScrollImage src="/home/light.JPG" speed={1.1} initialOffset={10} />
+                            </Col>
+                        </Row>
+                    </Container>
+                </Container>
+
                 {/* <Container fluid className="two-column-content-padding">
                     <Container fluid className="">
                         <h2 className="fade-in">
@@ -210,7 +236,7 @@ function Home() {
                 </Container>
             </Container>
 
-        </section>
+        </section >
     );
 }
 
