@@ -33,8 +33,27 @@
 
 .progress-fill {
     height: 100%;
-    background: #7dd3fc;
     width: 0%;
+    background: linear-gradient(90deg,
+            #ff00cc,
+            #00ccff,
+            #8000ff,
+            #b300ff,
+            #ff00cc,
+            #00ccff,
+            #8000ff,
+            #b300ff,
+            #ff00cc);
+    /* repeated pattern for seamless loop */
+    background-size: 300% 100%;
+    background-repeat: repeat;
+    animation: neonColorFlow 4s linear infinite;
+    box-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff00cc,
+        0 0 20px #00ccff,
+        0 0 30px #8000ff,
+        0 0 40px #b300ff;
     transition: width 0.02s ease-in-out;
 }
 
@@ -45,27 +64,73 @@
 }
 
 .phase {
-    flex: 1;
+    position: relative;
     background: #0f172a;
     border-radius: 12px;
     padding: 15px;
-    border: 1px solid #7dd3fc;
+    overflow: hidden;
+    /* so glow doesn't bleed out */
+    z-index: 1;
 }
 
+.phase-container {
+    flex: 1;
+    content: '';
+    padding: 2px;
+    inset: 0;
+    /* thickness of border */
+    border-radius: 12px;
+    background: linear-gradient(90deg,
+            #ff00cc,
+            #00ccff,
+            #8000ff,
+            #b300ff,
+            #ff00cc);
+    background-size: 400% 100%;
+    animation: neonColorFlow 6s linear infinite;
+}
+
+
+.done {
+    color: #d2e7facd;
+    font-weight: bold;
+}
 
 .trans {
     transition: opacity 0.4s ease;
 }
 
 .undone {
-    color: gray !important;
+    color: gray;
 }
 
-.done {
-    color: #90caff !important;
+
+.neon-text {
     font-weight: bold;
+    background: linear-gradient(90deg,
+            #ff00cc,
+            #00ccff,
+            #8000ff,
+            #b300ff,
+            #ff00cc);
+    background-size: 400% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Makes gradient visible */
+    animation: neonColorFlow 6s ease-in-out infinite;
 }
 
+
+@keyframes neonColorFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
 
 /* xs */
 @media (max-width: 575.98px) {

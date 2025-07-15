@@ -5,7 +5,7 @@
   padding: 12px;
   width: 100%;
   height: 100%;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace !important;
   margin-bottom: 16px;
   transition: transform 0.3s;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
@@ -41,13 +41,12 @@
 }
 
 .code-block {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', monospace !important;
   color: #e2e8f0;
   border-radius: 16px;
   background-color: #0f172a;
   padding: 16px;
   overflow-x: auto;
-  font-size: 14px;
 }
 
 .code-block .keyword {
@@ -59,4 +58,29 @@
 .code-block .string {
   color: #fbbf24;
   /* amber */
+}
+
+.code-block .highlight {
+  color: #98c379; /* Green */
+}
+
+.code-block .comment {
+  color: #7f848e;
+  /* subtle gray-green */
+  font-style: italic;
+}
+
+.neon-text {
+  background: linear-gradient(90deg,
+      #ff00cc,
+      #00ccff,
+      #8000ff,
+      #b300ff,
+      #ff00cc);
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Makes gradient visible */
+  animation: neonColorFlow 6s ease-in-out infinite;
 }
