@@ -138,10 +138,13 @@ export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId
                 setOpacity(0);
             } else {
                 // Between fade start and gallery bottom — interpolate
-                const totalFadeDistance = galleryBottomY - fadeStartY;
+                const totalFadeDistance = 0.45 * vh + galleryBottomY - fadeStartY;
                 const distanceScrolled = Math.max(0, vh - fadeStartY);
                 const progress = distanceScrolled / totalFadeDistance;
-                const newOpacity = Math.max(0, (1 - progress)) ** 2;
+
+
+                const newOpacity = Math.min(progress < 0.4 ? (1 - progress) ** 0.5 : Math.max(0, (1 - progress)) ** 1.5, 1);
+                console.log(newOpacity);
                 setOpacity(newOpacity);
             }
         };
@@ -168,7 +171,7 @@ export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId
                 textAlign: 'center',
                 width: '100%',
                 pointerEvents: 'none',
-                transition: 'opacity 0.3s ease-in-out',
+                transition: 'opacity 0.1s ease-in-out',
             }}
         >
             {text}

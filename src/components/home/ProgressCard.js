@@ -1,4 +1,4 @@
-import  { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './../../style/home/progress-card.css';
 
 const designTasks = ["User Research", "UI Design", "UI Rendering"];
@@ -33,9 +33,9 @@ export default function ProgressCard() {
     useEffect(() => {
         if (!hasStarted) return;
 
-        const allTasks = [...designTasks, ...devTasks];
+        const allTasks = ["", ...designTasks, ...devTasks];
         const totalTasks = allTasks.length;
-        const totalDuration = totalTasks * 800;
+        const totalDuration = (totalTasks - 1) * 600;
         const updateInterval = 50;
         const progressStep = 100 / (totalDuration / updateInterval);
 
@@ -53,7 +53,7 @@ export default function ProgressCard() {
         allTasks.forEach((task, index) => {
             setTimeout(() => {
                 setCompletedTasks(prev => [...prev, task]);
-            }, index * 800);
+            }, index * 600);
         });
 
         return () => clearInterval(interval);
@@ -79,25 +79,29 @@ export default function ProgressCard() {
             </div>
 
             <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${progress}%` }} />
+                <div className={`progress-fill ${progress === 100 ? 'done' : ''}`} style={{ width: `${progress}%` }} />
             </div>
 
             <div className="phases">
-                <div className="phase">
-                    <p className='md' style={{ marginBottom: '6px' }}>✎ Design</p>
-                    {designTasks.map((task) => (
-                        <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
-                            {isCompleted(task) ? `✓ ` : '☐ '}{task}
-                        </p>
-                    ))}
+                <div className='phase-container'>
+                    <div className="phase">
+                        <p className={`md`} style={{ marginBottom: '6px', color: '#7dd3fc' }}>✎ Design</p>
+                        {designTasks.map((task) => (
+                            <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
+                                {isCompleted(task) ? '✓ ' : '☐ '}{task}
+                            </p>
+                        ))}
+                    </div>
                 </div>
-                <div className="phase dev">
-                    <p className='md' style={{ marginBottom: '6px' }}>&lt;&nbsp;&gt; Develop</p>
-                    {devTasks.map((task) => (
-                        <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
-                            {isCompleted(task) ? '✓ ' : '☐ '}{task}
-                        </p>
-                    ))}
+                <div className='phase-container'>
+                    <div className="phase">
+                        <p className='md' style={{ marginBottom: '6px', color: '#7dd3fc' }}>&lt;&nbsp;&gt; Develop</p>
+                        {devTasks.map((task) => (
+                            <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
+                                {isCompleted(task) ? '✓ ' : '☐ '}{task}
+                            </p>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

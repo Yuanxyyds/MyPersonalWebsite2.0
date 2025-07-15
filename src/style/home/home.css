@@ -115,12 +115,12 @@
 
 .gallery-section {
     position: relative;
+    margin-top: 5vh;
     padding-top: 45vh;
     padding-bottom: 10vh;
     padding-left: 0;
     padding-right: 0;
 }
-
 
 
 /* lg (≤1199px) */
