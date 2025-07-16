@@ -5,7 +5,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import ProgressCard from "../../components/home/ProgressCard";
 import CodeCard from "../../components/home/CodeCard";
-// import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
 import "./../../style/home/home.css"
 import { ScrollImage, StickyText } from "../../components/home/Gallery";
 
@@ -162,34 +161,6 @@ function Home() {
                         </Row>
                     </Container>
                 </Container>
-
-                {/* <Container fluid className="two-column-content-padding">
-                    <Container fluid className="">
-                        <h2 className="fade-in">
-                            Programming Language <strong className="primary-color">Skill </strong>
-                        </h2>
-                        <Language className="fade-in" />
-                    </Container>
-                    <Container className="">
-                        <h2 className="fade-in">
-                            Framework and System <strong className="primary-color">Skill </strong>
-                        </h2>
-                        <Framework className="fade-in" />
-                    </Container>
-                    <Container className="">
-                        <h2 className="fade-in">
-                            Service and Tool <strong className="primary-color">Skill </strong>
-                        </h2>
-                        <Tool className="fade-in" />
-                    </Container>
-                    <Container className="">
-                        <h2 className="fade-in">
-                            Learning <strong className="primary-color">Topics </strong>
-                        </h2>
-                        <Topics className="fade-in" />
-
-                    </Container>
-                </Container> */}
 
                 <Container fluid id="about" className="contact-section" style={{ marginBottom: '10vh' }}>
                     <Container fluid className="two-column-content-padding">
