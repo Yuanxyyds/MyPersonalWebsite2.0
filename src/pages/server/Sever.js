@@ -5,22 +5,7 @@ import ModelCanvas from "../../components/server/ModelCanvas";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 import "./../../style/server/server.css"
 import InPageLoader from "../../components/common/InPageLoader";
-
-
-function useIsVerticalLayout() {
-    const getIsVertical = () => window.innerHeight / window.innerWidth > 1.3;
-    const [isVertical, setIsVertical] = useState(getIsVertical());
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsVertical(getIsVertical());
-        };
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return isVertical;
-}
+import { useIsVerticalLayout } from "../../components/effects/IsVertical";
 
 
 function Server() {
@@ -96,7 +81,7 @@ function Server() {
                         <Row>
                             <Col lg={11} xl={8}>
                                 <h1 className="thin with-line fade-in mb-0 delay-in delay-0">
-                                    EXPLORE MY
+                                    ENTER MY
                                 </h1>
                                 <h1 className="fade-in mb-2 delay-in delay-1 primary-color">
                                     3D SERVER ROOM
@@ -125,7 +110,7 @@ function Server() {
                         <Row>
                             <Col xs={11} md={8} lg={7} xl={6}>
                                 <h1 className="with-line fade-in mb-0 delay-in delay-0">
-                                    EXPLORE MY
+                                    ENTER MY
                                 </h1>
                                 <h2 className="fade-in mb-2 delay-in delay-1 primary-color" style={{ fontWeight: '700' }}>
                                     3D SERVER ROOM
