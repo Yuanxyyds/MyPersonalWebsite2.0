@@ -51,7 +51,8 @@
 }
 
 .project-card {
-    padding: 50px 25px !important;
+    padding: 16px !important;
+    gap: 20px;
     height: auto;
     text-align: center;
 }

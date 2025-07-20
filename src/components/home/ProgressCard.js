@@ -85,7 +85,7 @@ export default function ProgressCard() {
             <div className="phases">
                 <div className='phase-container'>
                     <div className="phase">
-                        <p className={`md`} style={{ marginBottom: '6px', color: '#7dd3fc' }}>✎ Design</p>
+                        <p className={`md`} style={{ marginBottom: '6px' }}>✎ Design</p>
                         {designTasks.map((task) => (
                             <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
                                 {isCompleted(task) ? '✓ ' : '☐ '}{task}
@@ -95,7 +95,7 @@ export default function ProgressCard() {
                 </div>
                 <div className='phase-container'>
                     <div className="phase">
-                        <p className='md' style={{ marginBottom: '6px', color: '#7dd3fc' }}>&lt;&nbsp;&gt; Develop</p>
+                        <p className='md' style={{ marginBottom: '6px' }}>&lt;&nbsp;&gt; Develop</p>
                         {devTasks.map((task) => (
                             <p key={task} className={`small trans ${isCompleted(task) ? 'done' : 'undone'}`} style={{ marginBottom: '4px' }}>
                                 {isCompleted(task) ? '✓ ' : '☐ '}{task}
