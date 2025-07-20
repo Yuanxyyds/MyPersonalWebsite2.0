@@ -128,7 +128,6 @@ function Home() {
                                 I create engaging, interactive software powered by cutting-edge technologies.
                             </h5>
                             <div className="fade-in"> <ProgressCard /> </div>
-
                         </Col>
                         <Col xs={12} md={10} lg={8} xl={6} style={{ display: 'flex', flexDirection: 'column' }}>
                             <div className="my-life fade-in">
@@ -138,14 +137,13 @@ function Home() {
                     </Row>
                 </Container>
 
-
-                <StickyText text="There are many of other things I do" />
+                <StickyText text="There are many other things I do" />
                 <Container fluid className="two-column-content-padding" id="gallery">
                     <Container fluid className="gallery-section">
                         <Row className="m-0 p-0">
                             <Col xs={12} md={6} id="first-image" className="m-0 p-0 text-center">
                                 <ScrollImage src="/home/lake.JPG" speed={1} z={0} />
-                                <p style={{ width: '70%', margin: '2px auto', marginTop: '15%',  marginBottom: '15%' }}>
+                                <p style={{ width: '70%', margin: '2px auto', marginTop: '15%', marginBottom: '15%' }}>
                                     Photography is one of my creative outlets — here’s a glimpse into my gallery.
                                 </p>
                             </Col>

@@ -1,16 +1,15 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import { BsGithub } from "react-icons/bs";
-import { CgWebsite } from "react-icons/cg";
-import { Link } from "react-router-dom";
-import ProjectCard from "../../components/project/ProjectCards";
+import { useNavigate } from "react-router-dom";
 import { useIsVerticalLayout } from "../../components/effects/IsVertical";
 import { Framework, Language, Topics, Tool } from "../../components/home/StackCard";
 import "./../../style/project/project.css"
 import { useEffect } from "react";
+import FeaturedProjectCard from "../../components/project/FeaturedProjectCard";
 
 function Project() {
     const isVertical = useIsVerticalLayout();
+    const navigate = useNavigate();
+
     useEffect(() => {
         const elements = [
             { headerId: 'project', lineId: 'project-line' },
@@ -60,7 +59,7 @@ function Project() {
                                     EXPLORE MY
                                 </h1>
                                 <h1 className="fade-in mb-2 delay-in delay-1 primary-color">
-                                    PROJECTS, SKILLS
+                                    WORKS & SKILLS
                                 </h1>
                                 <h5 className="fade-in mb-4 delay-in delay-2 bold">
                                     A curated collection of what I’ve designed, built, and deployed — from backend systems to interactive UIs.
@@ -100,352 +99,156 @@ function Project() {
                 </Container>
             }
 
-            <Container fluid className="two-column-content-padding" style={{ color: 'white' }} id="project">
-                <Container>
-                    <div className="text-with-animated-underline">
-                        <h2 id="project" className="fade-in mb-0">PROJECTS</h2>
+            <Container fluid className={`two-column-content-padding ${isVertical ? "pt-0" : ""}`} style={{ color: 'white' }} id="project">
+                <Container fluid className="m-0 p-0">
+                    <div className="text-with-animated-underline mb-4">
+                        <h2 id="project" className="fade-in mb-0">MY WORKS</h2>
                         <div id="project-line" className="animated-underline"></div>
                     </div>
-
                     <Row>
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/campus-eats.png"
+                        <Col xs={12} sm={10} md={10} lg={10} xl={6} xxl={6} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/campus-eats-cover.jpg"
+                                logoSrc="/project/campus-eats-logo-transparent.png"
                                 title="Campus Eats"
                                 description="To tackle challenges in campus dining, our startup team developed an all-encompassing mobile app for campus food service. This app serves students, restaurants, and drivers, aiming to improve the campus food service ecosystem. It was built with Flutter and a Firebase backend."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" target="_blank">
-                                                <Link to={"/campusEats"} style={{
-                                                    color: "white",
-                                                    textDecoration: "none",
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    justifyContent: "center"
-                                                }}>
-                                                    <CgWebsite /> &nbsp; Project Demo
-                                                </Link>
-                                            </Button>
-                                        </Col>
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" href={"https://github.com/CampusEatsUofT"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Organization
-                                            </Button>
-                                        </Col>
-                                    </Row>}
+                                shortDescription="Our startup team built a mobile app to streamline campus dining for students, restaurants, and drivers using Flutter and Firebase."
+                                githubLink="https://github.com/CampusEatsUofT"
+                                tags={['Mobile App', 'Website', 'Business/Startup', 'UI/UX Design',]}
+                                onDetailClick={() => {
+                                    navigate('/campusEats');
+                                }}
                             />
                         </Col>
 
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/steven-ai.png"
+                        <Col xs={12} sm={10} md={10} lg={10} xl={6} xxl={6} className="fade-in project-card">
+
+                            <FeaturedProjectCard
+                                imageSrc="/project/steven-ai-cover.jpg"
+                                logoSrc="/project/steven-ai-logo-transparent.png"
                                 title="Steven AI"
-                                description="This personal project aims to develop an AI chatbot that can answer any questions about me. The chatbot is created by fine-tuning the LLaMA 3.2 model (with 3 billion parameters) using approximately 1,000 Q&A pairs related to my personal background and experience. To optimize resources, I utilized a LoRA adapter for parameter-efficient fine-tuning, allowing the model to be trained efficiently in my home lab setup."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" target="_blank">
-                                                <Link to={"/stevenAi"} style={{
-                                                    color: "white",
-                                                    textDecoration: "none",
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    justifyContent: "center"
-                                                }}>
-                                                    <CgWebsite /> &nbsp; Project Demo
-                                                </Link>
-                                            </Button>
-                                        </Col>
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" href={"https://github.com/Yuanxyyds/machine-learning"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Github
-                                            </Button>
-                                        </Col>
-                                    </Row>}
+                                description="Steven AI is a personalized chatbot designed to answer any questions about me. It was built by fine-tuning the LLaMA 3.2 model (3 billion parameters) on over 1,000 Q&A pairs covering my background and experiences. To optimize training in my home lab, I used a LoRA adapter for parameter-efficient fine-tuning and RAG to enhance accuracy and response relevance."
+                                shortDescription="Steven AI is a personalized chatbot fine-tuned on 1,000+ Q&A pairs about me using LLaMA 3.2 and LoRA. It runs in my home lab and uses RAG to improve accuracy and relevance."
+                                githubLink="https://github.com/Yuanxyyds/machine-learning/tree/main/llama3.2"
+                                tags={['Machine Learning', 'LLM Finetuning', 'RAG']}
+                                onDetailClick={() => {
+                                    navigate('/stevenAi');
+                                }}
+                            />
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/portfolio-cover.jpg"
+                                title="Portfolio Website"
+                                description="My portfolio website is built with a React frontend and a Django backend, self-hosted on a Proxmox server. It showcases my projects, design work, and passion for building visually engaging, innovative products."
+                                shortDescription="My portfolio website, built with React and Django and self-hosted on Proxmox, showcases my projects, designs, and passion for creating visually engaging products."
+                                githubLink="https://github.com/Yuanxyyds/MyPersonalWebsite2.0"
+                                tags={['React', 'Django', 'UI/UX Design',]}
                             />
                         </Col>
 
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/mentor-ai.png"
-                                title="Mentor AI"
-                                description="MentorAI is a research project that automates the creation of an LLM pipeline using only YouTube links to generate personalized mentorship advice. It leverages NLP mentorship videos, transcripts, and user-specific data to guide aspiring researchers in finding mentors, conducting literature reviews, and preparing for PhD applications with tailored, actionable suggestions."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" target="_blank">
-                                                <Link to={"/mentorAi"} style={{
-                                                    color: "white",
-                                                    textDecoration: "none",
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    justifyContent: "center"
-                                                }}>
-                                                    <CgWebsite /> &nbsp; Project Demo
-                                                </Link>
-                                            </Button>
-                                        </Col>
-                                        {/*<Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}*/}
-                                        {/*     style={{display: "flex", justifyContent: "center", paddingBottom: "10px"}}>*/}
-                                        {/*    <Button variant="primary" href={"https://github.com/Yuanxyyds/machine-learning"}*/}
-                                        {/*            target="_blank">*/}
-                                        {/*        <BsGithub/> &nbsp; Github*/}
-                                        {/*    </Button>*/}
-                                        {/*</Col>*/}
-                                    </Row>}
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/server-room-cover.jpg"
+                                title="3D Server Room"
+                                description="A 3D-rendered server room built with Blender and Three.js, providing an interactive visualization of my setup. Explore my background and hardware by interacting with monitors, a TV, and other elements."
+                                shortDescription="A 3D server room built with Blender and Three.js, showcasing my setup and hardware through interactive elements."
+                                tags={['3D Modeling', 'Blender', 'Three.js',]}
+                                detailText="Visit"
+                                onDetailClick={() => {
+                                    navigate('/server');
+                                }}
                             />
                         </Col>
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/food-101.png"
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/food-101-cover.jpg"
                                 title="Food-101 Classification"
-                                description="This project focuses on developing a deep learning model to classify food images using the Food-101 dataset. It includes data processing, model training, fine-tuning, and performance optimization through transfer learning and hyperparameter tuning. It compares VGG, Inception, ResNet with a baseline model aiming to create an efficient and accurate food classification solution."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" target="_blank">
-                                                <Link to={"/foodImageClassify"} style={{
-                                                    color: "white",
-                                                    textDecoration: "none",
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    justifyContent: "center"
-                                                }}>
-                                                    <CgWebsite /> &nbsp; Project Demo
-                                                </Link>
-                                            </Button>
-                                        </Col>
-                                        <Col xs={5} sm={5} md={10} lg={5} xl={10} xxl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" href={"https://github.com/Yuanxyyds/machine-learning"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Github
-                                            </Button>
-                                        </Col>
-                                    </Row>}
+                                description="This project develops a deep learning model to classify food images using the Food-101 dataset. It covers data processing, model training, transfer learning, and hyperparameter tuning, comparing VGG, Inception, and ResNet against a baseline to build an efficient, accurate classifier."
+                                shortDescription="Built a food image classifier using Food-101, comparing VGG, Inception, and ResNet with a baseline through transfer learning and tuning for optimal accuracy."
+                                githubLink="https://github.com/Yuanxyyds/machine-learning/tree/main/food-101"
+                                tags={['Deep Learning', 'CNN']}
+                                onDetailClick={() => {
+                                    navigate('/foodImageClassify');
+                                }}
                             />
                         </Col>
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/personal-web.png"
-                                title="Personal Website"
-                                description="My personal website built with frontend using Next.js & Tailwind CSS (version 1), React (version 2). And backend using Django with AWS hosting. Both websites feature detailed project explanations, and videos showcasing each project."
-                                action={
-                                    <Row style={{ justifyContent: "center", padding: "10px", display: "flex" }}
-                                        className="g-0">
-                                        <Col xs={5} sm={5} md={6} lg={5} xl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                href={"https://github.com/Yuanxyyds/MyPersonalWebsite2.0"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Github
-                                            </Button>
-                                        </Col>
-                                        <Col xs={5} sm={5} md={6} lg={5} xl={6}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary" href={"https://liustev6.ca"} target="_blank">
-                                                <CgWebsite /> &nbsp; Website
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                }
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/lockin-cover.jpg"
+                                title="LockIn IOS"
+                                description="LockIn is an iOS app that helps users reduce screen time by blocking distracting apps, starting focus sessions, and earning coins for staying offline. Users can redeem real-life rewards like food and clothing. Built with Flutter, Swift, and Firebase."
+                                shortDescription="LockIn helps users block apps, stay focused, and earn real-life rewards. Built with Flutter and Firebase, it promotes digital wellness through focus sessions, screen time limits."
+                                githubLink="https://justlockin.com/"
+                                detailText="App Store"
+                                tags={['Mobile App', 'Flutter', 'Website']}
+                                onDetailClick={() => {
+                                    window.open("https://apps.apple.com/us/app/lock-in-focus-app-blocker/id6472232979");
+                                }}
                             />
                         </Col>
-
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/dtc.png"
-                                title="JCI Community (DTC) Mobile App"
-                                description="Home Security and Cloud device management mobile app (currently named as Community) developed by Johnson Controls. Participated in Front-end and Back-end development using Flutter and Firebase."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Unavailable
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                }
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/mentor-ai-cover.jpg"
+                                title="Mentor AI"
+                                description="MentorAI is a research project that uses YouTube links and user data to generate personalized mentorship advice. It guides researchers using LLMs and NLP on transcripts from mentorship-related videos."
+                                shortDescription="MentorAI generates personalized mentorship advice from YouTube videos and user data, helping aspiring researchers find mentors, review literature, and prepare for PhD applications."
+                                detailText="Demo"
+                                tags={['Machine Learning', 'RAG', 'Research']}
+                                onDetailClick={() => {
+                                    navigate('/mentorAi');
+                                }}
                             />
                         </Col>
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/fdl.png"
-                                title="Accelerated Data Management"
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/dtc.png"
+                                title="JCI DTC Community"
+                                description="Community is a mobile app by Johnson Controls for home security and cloud device management. I contributed to both front-end and back-end development using Flutter and Firebase, supporting real-time features and secure device interactions."
+                                shortDescription="Community is a mobile app by Johnson Controls for home security and cloud device management. Worked on front-end and back-end development using Flutter and Firebase."
+                                tags={['Flutter', 'Home Assistant', 'GCP']}
+                            />
+                        </Col>
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/fdl-cover.jpg"
+                                title="Accelerated DBMS"
                                 description="As Dennard scaling ends and Moore's law slows, enhancing general-purpose processor performance becomes harder. This research explores optimizing data management systems with cloud hardware accelerators to boost data task efficiency and reduce costs at scale."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                href={"https://fardatalab.org/research.html"}
-                                                target="_blank">
-                                                <CgWebsite /> &nbsp; FarDataLab Website
-                                            </Button>
-                                        </Col>
-
-                                    </Row>
-                                }
+                                shortDescription="This research explores optimizing data management systems with cloud hardware accelerators to boost data task efficiency and reduce costs at scale."
+                                tags={['GPU/FPGA', 'Research']}
+                                detailText="Website"
+                                onDetailClick={() => {
+                                    window.open("https://fardatalab.org/research.html");
+                                }}
                             />
                         </Col>
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/lockin.png"
-                                title="aSocial Mobile App"
-                                description="aSocial is an iOS app designed to help users reduce screen time by blocking apps, competing with friends, and earning real-life rewards. It utilizes the screen time API to limit phone usage and to encourage more offline activities. The app was developed using Flutter, Swift and Firebase backend."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                href={"https://github.com/aSocial-Technologies"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Github Organization Page
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                }
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/great-lake-cover.jpg"
+                                title="Great Lakes Pollution"
+                                description="This project explores Great Lakes water quality with a focus on phosphorus levels. It uses data from the Canadian Open Data Portal and city web scraping, featuring visualizations like time series plots, boxplots, and interactive maps."
+                                shortDescription="Analyzed Great Lakes water quality using public and scraped data, focusing on phosphorus levels. Visualized trends through time series plots, boxplots, and interactive maps."
+                                githubLink="https://github.com/Yuanxyyds/Analyzing-Great-Lakes-Polution"
+                                detailText="Visit"
+                                tags={['Data Science', 'Data Wrangling']}
+                                onDetailClick={() => {
+                                    window.open("https://yuanxyyds.github.io/Analyzing-Great-Lakes-Polution/");
+                                }}
                             />
                         </Col>
-
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/great-lake.png"
-                                title="Analyze Great Lakes Pollution"
-                                description="This project investigates Great Lakes water quality, focusing on phosphorus levels. Utilizing data from The Canadian Open Data Portal and web-scraped city data. Delivered with time series plots, boxplots, and interactive maps for visualization. "
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col xs={5} sm={5} md={6} lg={5} xl={6} xxl={5}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                href={"https://github.com/Yuanxyyds/Analyzing-Great-Lakes-Polution"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Github
-                                            </Button>
-                                        </Col>
-                                        <Col xs={5} sm={5} md={6} lg={5} xl={6} xxl={5}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                href={"https://yuanxyyds.github.io/Analyzing-Great-Lakes-Polution/"}
-                                                target="_blank">
-                                                <CgWebsite /> &nbsp; Website
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                }
-                            />
-                        </Col>
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/ds-web.png"
-                                title="Data Science Projects Collection Website"
-                                description="My data science project showcase website written by RMarkdown. Including projects: Predict NBA Player's NBA2K Rating; NLP in Identifying Clash Royale Players' Feeling; Data Visualization for Bike Thefts in Toronto; Analyze Life Expectation versus Alcohol Consumption."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col xs={5} sm={5} md={6} lg={5} xl={6} xxl={5}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button variant="primary"
-                                                href={"https://github.com/Yuanxyyds/Data-Science-Projects"}
-                                                target="_blank">
-                                                <BsGithub /> &nbsp; Github
-                                            </Button>
-                                        </Col>
-                                        <Col xs={5} sm={5} md={6} lg={5} xl={6} xxl={5}
-                                            style={{ display: "flex", justifyContent: "center", paddingBottom: "10px" }}>
-                                            <Button
-                                                variant="primary"
-                                                href={"https://yuanxyyds.github.io/Data-Science-Projects/"}
-                                                target="_blank">
-                                                <CgWebsite /> &nbsp; Website
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                }
-                            />
-                        </Col>
-
-                        <Col xs={12} sm={12} md={6} lg={6} xl={4} className="project-card">
-                            <ProjectCard
-                                imgPath="/project/land-sink.png"
-                                title="Estimate LandSink Percentage"
-                                description="CSC110 Final Project. We trained a model using Python to estimate temperature and land sink percentage for a given year. As an extension, I developed a Django Backend server, which is now hosted on AWS. This server enhances interactivity and allows users to access and interact with the project through the web."
-                                action={
-                                    <Row style={{
-                                        justifyContent: "center",
-                                        padding: "10px",
-                                        display: "flex",
-                                        flexWrap: "wrap"
-                                    }} className="g-0">
-                                        <Col style={{ display: "flex", justifyContent: "center", paddingBottom: "10px", }}>
-                                            <Button variant="primary"
-                                                target="_blank">
-                                                <Link to={"/landSink"} style={{ color: "white", textDecoration: "none" }}>
-                                                    <CgWebsite /> &nbsp; Project Demo
-                                                </Link>
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                }
+                        <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
+                            <FeaturedProjectCard
+                                imageSrc="/project/land-sink-cover.jpg"
+                                title="LandSink Estimate"
+                                description="For our CSC110 Final Project, we trained a Python model to estimate temperature and land sink percentages by year. I extended the project by developing a Django backend hosted on AWS, enabling interactive web access and user engagement."
+                                shortDescription="Built a Python model to estimate climate data, then added a Django backend hosted on AWS to enable web-based user interaction for the CSC110 final project."
+                                tags={['Regression', 'Django', 'AWS']}
+                                onDetailClick={() => {
+                                    navigate('/landSink');
+                                }}
                             />
                         </Col>
                     </Row>
