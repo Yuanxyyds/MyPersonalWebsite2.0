@@ -205,7 +205,7 @@ function Project() {
                         </Col>
                         <Col xs={12} sm={10} md={10} lg={6} xl={5} xxl={4} className="fade-in project-card">
                             <FeaturedProjectCard
-                                imageSrc="/project/dtc.png"
+                                imageSrc="/project/dtc-cover.jpg"
                                 title="JCI DTC Community"
                                 description="Community is a mobile app by Johnson Controls for home security and cloud device management. I contributed to both front-end and back-end development using Flutter and Firebase, supporting real-time features and secure device interactions."
                                 shortDescription="Community is a mobile app by Johnson Controls for home security and cloud device management. Worked on front-end and back-end development using Flutter and Firebase."
