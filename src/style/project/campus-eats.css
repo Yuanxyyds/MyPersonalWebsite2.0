@@ -1,32 +1,101 @@
-.project-tab-section {
-    justify-content: center;
-    padding-top: 15px;
-    display: inline-block;
+.ce-section {
     position: relative;
-    padding-inline-start: 0;
+    height: 100vh;
+    min-height: 780px;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.project-tab {
-    display: inline-block;
-    padding-right: 15px;
-    padding-left: 15px;
+.ce-bg-desktop {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
 }
 
-.project-tab-content {
-    position: relative !important;
-    display: inline-block !important;
-    text-align: center !important;
-    transition: 0.5s !important;
-    padding: 4px 10px;
-    border-radius: 10%;
+.ce-content-padding {
+    margin: 0 !important;
+    padding-top: max(100px, 15vh);
+    padding-bottom: max(100px, 15vh);
+    padding-left: 8vw;
+    padding-right: 8vw;
 }
 
-.project-tab-content:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--primary-color);
+.ce-fixed-height-col {
+    position: relative;
+    height: 70vh;
+    min-height: 580px;
 }
 
-.tab-colour {
-    color: white !important;
-    text-decoration: none;
+.ce-text-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0.9;
+    background-color: #ffe62c;
+    width: 100%;
+    height: 100%;
+    padding: 8% 10%;
+}
+
+.ce-logo {
+    display: flex;
+    align-items: center;
+}
+
+.timeline-section {
+    position: relative;
+    margin-top: 5vh;
+    padding-top: 45vh;
+    padding-bottom: 10vh;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    .ce-section {
+        min-height: 600px;
+    }
+
+    .ce-content-padding {
+        padding-top: max(60px, 15vh);
+        padding-bottom: max(60px, 15vh);
+    }
+
+    .ce-fixed-height-col {
+        min-height: 480px;
+    }
+
+    .ce-text-card {
+        padding: 8% 10%;
+    }
+}
+
+@media (max-width: 575px) {
+    .ce-section {
+        min-height: 550px;
+    }
+
+    .ce-content-padding {
+        padding-top: max(50px, 20vh);
+        padding-bottom: max(50px, 20vh);
+    }
+
+    .ce-fixed-height-col {
+        height: 60vh;
+        min-height: 450px;
+    }
+
+    .ce-text-card {
+        padding: 8% 10%;
+    }
 }

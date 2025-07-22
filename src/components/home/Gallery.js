@@ -10,6 +10,10 @@ export const ScrollImage = ({
     wrapperWidth = "80%",
     initialOffset = 0,
     z = 0,
+    overlayText,
+    overlayAction = () => { },
+    tag,
+    tagLocation = "10%"
 }) => {
     const wrapperRef = useRef(null);
     const imgRef = useRef(null);
@@ -78,8 +82,6 @@ export const ScrollImage = ({
 
     // ✅ xs mode: just show image
     if (isXS) {
-        console.log(src)
-        console.log(aspectRatio)
         return (
             <div
                 className={`image-wrapper mb-4`}
@@ -90,6 +92,17 @@ export const ScrollImage = ({
                     transform: 'none',
                 }}>
                 <img src={src} alt="" loading="lazy" />
+                {tag !== undefined && (
+                    <div className="image-tag" style={{ top: tagLocation }}>
+                        {tag}
+                    </div>
+                )}
+                {overlayText !== undefined &&
+                    <div className="hover-overlay" onClick={overlayAction}>
+                        <div className="overlay-text">{overlayText}</div>
+                    </div>
+                }
+
             </div>
         );
     }
@@ -104,29 +117,48 @@ export const ScrollImage = ({
                 width: wrapperWidth,
                 opacity: 0,
                 zIndex: z,
-                minWidth: '330px'
+                minWidth: '300px'
             }}
         >
             <img src={src} ref={imgRef} alt="" loading="lazy" />
+            {tag !== undefined && (
+                <div className="image-tag" style={{ top: tagLocation }}>
+                    {tag}
+                </div>
+            )}
+            {overlayText !== undefined &&
+                <div className="hover-overlay" onClick={overlayAction}>
+                    <div className="overlay-text">{overlayText}</div>
+                </div>
+            }
         </div>
     );
 };
 
 
-export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId = "first-image" }) => {
+export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId = "first-image", fadeEndId }) => {
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            const gallery = document.getElementById(targetId);
+            const targetObject = document.getElementById(targetId);
             const fadeStart = document.getElementById(fadeStartId);
-            if (!gallery || !fadeStart) return;
+            if (!targetObject || !fadeStart) return;
 
-            const galleryRect = gallery.getBoundingClientRect();
+            const targetRect = targetObject.getBoundingClientRect();
             const fadeStartRect = fadeStart.getBoundingClientRect();
-
             const fadeStartY = fadeStartRect.top;
-            const galleryBottomY = galleryRect.bottom;
+
+            let galleryBottomY = 0;
+
+            if (fadeEndId !== undefined) {
+                const targetEndObject = document.getElementById(fadeStartId);
+                const targetEndRect = targetEndObject.getBoundingClientRect();
+                galleryBottomY = targetEndRect.bottom;
+            } else {
+                galleryBottomY = targetRect.bottom;
+            }
+
             const vh = window.innerHeight * 1.1;
 
 
@@ -157,12 +189,13 @@ export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleScroll);
         };
-    }, [targetId, fadeStartId]);
+    }, [targetId, fadeStartId, fadeEndId]);
 
     return (
         <h3
             style={{
                 position: 'fixed',
+                color: 'white',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',

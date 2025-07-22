@@ -4,7 +4,7 @@ import Navbar from "../components/common/Navbar";
 import Project from "./project/Project";
 import Resume from "./resume/Resume";
 import FoodImageClassify from "./project/FoodImageClassify";
-import CampusEats from "./project/CampusEats";
+// import CampusEats from "./project/CampusEats";
 import LandSink from "./project/LandSink";
 import StevenAI from "./project/StevenAI";
 import MentorAI from "./project/MentorAI";
@@ -17,6 +17,7 @@ import Home from "./home/Home";
 import Loader from "../components/common/Loader";
 import { useEffect } from "react";
 import { initNeonTrail } from "../components/effects/NeonTrail";
+import CampusEatsNew from "./project/CampusEatsNew";
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/project" element={<Project />} />
                 <Route path="/resume" element={<Resume />} />
-                <Route path="/campusEats" element={<CampusEats />} />
+                <Route path="/campusEats" element={<CampusEatsNew />} />
                 <Route path="/landSink" element={<LandSink />} />
                 <Route path="/foodImageClassify" element={<FoodImageClassify />} />
                 <Route path="/server" element={<Sever />} />
