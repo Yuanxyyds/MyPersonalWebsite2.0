@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-export function useIsVerticalLayout() {
-    const getIsVertical = () => window.innerHeight / window.innerWidth > 1.3;
+export function useIsVerticalLayout(ratio = 1.3) {
+    const getIsVertical = () => window.innerHeight / window.innerWidth > ratio;
     const [isVertical, setIsVertical] = useState(getIsVertical());
 
     useEffect(() => {
@@ -10,7 +10,7 @@ export function useIsVerticalLayout() {
         };
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    });
 
     return isVertical;
 }
