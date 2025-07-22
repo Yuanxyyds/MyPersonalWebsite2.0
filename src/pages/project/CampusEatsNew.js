@@ -4,10 +4,12 @@ import "./../../style/project/campus-eats.css"
 import { useEffect, useState } from "react";
 import { ScrollImage, StickyText } from "../../components/home/Gallery";
 import ReactPlayer from "react-player";
+import { useVideoPopup } from "../../components/project/PopupVideoPlayer";
 
 function CampusEatsNew() {
     const isVertical = useIsVerticalLayout(1);
     const [isXS, setIsXS] = useState(false);
+    const { VideoPopup, openVideo } = useVideoPopup();
     const XS_BREAKPOINT = 767;
 
     // Detect if screen is xs on mount and resize
@@ -63,6 +65,7 @@ function CampusEatsNew() {
 
     return (
         <section>
+            <VideoPopup />
             <Container fluid className="ce-section">
                 {isVertical ? <img className="ce-bg-desktop" src="/project-demo/campus-eats-bg-vertical.jpg" alt="campus-eats-bg-cropped" /> : <img className="ce-bg-desktop" src="/project-demo/campus-eats-bg.jpg" alt="campus-eats-bg" />}
                 <Container fluid id="landing" className="ce-content-padding">
@@ -136,14 +139,15 @@ function CampusEatsNew() {
                 <Container fluid className="timeline-section text-center">
                     <Row className="m-0 p-0">
                         <Col xs={12} md={6} id="first-image" className="m-0 p-0">
-                            <ScrollImage src="/project-demo/command-line.png" wrapperWidth="90%" speed={1} z={0} tag="Starting" tagLocation="20%"/>
+                            <ScrollImage src="/project-demo/command-line.png" wrapperWidth="90%" speed={1} z={0} tag="Starting" tagLocation="20%"
+                                overlayText="Watch Command Line Video Demo" overlayAction={() => openVideo('https://youtu.be/J3kfU4Ic8Uc')} />
                             <p className="md" style={{ width: '80%', margin: '2px auto', marginTop: isXS ? '8vh' : '12vh', marginBottom: isXS ? '8vh' : '12vh' }}>
                                 Campus Eats began as Group Asoul’s final project for CSC207—a Java-based food truck ordering system with both backend logic and a CLI/Android frontend. This marked the first step toward building today’s Campus Eats platform.
                             </p>
                         </Col>
                         <Col xs={12} md={6} className="m-0 p-0">
                             <ScrollImage src="/project-demo/asoul.png" speed={0.8} wrapperWidth="60%" tag="Nov 2021" tagLocation="20%"
-                                initialOffset={-20} />
+                                initialOffset={-20} overlayText="Watch Asoul Android App Demo" overlayAction={() => openVideo('https://youtu.be/RT-l98ZasE4')} />
                         </Col>
                     </Row>
                     <Row className="m-0 p-0">
@@ -156,7 +160,7 @@ function CampusEatsNew() {
                                     After its launch by Group Asoul, Campus Eats entered its second phase with a new team, re-integrating by Flutter and Firebase, featuring separate user and seller apps for a richer, modernized experience.
                                 </p>
                             }
-                            <ScrollImage src="/project-demo/campus-eats-1.png" speed={1} wrapperWidth="60%" initialOffset={20} tag="May 2023"  tagLocation="15%"/>
+                            <ScrollImage src="/project-demo/campus-eats-1.png" speed={1} wrapperWidth="60%" initialOffset={20} tag="May 2023" tagLocation="15%" overlayText="Watch Campus Eats V1 Demo" overlayAction={() => openVideo('https://youtu.be/0pP6WPmZV9M')} />
                         </Col>
                         <Col xs={12} md={6} style={{
                             display: 'flex',
@@ -178,7 +182,7 @@ function CampusEatsNew() {
                             <p className="md" style={{ width: '80%', margin: '2px auto', marginTop: isXS ? '8vh' : '5vh', marginBottom: isXS ? '8vh' : '13vh' }}>
                                 Here are some snapshots of Campus Eats—a project we not only built and developed technically, but also advanced through business development and pitch presentations.
                             </p>
-                            <ScrollImage src="/project-demo/campus-eats-steven.jpg" wrapperWidth="70%" speed={1} z={0} tag="Pitch" initialOffset={50} />
+                            <ScrollImage src="/project-demo/campus-eats-steven.jpg" wrapperWidth="70%" speed={1} z={0} tag="Pitch" initialOffset={50} overlayText="Watch our Hult Prize Pitch" overlayAction={() => openVideo('https://youtu.be/VVPSaiIJwNQ')} />
                         </Col>
                         <Col xs={12} md={6} className="m-0 p-0">
                             <ScrollImage src="/project-demo/campus-eats-team.png" wrapperWidth="80%" speed={1.23} z={0} tag="Our Team" initialOffset={-130} />
@@ -189,13 +193,13 @@ function CampusEatsNew() {
                             <p className="md" style={{ width: '80%', margin: '2px auto', marginTop: isXS ? '8vh' : '3vh', marginBottom: isXS ? '8vh' : '5vh' }}>
                                 In Summer 2024, we joined the UofT Hatchery Program to enhance Campus Eats by adding new features, strengthening our business model.
                             </p>
-                            {isXS && <ScrollImage src="/project-demo/uoft-hatchery.png" wrapperWidth="90%" speed={1.2} z={0} tag="Hatchery" initialOffset={0} />}
+                            {isXS && <ScrollImage src="/project-demo/uoft-hatchery.png" wrapperWidth="90%" speed={1.2} z={0} tag="Hatchery" initialOffset={0} overlayText="Watch our Hatchery Pitch" overlayAction={() => openVideo('https://youtu.be/-iV_XxbnngA')} />}
                             {!isXS && <ScrollImage src="/project/campus-eats.png" wrapperWidth="90%" speed={1} z={0} tag="Jan 2025" initialOffset={0} />}
                         </Col>
                         <Col xs={12} md={6} className="m-0 p-0">
-                            {!isXS && <ScrollImage src="/project-demo/uoft-hatchery.png" wrapperWidth="90%" speed={1.2} z={0} tag="Hatchery" initialOffset={0} />}
+                            {!isXS && <ScrollImage src="/project-demo/uoft-hatchery.png" wrapperWidth="90%" speed={1.2} z={0} tag="Hatchery" initialOffset={0} overlayText="Watch our Hatchery Pitch" overlayAction={() => openVideo('https://youtu.be/-iV_XxbnngA')} />}
                             <p className="md" style={{ width: '80%', margin: '2px auto', marginTop: isXS ? '8vh' : '0', marginBottom: isXS ? '8vh' : '5vh' }}>
-                               Finally, we redesigned Campus Eats with a sleek modern UI, expanded features, and a scalable backend—delivering a faster, smarter, and more seamless student dining experience.
+                                Finally, we redesigned Campus Eats with a sleek modern UI, expanded features, and a scalable backend—delivering a faster, smarter, and more seamless student dining experience.
                             </p>
                             {isXS && <ScrollImage src="/project/campus-eats.png" wrapperWidth="90%" speed={1} z={0} tag="Jan 2025" initialOffset={0} />}
                         </Col>
