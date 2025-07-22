@@ -178,7 +178,7 @@ function CampusEatsNew() {
                             <p className="md" style={{ width: '80%', margin: '2px auto', marginTop: isXS ? '8vh' : '5vh', marginBottom: isXS ? '8vh' : '13vh' }}>
                                 Here are some snapshots of Campus Eats—a project we not only built and developed technically, but also advanced through business development and pitch presentations.
                             </p>
-                            <ScrollImage src="/project-demo/campus-eats-steven.JPG" wrapperWidth="70%" speed={1} z={0} tag="Pitch" initialOffset={50} />
+                            <ScrollImage src="/project-demo/campus-eats-steven.jpg" wrapperWidth="70%" speed={1} z={0} tag="Pitch" initialOffset={50} />
                         </Col>
                         <Col xs={12} md={6} className="m-0 p-0">
                             <ScrollImage src="/project-demo/campus-eats-team.jpg" wrapperWidth="80%" speed={1.23} z={0} tag="Our Team" initialOffset={-130} />
