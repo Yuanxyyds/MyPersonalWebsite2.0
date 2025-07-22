@@ -176,7 +176,6 @@ export const StickyText = ({ text = "Gallery", targetId = "gallery", fadeStartId
 
 
                 const newOpacity = Math.min(progress < 0.4 ? (1 - progress) ** 0.5 : Math.max(0, (1 - progress)) ** 1.5, 1);
-                console.log(newOpacity);
                 setOpacity(newOpacity);
             }
         };
