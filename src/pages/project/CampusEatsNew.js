@@ -181,8 +181,7 @@ function CampusEatsNew() {
                             <ScrollImage src="/project-demo/campus-eats-steven.jpg" wrapperWidth="70%" speed={1} z={0} tag="Pitch" initialOffset={50} />
                         </Col>
                         <Col xs={12} md={6} className="m-0 p-0">
-                            <ScrollImage src="/project-demo/campus-eats-team.jpg" wrapperWidth="80%" speed={1.23} z={0} tag="Our Team" initialOffset={-130} />
-
+                            <ScrollImage src="/project-demo/campus-eats-team.png" wrapperWidth="80%" speed={1.23} z={0} tag="Our Team" initialOffset={-130} />
                         </Col>
                     </Row>
                     <Row className="p-0">
