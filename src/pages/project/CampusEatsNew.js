@@ -93,7 +93,7 @@ function CampusEatsNew() {
                     <div id="about-line" className="animated-underline"></div>
                 </div>
                 <Row>
-                    <Col lg={8}>
+                    <Col xl={8}>
                         <p className="fade-in mt-5">
                             Campus Eats is a student-led startup on a mission to <i> <b className="primary-color"> transform the campus dining experience </b> </i> through
                             an all-in-one mobile platform. Beyond our core  <i> <b className="primary-color">  Grab and Go central delivery system,</b> </i>
@@ -106,8 +106,11 @@ function CampusEatsNew() {
                             and access exclusive discounts—making campus dining more diverse, accessible, and student-friendly than ever.
                         </p>
                     </Col>
-                    <Col xs={0} lg={4} className="ce-logo">
-                        <img src='/project-demo/campus-eats-logo.jpg' alt="Campus Eats Logo" style={{ maxHeight: "300px" }} />
+                    <Col xs={12} md={10} lg={9} xl={4}>
+                        <ReactPlayer
+                            width="100%"
+                            controls={true}
+                            url='https://youtu.be/nSsBSv1q4Bc' />
                     </Col>
                 </Row>
             </Container>
@@ -194,14 +197,14 @@ function CampusEatsNew() {
                                 In Summer 2024, we joined the UofT Hatchery Program to enhance Campus Eats by adding new features, strengthening our business model.
                             </p>
                             {isXS && <ScrollImage src="/project-demo/uoft-hatchery.png" wrapperWidth="90%" speed={1.2} z={0} tag="Hatchery" initialOffset={0} overlayText="Watch our Hatchery Pitch" overlayAction={() => openVideo('https://youtu.be/-iV_XxbnngA')} />}
-                            {!isXS && <ScrollImage src="/project/campus-eats.png" wrapperWidth="90%" speed={1} z={0} tag="Jan 2025" initialOffset={0} />}
+                            {!isXS && <ScrollImage src="/project/campus-eats.png" wrapperWidth="90%" speed={1} z={0} tag="Jan 2025" initialOffset={0} overlayText="Watch our Full Demo" overlayAction={() => openVideo('https://youtu.be/nSsBSv1q4Bc')} />}
                         </Col>
                         <Col xs={12} md={6} className="m-0 p-0">
                             {!isXS && <ScrollImage src="/project-demo/uoft-hatchery.png" wrapperWidth="90%" speed={1.2} z={0} tag="Hatchery" initialOffset={0} overlayText="Watch our Hatchery Pitch" overlayAction={() => openVideo('https://youtu.be/-iV_XxbnngA')} />}
                             <p className="md" style={{ width: '80%', margin: '2px auto', marginTop: isXS ? '8vh' : '0', marginBottom: isXS ? '8vh' : '5vh' }}>
                                 Finally, we redesigned Campus Eats with a sleek modern UI, expanded features, and a scalable backend—delivering a faster, smarter, and more seamless student dining experience.
                             </p>
-                            {isXS && <ScrollImage src="/project/campus-eats.png" wrapperWidth="90%" speed={1} z={0} tag="Jan 2025" initialOffset={0} />}
+                            {isXS && <ScrollImage src="/project/campus-eats.png" wrapperWidth="90%" speed={1} z={0} tag="Jan 2025" initialOffset={0} overlayText="Watch our Full Demo" overlayAction={() => openVideo('https://youtu.be/nSsBSv1q4Bc')} />}
                         </Col>
                     </Row>
                 </Container>
