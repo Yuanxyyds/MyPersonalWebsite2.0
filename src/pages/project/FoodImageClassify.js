@@ -35,8 +35,9 @@ function FoodImageClassify() {
         try {
             setIsProcessing(true);
             setModelResult(null);
+            
             // POST request to the backend
-            const response = await axios.post('https://webserver.liustev6.ca/food101/classify',
+            const response = await axios.post('https://server-lite.liustev6.ca/food101/classify',
                 formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
