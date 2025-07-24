@@ -8,7 +8,7 @@ function LandSink() {
     const [year, setYear] = useState(2020);
 
     const request = () => {
-        let url = 'https://webserver.liustev6.ca/landsink/predict/' + year.toString();
+        let url = 'https://server-lite.liustev6.ca/landsink/predict/' + year.toString();
         const newWindow = window.open(url, 'Dialog', 'width=600,height=400');
         if (newWindow) {
             // Fo nothing
