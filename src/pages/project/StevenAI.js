@@ -4,62 +4,33 @@ import "./../../style/project/steven-ai.css"
 
 function StevenAI() {
     // States for managing WebSocket connection and chat messages
-    const [chatSocket, setChatSocket] = useState(null);
-    const [connectionStatus, setConnectionStatus] = useState("Not Connected");
     const [messages, setMessages] = useState([]);
     const [messageInput, setMessageInput] = useState("");
-    const [isConnected, setIsConnected] = useState(false);
-    const [isModelLoaded, setIsModelLoaded] = useState(false);
+    const [isModelLoaded, setIsModelLoaded] = useState(true);
 
-    // WebSocket URL (adjust this URL based on your setup)
-    const wsUrl = `wss://webserver.liustev6.ca/ws/socket-server/`;
-
-    // Function to initiate WebSocket connection when button is clicked
-    const requestConnection = () => {
-        try {
-            const socket = new WebSocket(wsUrl);
-            setChatSocket(socket);
-
-            // WebSocket opened
-            socket.onopen = () => {
-                setConnectionStatus("Connected!");
-                setIsConnected(true);  // Mark connection as established
-            };
-
-            // WebSocket message received
-            socket.onmessage = (e) => {
-                const data = JSON.parse(e.data);
-                if (data.code === "MR") {  // Model Response
-                    setMessages((prevMessages) => [...prevMessages, { sender: "AI", text: data.message }]);
-                } else if (data.code === "CA") {// Connection accepted
-                    setConnectionStatus(data.message);
-                } else if (data.code === "ML") {  // Model loaded
-                    setIsModelLoaded(true);
-                    setConnectionStatus(data.message);
-                } else if (data.code === "TO") {  // Timeout
-                    setConnectionStatus(data.message);
-                }
-            };
-
-            // WebSocket closed
-            socket.onclose = () => {
-                setConnectionStatus("Connection Closed – This may be due to session timeout or reaching the maximum connection limit (1).");
-                setChatSocket(null);
-                setIsModelLoaded(false);
-                setIsConnected(false); // Mark connection as disconnected
-            };
-        } catch (e) {
-            setConnectionStatus("Failed to connect – The service might not have started.");
-        }
-    };
-
-    // Handle form submission to send messages
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (chatSocket && chatSocket.readyState === WebSocket.OPEN) {
-            chatSocket.send(JSON.stringify({ message: messageInput }));
-            setMessages((prevMessages) => [...prevMessages, { sender: "You", text: messageInput }]);
-            setMessageInput("");  // Clear input
+        const userMessage = messageInput.trim();
+        if (!userMessage) return;
+
+        setMessages((prev) => [...prev, { sender: "You", text: userMessage }]);
+        setMessageInput("");
+
+        try {
+            const response = await fetch(
+                `https://server-lite.liustev6.ca/stevenai/openai-rag/query?q=${encodeURIComponent(userMessage)}`
+            );
+            const data = await response.json();
+
+            if (data.answer) {
+                setMessages((prev) => [...prev, { sender: "AI", text: data.answer }]);
+            } else if (data.error) {
+                setMessages((prev) => [...prev, { sender: "AI", text: `Error: ${data.error}` }]);
+            } else {
+                setMessages((prev) => [...prev, { sender: "AI", text: "No response received." }]);
+            }
+        } catch (error) {
+            setMessages((prev) => [...prev, { sender: "AI", text: `Error: ${error.message}` }]);
         }
     };
 
@@ -106,8 +77,7 @@ function StevenAI() {
                     READ <span className="primary-color"> ME </span> Before Start
                 </h3>
                 <p className="sm fade-in sub-title" >
-                    Due to limited resources, only one connection is
-                    allowed at a time. The model is lazy-loaded, so please allow up to 20 seconds for it to load
+                    Please allow up to 20 seconds for it to load
                     initially. Since text streaming isn't implemented, longer messages may take up to 10 seconds to
                     generate. The chat will timeout if no new requests are received within 60 seconds.
                 </p>
@@ -117,18 +87,10 @@ function StevenAI() {
 
             <Container className="section-margin">
                 <h3 className="fade-in">
-                    Start a Chat - <span className="primary-color">
-                        {!isConnected ? (
-                            <span onClick={requestConnection} style={{ cursor: "pointer" }}> Click to Connect</span>
-                        ) : (
-                            <span onClick={requestConnection}> Connected</span>
-                        )}
+                    Start a Chat - <span className="primary-color"> Now
                     </span>
                 </h3>
-                <p className="sub-title fade-in">
-                    {connectionStatus}
-                </p>
-
+                
                 {(messages.length > 0 || isModelLoaded) &&
                     <div id="chatLog" className="chat-log">
                         {messages.map((msg, index) => (
