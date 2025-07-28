@@ -1,12 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useState } from "react";
+
 import "./../../style/project/steven-ai.css"
 
 function StevenAI() {
     // States for managing WebSocket connection and chat messages
     const [messages, setMessages] = useState([]);
     const [messageInput, setMessageInput] = useState("");
-    const [isModelLoaded, setIsModelLoaded] = useState(true);
+    const [showPopup, setShowPopup] = useState(false);
+    const [selectedModel, setSelectedModel] = useState("ChatGPT-4o");
+    const [selectedRAG, setSelectedRAG] = useState(["QA Pairs", "Docs of Facts"]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,10 +19,29 @@ function StevenAI() {
         setMessages((prev) => [...prev, { sender: "You", text: userMessage }]);
         setMessageInput("");
 
+        // === STEP 1: Determine model slug
+        const modelSlug = selectedModel === "ChatGPT-4o" ? "gpt4o" : "llama";
+
+        // === STEP 2: Determine RAG suffix
+        let ragSlug = "";
+        const hasQA = selectedRAG.includes("QA Pairs");
+        const hasDocs = selectedRAG.includes("Docs of Facts");
+
+        if (hasQA && hasDocs) ragSlug = "qa-docs";
+        else if (hasQA) ragSlug = "qa";
+        else if (hasDocs) ragSlug = "docs";
+        else ragSlug = ""; // fallback to base path
+
+        // === STEP 3: Construct path
+        const fullPath = ragSlug
+            ? `${modelSlug}-${ragSlug}`
+            : `${modelSlug}`;
+
+        const fullUrl = `https://server-lite.liustev6.ca/stevenai/${fullPath}/query?q=${encodeURIComponent(userMessage)}`;
+
+
         try {
-            const response = await fetch(
-                `https://server-lite.liustev6.ca/stevenai/openai-rag/query?q=${encodeURIComponent(userMessage)}`
-            );
+            const response = await fetch(fullUrl);
             const data = await response.json();
 
             if (data.answer) {
@@ -35,76 +57,85 @@ function StevenAI() {
     };
 
     return (
-        <Container fluid className="project-demo-section">
-            <Container fluid className="two-column-content-padding">
-                <Row>
-                    <Col lg={12} xl={7}>
-                        <h3 className="fade-in">
-                            Ask me everything - <span className='primary-color'> Steven AI </span>
-                        </h3>
-                        <p className="fade-in" style={{ textAlign: "justify", paddingTop: 20 }}>
-                            This personal project focuses on creating an AI chatbot capable of answering any questions
-                            about me. The chatbot is built by fine-tuning the <span className="primary-color">LLaMA 3.2
-                                model </span> (3 billion parameters) using around 1,000 Q&A pairs related to <span
-                                    className="primary-color"> my personal background and experience.</span>
-                        </p>
-                        <p className="fade-in" style={{ textAlign: "justify", paddingTop: 20 }}>
-                            To optimize resources, I leveraged <span className="primary-color">Unsloth</span>, which
-                            delivers 2x faster speeds and reduces VRAM usage by 50%. I also used a <span
-                                className="primary-color">LoRA adapter</span> for parameter-efficient fine-tuning, enabling
-                            efficient training within my home lab setup, which includes a 16GB 4060Ti GPU.
-                            The model was trained with several LoRA ranks (8, 16, 32, 64, 128) and used a LoRA alpha set
-                            at 2x the LoRA rank over 10 epochs. The best-performing configuration had a <span
-                                className="primary-color">LoRA rank of 16 and LoRA alpha of 32</span>, achieving a
-                            performance range of <span className="primary-color">70%-85%</span> across different
-                            answers. Due to the model’s size (3 billion parameters) and resource constraints, <span
-                                className="primary-color">it may occasionally make mistakes</span>. Feel free to ask me some
-                            questions!
-                        </p>
-                    </Col>
-                    <Col lg={12} xl={5} style={{ paddingBottom: 20, textAlign: "center" }}>
-                        <img
-                            src="/project-demo/steven-ai-qa.png"
-                            alt="Steven AI QA"
-                            className="img-fluid fade-in food-classify-image"
-                        />
-                    </Col>
-                </Row>
+        <section>
+            {showPopup && (
+                <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+                    <div className="popup-modal" onClick={(e) => e.stopPropagation()}>
+                        <label>
+                            Base Model:
+                            <select
+                                value={selectedModel}
+                                onChange={(e) => setSelectedModel(e.target.value)}
+                            >
+                                <option value="ChatGPT-4o">ChatGPT-4o</option>
+                                <option value="LLaMA">FT LLaMA-3.2-3B</option>
+                            </select>
+                        </label>
+
+                        <label className="mt-3">RAG Info:</label>
+                        <div className="checkbox-group">
+                            {["QA Pairs", "Docs of Facts"].map((option) => (
+                                <label key={option}>
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedRAG.includes(option)}
+                                        onChange={() =>
+                                            setSelectedRAG((prev) =>
+                                                prev.includes(option)
+                                                    ? prev.filter((item) => item !== option)
+                                                    : [...prev, option]
+                                            )
+                                        }
+                                    />
+                                    {option}
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <Container fluid className="steven-ai-section">
+                <img className="steven-ai-bg-desktop" src="/project-demo/stevenai.jpeg" alt="campus-eats-bg" />
+                <Container fluid id="landing" className="steven-ai-content-padding">
+                    <Row>
+                        <Col xs={12} sm={10} md={8} lg={7} xl={6} xxl={6} className="steven-ai-fixed-height-col">
+                            <div className="steven-ai-text-card text-center">
+                                <h2 className="mb-2" style={{ fontWeight: '800' }}>
+                                    STEVEN AI
+                                </h2>
+                                <p className="small delay-in delay-1" style={{ textAlign: "start" }}>
+                                    StevenAI is <span className="neon-text">a personalized AI chatbot</span> built to answer any questions me. It was originally developed by <span className="neon-text">fine-tuning LLaMA 3.2 with LoRA</span> on a custom dataset of 1,000+ Q&A pairs. However, while this method provided deep personalization, it also surfaced limitations in accuracy, especially when handling rare or nuanced queries.
+                                </p>
+                                <p className="small delay-in delay-2" style={{ textAlign: "start" }}>
+                                    To address these challenges, StevenAI was upgraded with a <span className="neon-text">retrieval-augmented generation (RAG)</span> layer, which supplements the model’s responses with relevant facts from a structured knowledge base. This <span className="neon-text">hybrid architecture</span> blends the strengths of fine-tuning with real-time semantic retrieval, resulting in more accurate, flexible, and context-aware answers.
+                                </p>
+                                <p className="small delay-in delay-3" style={{ textAlign: "start" }}>
+                                    The system supports multiple <span className="neon-text">base models</span> and <span className="neon-text">retrieval strategies</span>. You can select your preferred combination and <span className="neon-text">ASK A QUESTION NOW</span>!
+                                </p>
+
+                            </div>
+                        </Col>
+                        <Col></Col>
+                    </Row>
+                </Container>
             </Container>
-
-            <Container className="section-margin">
-                <h3 className="fade-in ">
-                    READ <span className="primary-color"> ME </span> Before Start
-                </h3>
-                <p className="sm fade-in sub-title" >
-                    Please allow up to 20 seconds for it to load
-                    initially. Since text streaming isn't implemented, longer messages may take up to 10 seconds to
-                    generate. The chat will timeout if no new requests are received within 60 seconds.
-                </p>
-            </Container>
-
-
-
-            <Container className="section-margin">
-                <h3 className="fade-in">
-                    Start a Chat - <span className="primary-color"> Now
-                    </span>
-                </h3>
-                
-                {(messages.length > 0 || isModelLoaded) &&
+            <Container fluid className="steven-ai-chat-section" >
+                <Container fluid id="landing" className="chat-container">
+                    <div className="chat-padding" />
+                    <h2 id="about" className="fade-in mt-2 mb-4 text-center">Start a <span className="neon-text">Chat</span> now</h2>
                     <div id="chatLog" className="chat-log">
                         {messages.map((msg, index) => (
-                            <div key={index}
+                            <div
+                                key={index}
                                 className={`chat-message ${msg.sender === 'You' ? 'chat-message-sender' : 'chat-message-receiver'}`}>
                                 {msg.text}
                             </div>
                         ))}
                     </div>
-                }
 
-                {/* Chat Section */}
-                {isModelLoaded && (
                     <form id="chatForm" onSubmit={handleSubmit} className="chat-form">
+
                         <input
                             type="text"
                             id="messageInput"
@@ -114,11 +145,20 @@ function StevenAI() {
                             required
                             className="chat-input"
                         />
+                        <button
+                            type="button"
+                            className="send-button"
+                            onClick={() => setShowPopup((prev) => !prev)}
+                        >
+                            Config
+                        </button>
+
                         <button type="submit" className="send-button">Send</button>
                     </form>
-                )}
+                    <div className="chat-padding" />
+                </Container>
             </Container>
-        </Container>
+        </section>
     );
 }
 
