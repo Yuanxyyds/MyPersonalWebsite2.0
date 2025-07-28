@@ -8,15 +8,20 @@ function StevenAI() {
     const [messages, setMessages] = useState([]);
     const [messageInput, setMessageInput] = useState("");
     const [showPopup, setShowPopup] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [selectedModel, setSelectedModel] = useState("ChatGPT-4o");
     const [selectedRAG, setSelectedRAG] = useState(["QA Pairs", "Docs of Facts"]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const userMessage = messageInput.trim();
-        if (!userMessage) return;
+        if (!messageInput.trim() || isLoading) return;
 
-        // STEP 1: Determine lastQ and lastA BEFORE updating messages
+        const userMessage = messageInput.trim();
+        setMessageInput("");
+        setMessages((prev) => [...prev, { sender: "You", text: userMessage }]);
+        setIsLoading(true); // <-- start loading
+
+        // STEP 1: Determine lastQ and lastA
         let lastQ = null;
         let lastA = null;
         for (let i = messages.length - 1; i >= 0; i--) {
@@ -25,14 +30,8 @@ function StevenAI() {
             if (lastQ && lastA) break;
         }
 
-        // Now update state with the new message
-        setMessages((prev) => [...prev, { sender: "You", text: userMessage }]);
-        setMessageInput("");
-
-        // STEP 2: Determine model slug
+        // STEP 2–4: same as before...
         const modelSlug = selectedModel === "ChatGPT-4o" ? "gpt4o" : "llama";
-
-        // STEP 3: Determine RAG suffix
         let ragSlug = "";
         const hasQA = selectedRAG.includes("QA Pairs");
         const hasDocs = selectedRAG.includes("Docs of Facts");
@@ -40,7 +39,6 @@ function StevenAI() {
         else if (hasQA) ragSlug = "qa";
         else if (hasDocs) ragSlug = "docs";
 
-        // STEP 4: Construct full URL
         const basePath = ragSlug ? `${modelSlug}-${ragSlug}` : modelSlug;
         const baseUrl = `https://server-lite.liustev6.ca/stevenai/${basePath}/query`;
 
@@ -65,8 +63,11 @@ function StevenAI() {
             }
         } catch (error) {
             setMessages((prev) => [...prev, { sender: "AI", text: `Error: ${error.message}` }]);
+        } finally {
+            setIsLoading(false); // <-- stop loading
         }
     };
+
 
     return (
         <section>
@@ -165,7 +166,10 @@ function StevenAI() {
                             Config
                         </button>
 
-                        <button type="submit" className="send-button">Send</button>
+                        <button type="submit" className="send-button" disabled={isLoading}>
+                            Send
+                        </button>
+
                     </form>
                     <div className="chat-padding" />
                 </Container>

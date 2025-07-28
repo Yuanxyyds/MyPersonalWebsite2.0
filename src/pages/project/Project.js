@@ -125,7 +125,7 @@ function Project() {
 
                             <FeaturedProjectCard
                                 imageSrc="/project/steven-ai-cover.jpg"
-                                logoSrc="/project/steven-ai-logo-transparent.png"
+                                logoSrc="/project/stevenai.webp"
                                 title="Steven AI"
                                 description="Steven AI is a personalized chatbot designed to answer any questions about me. It was built by fine-tuning the LLaMA 3.2 model (3 billion parameters) on over 1,000 Q&A pairs covering my background and experiences. To optimize training in my home lab, I used a LoRA adapter for parameter-efficient fine-tuning and RAG to enhance accuracy and response relevance."
                                 shortDescription="Steven AI is a personalized chatbot fine-tuned on 1,000+ Q&A pairs about me using LLaMA 3.2 and LoRA. It runs in my home lab and uses RAG to improve accuracy and relevance."
