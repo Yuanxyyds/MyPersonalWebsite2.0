@@ -119,6 +119,7 @@
 .chat-input {
     flex-grow: 1;
     padding: 10px;
+    min-width: 0;
     background-color: #333;
     border: 1px solid #555;
     border-radius: 5px;

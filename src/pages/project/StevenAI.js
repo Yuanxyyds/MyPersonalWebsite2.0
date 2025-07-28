@@ -16,29 +16,41 @@ function StevenAI() {
         const userMessage = messageInput.trim();
         if (!userMessage) return;
 
+        // STEP 1: Determine lastQ and lastA BEFORE updating messages
+        let lastQ = null;
+        let lastA = null;
+        for (let i = messages.length - 1; i >= 0; i--) {
+            if (messages[i].sender === "You" && !lastQ) lastQ = messages[i].text;
+            if (messages[i].sender === "AI" && !lastA) lastA = messages[i].text;
+            if (lastQ && lastA) break;
+        }
+
+        // Now update state with the new message
         setMessages((prev) => [...prev, { sender: "You", text: userMessage }]);
         setMessageInput("");
 
-        // === STEP 1: Determine model slug
+        // STEP 2: Determine model slug
         const modelSlug = selectedModel === "ChatGPT-4o" ? "gpt4o" : "llama";
 
-        // === STEP 2: Determine RAG suffix
+        // STEP 3: Determine RAG suffix
         let ragSlug = "";
         const hasQA = selectedRAG.includes("QA Pairs");
         const hasDocs = selectedRAG.includes("Docs of Facts");
-
         if (hasQA && hasDocs) ragSlug = "qa-docs";
         else if (hasQA) ragSlug = "qa";
         else if (hasDocs) ragSlug = "docs";
-        else ragSlug = ""; // fallback to base path
 
-        // === STEP 3: Construct path
-        const fullPath = ragSlug
-            ? `${modelSlug}-${ragSlug}`
-            : `${modelSlug}`;
+        // STEP 4: Construct full URL
+        const basePath = ragSlug ? `${modelSlug}-${ragSlug}` : modelSlug;
+        const baseUrl = `https://server-lite.liustev6.ca/stevenai/${basePath}/query`;
 
-        const fullUrl = `https://server-lite.liustev6.ca/stevenai/${fullPath}/query?q=${encodeURIComponent(userMessage)}`;
+        const urlParams = new URLSearchParams({ q: userMessage });
+        if (lastQ && lastA) {
+            urlParams.append("last_q", lastQ);
+            urlParams.append("last_a", lastA);
+        }
 
+        const fullUrl = `${baseUrl}?${urlParams.toString()}`;
 
         try {
             const response = await fetch(fullUrl);
