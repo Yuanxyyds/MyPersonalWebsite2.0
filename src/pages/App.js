@@ -18,6 +18,7 @@ import Loader from "../components/common/Loader";
 import { useEffect } from "react";
 import { initNeonTrail } from "../components/effects/NeonTrail";
 import CampusEatsNew from "./project/CampusEatsNew";
+import Chatbot from "../components/common/Chatbot";
 
 
 function App() {
@@ -43,12 +44,13 @@ function App() {
                 <Route path="/landSink" element={<LandSink />} />
                 <Route path="/foodImageClassify" element={<FoodImageClassify />} />
                 <Route path="/server" element={<Sever />} />
-                <Route path="/stevenAI" element={<StevenAI />} />
-                <Route path="/mentorAI" element={<MentorAI />} />
+                <Route path="/stevenAi" element={<StevenAI />} />
+                <Route path="/mentorAi" element={<MentorAI />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
             {/* Conditionally hide footer if path starts with /server */}
             {!location.pathname.startsWith("/server") && <Footer />}
+            {!location.pathname.startsWith("/server") && !location.pathname.startsWith("/stevenAi") && <Chatbot />}
         </div>
     );
 }
